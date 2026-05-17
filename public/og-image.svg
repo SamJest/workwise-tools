@@ -1,0 +1,15 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#F7F9FB"/>
+  <rect x="88" y="86" width="1024" height="458" rx="28" fill="#FFFFFF" stroke="#DFE5EC" stroke-width="2"/>
+  <rect x="140" y="138" width="116" height="116" rx="20" fill="#17212B"/>
+  <rect x="165" y="167" width="52" height="16" rx="5" fill="#2DD4BF"/>
+  <rect x="181" y="190" width="52" height="16" rx="5" fill="#FFFFFF"/>
+  <rect x="165" y="213" width="52" height="16" rx="5" fill="#F59E0B"/>
+  <path d="M226 165L232.4 177.5L246.2 179.5L236.2 189.3L238.5 203L226 196.5L213.6 203L215.9 189.3L205.8 179.5L219.7 177.5L226 165Z" fill="#FFFFFF"/>
+  <text x="292" y="190" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="700" fill="#17212B">WorkWise Tools</text>
+  <text x="292" y="242" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" letter-spacing="3" fill="#0F766E">AI AND SAAS GUIDES FOR BETTER WORKFLOWS</text>
+  <text x="140" y="350" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="700" fill="#17212B">Find better tools for the way you work.</text>
+  <text x="140" y="407" font-family="Arial, Helvetica, sans-serif" font-size="25" fill="#5D6875">Comparisons, alternatives, prompts, templates, and free calculators.</text>
+  <rect x="140" y="465" width="224" height="44" rx="8" fill="#0F766E"/>
+  <text x="168" y="494" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#FFFFFF">workwisetools.com</text>
+</svg>

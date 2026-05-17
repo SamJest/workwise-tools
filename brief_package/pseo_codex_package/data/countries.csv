@@ -1,0 +1,11 @@
+name,slug,currency,region,priority,terminologyNotes,privacyNotes
+United States,us,USD,North America,1,"[""small business"", ""realtor"", ""CPA""]","[""Check state and sector-specific requirements where relevant.""]"
+United Kingdom,uk,GBP,Europe,2,"[""SME"", ""estate agent"", ""solicitor"", ""limited company""]","[""Consider UK GDPR and data processing requirements.""]"
+Australia,au,AUD,Oceania,3,"[""small business"", ""real estate agent"", ""Pty Ltd""]","[""Check Australian Privacy Principles where relevant.""]"
+Canada,ca,CAD,North America,4,"[""small business"", ""realtor"", ""CPA""]","[""Check federal and provincial privacy rules where relevant.""]"
+New Zealand,nz,NZD,Oceania,5,"[""small business"", ""real estate agent""]","[""Check New Zealand privacy requirements where relevant.""]"
+Ireland,ie,EUR,Europe,6,"[""SME"", ""solicitor""]","[""GDPR applies.""]"
+Singapore,sg,SGD,Asia,7,"[""SME"", ""private limited company""]","[""Check PDPA requirements where relevant.""]"
+South Africa,za,ZAR,Africa,8,"[""SME"", ""estate agent""]","[""Check POPIA requirements where relevant.""]"
+India,in,INR,Asia,9,"[""startup"", ""SME"", ""chartered accountant""]","[""Check current data protection requirements where relevant.""]"
+Philippines,ph,PHP,Asia,10,"[""SME"", ""virtual assistant""]","[""Check local privacy requirements where relevant.""]"

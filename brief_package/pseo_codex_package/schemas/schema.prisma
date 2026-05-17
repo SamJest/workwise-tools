@@ -1,0 +1,211 @@
+// Prisma schema for AI/SaaS PSEO platform
+// Adjust provider/url for your deployment.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Tool {
+  id                 String              @id @default(cuid())
+  name               String
+  slug               String              @unique
+  summary            String
+  description        String?
+  websiteUrl         String?
+  affiliateUrl       String?
+  logoUrl            String?
+  pricingModel       String?
+  startingPrice      Decimal?
+  currency           String?             @default("USD")
+  freePlanAvailable  Boolean             @default(false)
+  trialAvailable     Boolean             @default(false)
+  bestFor            String[]
+  notBestFor         String[]
+  pros               String[]
+  cons               String[]
+  rating             Decimal?
+  isSponsored        Boolean             @default(false)
+  affiliateAvailable Boolean             @default(false)
+  lastCheckedAt      DateTime?
+  createdAt          DateTime            @default(now())
+  updatedAt          DateTime            @updatedAt
+
+  categories         ToolCategory[]      @relation("ToolCategories")
+  professions        Profession[]        @relation("ToolProfessions")
+  countries          Country[]           @relation("ToolCountries")
+  useCases           UseCase[]           @relation("ToolUseCases")
+  integrations       Integration[]       @relation("ToolIntegrations")
+  pricingPlans       PricingPlan[]
+  comparisonsA       Comparison[]        @relation("ComparisonToolA")
+  comparisonsB       Comparison[]        @relation("ComparisonToolB")
+  alternativeSets    AlternativeSet[]    @relation("AlternativeCandidates")
+  faqs               FAQ[]
+}
+
+model ToolCategory {
+  id          String   @id @default(cuid())
+  name        String
+  slug        String   @unique
+  description String?
+  parentId    String?
+  parent      ToolCategory? @relation("CategoryTree", fields: [parentId], references: [id])
+  children    ToolCategory[] @relation("CategoryTree")
+  tools       Tool[]   @relation("ToolCategories")
+  useCases    UseCase[]
+}
+
+model Profession {
+  id                    String   @id @default(cuid())
+  name                  String
+  slug                  String   @unique
+  aliases               String[]
+  countryTerminology    Json?
+  painPoints            String[]
+  commonTasks           String[]
+  recommendedCategories String[]
+  monetisationScore     Int      @default(3)
+  tools                 Tool[]   @relation("ToolProfessions")
+  workflows             Workflow[]
+  promptTemplates       PromptTemplate[]
+}
+
+model Country {
+  id                String   @id @default(cuid())
+  name              String
+  slug              String   @unique
+  currency          String
+  region            String?
+  terminologyNotes  String[]
+  privacyNotes      String[]
+  priority          Int      @default(5)
+  tools             Tool[]   @relation("ToolCountries")
+}
+
+model UseCase {
+  id          String        @id @default(cuid())
+  name        String
+  slug        String        @unique
+  intent      String?
+  funnelStage String?
+  description String?
+  tools       Tool[]        @relation("ToolUseCases")
+  categoryId  String?
+  category    ToolCategory? @relation(fields: [categoryId], references: [id])
+}
+
+model Integration {
+  id       String @id @default(cuid())
+  name     String
+  slug     String @unique
+  tools    Tool[] @relation("ToolIntegrations")
+}
+
+model PricingPlan {
+  id          String   @id @default(cuid())
+  toolId      String
+  tool        Tool     @relation(fields: [toolId], references: [id], onDelete: Cascade)
+  name        String
+  price       Decimal?
+  currency    String?  @default("USD")
+  billingUnit String?
+  notes       String?
+}
+
+model Comparison {
+  id              String   @id @default(cuid())
+  slug            String   @unique
+  toolAId         String
+  toolBId         String
+  toolA           Tool     @relation("ComparisonToolA", fields: [toolAId], references: [id])
+  toolB           Tool     @relation("ComparisonToolB", fields: [toolBId], references: [id])
+  summaryVerdict  String
+  primaryUseCase  String?
+  winnerByUseCase Json?
+  featureRows     Json?
+  pricingNotes    String?
+  lastCheckedAt   DateTime?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+model AlternativeSet {
+  id              String   @id @default(cuid())
+  slug            String   @unique
+  baseToolName    String
+  baseToolSlug    String
+  reason          String?
+  candidates      Tool[]   @relation("AlternativeCandidates")
+  bestFreeOption  String?
+  bestBusinessOption String?
+  finalVerdict    String?
+  lastCheckedAt   DateTime?
+}
+
+model Workflow {
+  id                  String       @id @default(cuid())
+  title               String
+  slug                String       @unique
+  problem             String
+  toolsNeeded         String[]
+  steps               Json
+  prompts             String[]
+  templates           String[]
+  relatedProfessionId String?
+  relatedProfession   Profession?  @relation(fields: [relatedProfessionId], references: [id])
+  lastUpdatedAt       DateTime?
+}
+
+model PromptTemplate {
+  id                  String       @id @default(cuid())
+  title               String
+  slug                String       @unique
+  professionId        String?
+  profession          Profession?  @relation(fields: [professionId], references: [id])
+  task                String
+  prompt              String
+  refinementPrompt    String?
+  mistakesToAvoid     String[]
+  lastUpdatedAt       DateTime?
+}
+
+model Author {
+  id          String   @id @default(cuid())
+  name        String
+  slug        String   @unique
+  role        String?
+  bio         String?
+  avatarUrl   String?
+  credentials String[]
+  pages       Page[]
+}
+
+model Page {
+  id              String   @id @default(cuid())
+  title           String
+  slug            String
+  route           String   @unique
+  pageType        String
+  excerpt         String?
+  bodyBlocks      Json?
+  indexable       Boolean  @default(true)
+  qualityScore    Int      @default(0)
+  authorId        String?
+  author          Author?  @relation(fields: [authorId], references: [id])
+  lastUpdatedAt   DateTime?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+model FAQ {
+  id        String  @id @default(cuid())
+  question  String
+  answer    String
+  toolId    String?
+  tool      Tool?   @relation(fields: [toolId], references: [id])
+  pageRoute String?
+}

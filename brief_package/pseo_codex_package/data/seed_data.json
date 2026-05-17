@@ -1,0 +1,1163 @@
+{
+  "metadata": {
+    "note": "Starter/demo data for development. Verify all pricing, availability, features, and affiliate details before publishing.",
+    "project": "AI/SaaS PSEO Platform"
+  },
+  "countries": [
+    {
+      "name": "United States",
+      "slug": "us",
+      "currency": "USD",
+      "region": "North America",
+      "priority": 1,
+      "terminologyNotes": [
+        "small business",
+        "realtor",
+        "CPA"
+      ],
+      "privacyNotes": [
+        "Check state and sector-specific requirements where relevant."
+      ]
+    },
+    {
+      "name": "United Kingdom",
+      "slug": "uk",
+      "currency": "GBP",
+      "region": "Europe",
+      "priority": 2,
+      "terminologyNotes": [
+        "SME",
+        "estate agent",
+        "solicitor",
+        "limited company"
+      ],
+      "privacyNotes": [
+        "Consider UK GDPR and data processing requirements."
+      ]
+    },
+    {
+      "name": "Australia",
+      "slug": "au",
+      "currency": "AUD",
+      "region": "Oceania",
+      "priority": 3,
+      "terminologyNotes": [
+        "small business",
+        "real estate agent",
+        "Pty Ltd"
+      ],
+      "privacyNotes": [
+        "Check Australian Privacy Principles where relevant."
+      ]
+    },
+    {
+      "name": "Canada",
+      "slug": "ca",
+      "currency": "CAD",
+      "region": "North America",
+      "priority": 4,
+      "terminologyNotes": [
+        "small business",
+        "realtor",
+        "CPA"
+      ],
+      "privacyNotes": [
+        "Check federal and provincial privacy rules where relevant."
+      ]
+    },
+    {
+      "name": "New Zealand",
+      "slug": "nz",
+      "currency": "NZD",
+      "region": "Oceania",
+      "priority": 5,
+      "terminologyNotes": [
+        "small business",
+        "real estate agent"
+      ],
+      "privacyNotes": [
+        "Check New Zealand privacy requirements where relevant."
+      ]
+    },
+    {
+      "name": "Ireland",
+      "slug": "ie",
+      "currency": "EUR",
+      "region": "Europe",
+      "priority": 6,
+      "terminologyNotes": [
+        "SME",
+        "solicitor"
+      ],
+      "privacyNotes": [
+        "GDPR applies."
+      ]
+    },
+    {
+      "name": "Singapore",
+      "slug": "sg",
+      "currency": "SGD",
+      "region": "Asia",
+      "priority": 7,
+      "terminologyNotes": [
+        "SME",
+        "private limited company"
+      ],
+      "privacyNotes": [
+        "Check PDPA requirements where relevant."
+      ]
+    },
+    {
+      "name": "South Africa",
+      "slug": "za",
+      "currency": "ZAR",
+      "region": "Africa",
+      "priority": 8,
+      "terminologyNotes": [
+        "SME",
+        "estate agent"
+      ],
+      "privacyNotes": [
+        "Check POPIA requirements where relevant."
+      ]
+    },
+    {
+      "name": "India",
+      "slug": "in",
+      "currency": "INR",
+      "region": "Asia",
+      "priority": 9,
+      "terminologyNotes": [
+        "startup",
+        "SME",
+        "chartered accountant"
+      ],
+      "privacyNotes": [
+        "Check current data protection requirements where relevant."
+      ]
+    },
+    {
+      "name": "Philippines",
+      "slug": "ph",
+      "currency": "PHP",
+      "region": "Asia",
+      "priority": 10,
+      "terminologyNotes": [
+        "SME",
+        "virtual assistant"
+      ],
+      "privacyNotes": [
+        "Check local privacy requirements where relevant."
+      ]
+    }
+  ],
+  "professions": [
+    {
+      "name": "Accountants",
+      "slug": "accountants",
+      "aliases": [
+        "CPAs",
+        "chartered accountants",
+        "bookkeepers"
+      ],
+      "painPoints": [
+        "client communication",
+        "document review",
+        "report drafting",
+        "deadline management"
+      ],
+      "commonTasks": [
+        "summarise documents",
+        "write client emails",
+        "prepare reports",
+        "automate reminders"
+      ],
+      "recommendedCategories": [
+        "AI writing",
+        "document automation",
+        "meeting notes",
+        "CRM"
+      ],
+      "monetisationScore": 5
+    },
+    {
+      "name": "Real Estate Agents",
+      "slug": "real-estate-agents",
+      "aliases": [
+        "estate agents",
+        "realtors",
+        "property agents"
+      ],
+      "painPoints": [
+        "listing descriptions",
+        "lead follow-up",
+        "client updates",
+        "social content"
+      ],
+      "commonTasks": [
+        "write property descriptions",
+        "follow up leads",
+        "create brochures",
+        "summarise viewings"
+      ],
+      "recommendedCategories": [
+        "AI writing",
+        "CRM",
+        "design",
+        "sales automation"
+      ],
+      "monetisationScore": 5
+    },
+    {
+      "name": "Recruiters",
+      "slug": "recruiters",
+      "aliases": [
+        "talent teams",
+        "recruitment consultants"
+      ],
+      "painPoints": [
+        "candidate screening",
+        "outreach",
+        "job descriptions",
+        "interview notes"
+      ],
+      "commonTasks": [
+        "write outreach",
+        "screen CVs",
+        "draft job ads",
+        "summarise interviews"
+      ],
+      "recommendedCategories": [
+        "AI writing",
+        "CRM",
+        "meeting notes",
+        "document automation"
+      ],
+      "monetisationScore": 4
+    },
+    {
+      "name": "Sales Teams",
+      "slug": "sales-teams",
+      "aliases": [
+        "sales reps",
+        "BDRs",
+        "account executives"
+      ],
+      "painPoints": [
+        "prospecting",
+        "follow-up",
+        "CRM updates",
+        "personalisation"
+      ],
+      "commonTasks": [
+        "write cold emails",
+        "research prospects",
+        "summarise calls",
+        "score leads"
+      ],
+      "recommendedCategories": [
+        "sales automation",
+        "CRM",
+        "AI writing",
+        "meeting notes"
+      ],
+      "monetisationScore": 5
+    },
+    {
+      "name": "Marketing Agencies",
+      "slug": "marketing-agencies",
+      "aliases": [
+        "digital agencies",
+        "creative agencies"
+      ],
+      "painPoints": [
+        "content production",
+        "client reporting",
+        "campaign planning",
+        "design output"
+      ],
+      "commonTasks": [
+        "draft content",
+        "generate briefs",
+        "build reports",
+        "create ad variations"
+      ],
+      "recommendedCategories": [
+        "AI writing",
+        "SEO",
+        "design",
+        "project management"
+      ],
+      "monetisationScore": 5
+    },
+    {
+      "name": "Freelancers",
+      "slug": "freelancers",
+      "aliases": [
+        "independent consultants",
+        "solo businesses"
+      ],
+      "painPoints": [
+        "proposals",
+        "client onboarding",
+        "admin",
+        "marketing"
+      ],
+      "commonTasks": [
+        "write proposals",
+        "create invoices",
+        "draft outreach",
+        "plan projects"
+      ],
+      "recommendedCategories": [
+        "AI writing",
+        "project management",
+        "CRM",
+        "document automation"
+      ],
+      "monetisationScore": 4
+    },
+    {
+      "name": "Consultants",
+      "slug": "consultants",
+      "aliases": [
+        "business consultants",
+        "strategy consultants"
+      ],
+      "painPoints": [
+        "proposals",
+        "research",
+        "report writing",
+        "client updates"
+      ],
+      "commonTasks": [
+        "summarise research",
+        "write reports",
+        "prepare decks",
+        "draft recommendations"
+      ],
+      "recommendedCategories": [
+        "AI writing",
+        "document automation",
+        "meeting notes",
+        "project management"
+      ],
+      "monetisationScore": 5
+    },
+    {
+      "name": "Ecommerce Sellers",
+      "slug": "ecommerce-sellers",
+      "aliases": [
+        "online stores",
+        "Shopify sellers",
+        "marketplace sellers"
+      ],
+      "painPoints": [
+        "product descriptions",
+        "ads",
+        "support tickets",
+        "SEO"
+      ],
+      "commonTasks": [
+        "write product copy",
+        "generate ads",
+        "reply to customers",
+        "optimise listings"
+      ],
+      "recommendedCategories": [
+        "AI writing",
+        "customer support",
+        "SEO",
+        "design"
+      ],
+      "monetisationScore": 5
+    },
+    {
+      "name": "Teachers",
+      "slug": "teachers",
+      "aliases": [
+        "educators",
+        "tutors"
+      ],
+      "painPoints": [
+        "lesson planning",
+        "feedback",
+        "worksheets",
+        "admin"
+      ],
+      "commonTasks": [
+        "create lesson plans",
+        "write feedback",
+        "generate quizzes",
+        "summarise material"
+      ],
+      "recommendedCategories": [
+        "AI writing",
+        "document automation",
+        "chatbots"
+      ],
+      "monetisationScore": 3
+    },
+    {
+      "name": "Developers",
+      "slug": "developers",
+      "aliases": [
+        "software engineers",
+        "programmers"
+      ],
+      "painPoints": [
+        "boilerplate",
+        "debugging",
+        "documentation",
+        "code review"
+      ],
+      "commonTasks": [
+        "generate code",
+        "write tests",
+        "explain errors",
+        "draft docs"
+      ],
+      "recommendedCategories": [
+        "AI coding",
+        "chatbots",
+        "project management"
+      ],
+      "monetisationScore": 4
+    }
+  ],
+  "categories": [
+    {
+      "name": "AI Writing",
+      "slug": "ai-writing",
+      "description": "Tools for drafting, editing, summarising, and repurposing written content."
+    },
+    {
+      "name": "AI Chatbots",
+      "slug": "ai-chatbots",
+      "description": "General-purpose assistants for reasoning, writing, coding, and analysis."
+    },
+    {
+      "name": "AI Meeting Notes",
+      "slug": "ai-meeting-notes",
+      "description": "Tools that record, transcribe, summarise, and organise meetings."
+    },
+    {
+      "name": "AI Design",
+      "slug": "ai-design",
+      "description": "Tools for images, brand assets, presentations, and visual content."
+    },
+    {
+      "name": "AI Video",
+      "slug": "ai-video",
+      "description": "Tools for video generation, editing, subtitles, and repurposing."
+    },
+    {
+      "name": "AI SEO",
+      "slug": "ai-seo",
+      "description": "Tools for keyword research, content briefs, optimisation, and search workflows."
+    },
+    {
+      "name": "AI Sales Automation",
+      "slug": "ai-sales-automation",
+      "description": "Tools for prospecting, outreach, follow-up, and sales workflows."
+    },
+    {
+      "name": "AI CRM",
+      "slug": "ai-crm",
+      "description": "Customer relationship management systems with AI features."
+    },
+    {
+      "name": "AI Document Automation",
+      "slug": "ai-document-automation",
+      "description": "Tools for extracting, summarising, and generating documents."
+    },
+    {
+      "name": "AI Coding",
+      "slug": "ai-coding",
+      "description": "Tools for code generation, debugging, review, and documentation."
+    },
+    {
+      "name": "AI Customer Support",
+      "slug": "ai-customer-support",
+      "description": "Chatbots and helpdesk tools for customer support workflows."
+    },
+    {
+      "name": "AI Project Management",
+      "slug": "ai-project-management",
+      "description": "Tools that support planning, task management, and collaboration."
+    }
+  ],
+  "tools": [
+    {
+      "name": "ChatGPT",
+      "slug": "chatgpt",
+      "summary": "General-purpose AI assistant for writing, analysis, brainstorming, coding, and business workflows.",
+      "categories": [
+        "ai-chatbots",
+        "ai-writing",
+        "ai-coding"
+      ],
+      "pricingModel": "freemium",
+      "startingPrice": null,
+      "currency": "USD",
+      "freePlanAvailable": true,
+      "trialAvailable": false,
+      "bestFor": [
+        "general AI tasks",
+        "drafting",
+        "analysis",
+        "coding help"
+      ],
+      "notBestFor": [
+        "specialised workflow automation without setup"
+      ],
+      "pros": [
+        "broad use cases",
+        "easy to use",
+        "strong ecosystem"
+      ],
+      "cons": [
+        "outputs still require checking",
+        "plan details may change"
+      ],
+      "professions": [
+        "accountants",
+        "real-estate-agents",
+        "recruiters",
+        "sales-teams",
+        "marketing-agencies",
+        "freelancers",
+        "consultants",
+        "teachers",
+        "developers"
+      ],
+      "countries": [
+        "us",
+        "uk",
+        "au",
+        "ca",
+        "nz",
+        "ie",
+        "sg",
+        "za",
+        "in",
+        "ph"
+      ],
+      "useCases": [
+        "writing",
+        "analysis",
+        "coding",
+        "prompting"
+      ],
+      "affiliateAvailable": false,
+      "lastCheckedAt": null
+    },
+    {
+      "name": "Claude",
+      "slug": "claude",
+      "summary": "AI assistant often used for long-form writing, document analysis, and business reasoning.",
+      "categories": [
+        "ai-chatbots",
+        "ai-writing",
+        "ai-coding"
+      ],
+      "pricingModel": "freemium",
+      "startingPrice": null,
+      "currency": "USD",
+      "freePlanAvailable": true,
+      "trialAvailable": false,
+      "bestFor": [
+        "long documents",
+        "writing",
+        "analysis"
+      ],
+      "notBestFor": [
+        "users who need every third-party integration"
+      ],
+      "pros": [
+        "strong writing quality",
+        "good long-context workflows"
+      ],
+      "cons": [
+        "availability and features vary by plan/region"
+      ],
+      "professions": [
+        "consultants",
+        "freelancers",
+        "marketing-agencies",
+        "developers",
+        "teachers"
+      ],
+      "countries": [
+        "us",
+        "uk",
+        "au",
+        "ca",
+        "nz",
+        "ie",
+        "sg"
+      ],
+      "useCases": [
+        "writing",
+        "document analysis",
+        "research"
+      ],
+      "affiliateAvailable": false,
+      "lastCheckedAt": null
+    },
+    {
+      "name": "Jasper",
+      "slug": "jasper",
+      "summary": "AI writing and marketing content platform for teams and agencies.",
+      "categories": [
+        "ai-writing"
+      ],
+      "pricingModel": "paid",
+      "startingPrice": null,
+      "currency": "USD",
+      "freePlanAvailable": false,
+      "trialAvailable": true,
+      "bestFor": [
+        "marketing teams",
+        "brand content",
+        "campaign copy"
+      ],
+      "notBestFor": [
+        "casual users wanting a free tool"
+      ],
+      "pros": [
+        "marketing-focused workflows",
+        "brand voice features"
+      ],
+      "cons": [
+        "can be expensive for light use"
+      ],
+      "professions": [
+        "marketing-agencies",
+        "freelancers",
+        "ecommerce-sellers"
+      ],
+      "countries": [
+        "us",
+        "uk",
+        "au",
+        "ca"
+      ],
+      "useCases": [
+        "marketing copy",
+        "blog drafts",
+        "ad copy"
+      ],
+      "affiliateAvailable": true,
+      "lastCheckedAt": null
+    },
+    {
+      "name": "Copy.ai",
+      "slug": "copy-ai",
+      "summary": "AI writing and go-to-market content tool for sales and marketing teams.",
+      "categories": [
+        "ai-writing",
+        "ai-sales-automation"
+      ],
+      "pricingModel": "freemium",
+      "startingPrice": null,
+      "currency": "USD",
+      "freePlanAvailable": true,
+      "trialAvailable": true,
+      "bestFor": [
+        "sales copy",
+        "marketing workflows",
+        "go-to-market teams"
+      ],
+      "notBestFor": [
+        "deep technical writing"
+      ],
+      "pros": [
+        "useful templates",
+        "sales and marketing focus"
+      ],
+      "cons": [
+        "outputs need editing for accuracy"
+      ],
+      "professions": [
+        "sales-teams",
+        "marketing-agencies",
+        "freelancers"
+      ],
+      "countries": [
+        "us",
+        "uk",
+        "au",
+        "ca",
+        "in",
+        "ph"
+      ],
+      "useCases": [
+        "cold email",
+        "ad copy",
+        "content ideas"
+      ],
+      "affiliateAvailable": true,
+      "lastCheckedAt": null
+    },
+    {
+      "name": "Grammarly",
+      "slug": "grammarly",
+      "summary": "Writing assistant for grammar, clarity, tone, and business communication.",
+      "categories": [
+        "ai-writing"
+      ],
+      "pricingModel": "freemium",
+      "startingPrice": null,
+      "currency": "USD",
+      "freePlanAvailable": true,
+      "trialAvailable": false,
+      "bestFor": [
+        "editing",
+        "business emails",
+        "grammar improvement"
+      ],
+      "notBestFor": [
+        "full content strategy"
+      ],
+      "pros": [
+        "easy to adopt",
+        "works across many writing surfaces"
+      ],
+      "cons": [
+        "not a full marketing platform"
+      ],
+      "professions": [
+        "accountants",
+        "recruiters",
+        "sales-teams",
+        "teachers",
+        "freelancers"
+      ],
+      "countries": [
+        "us",
+        "uk",
+        "au",
+        "ca",
+        "nz",
+        "ie",
+        "sg"
+      ],
+      "useCases": [
+        "editing",
+        "email writing",
+        "proofreading"
+      ],
+      "affiliateAvailable": true,
+      "lastCheckedAt": null
+    },
+    {
+      "name": "Canva",
+      "slug": "canva",
+      "summary": "Design platform with AI-assisted visual content, presentations, and marketing assets.",
+      "categories": [
+        "ai-design"
+      ],
+      "pricingModel": "freemium",
+      "startingPrice": null,
+      "currency": "USD",
+      "freePlanAvailable": true,
+      "trialAvailable": true,
+      "bestFor": [
+        "social graphics",
+        "presentations",
+        "simple design"
+      ],
+      "notBestFor": [
+        "advanced professional design workflows only"
+      ],
+      "pros": [
+        "easy design workflow",
+        "large template library"
+      ],
+      "cons": [
+        "advanced users may need specialist tools"
+      ],
+      "professions": [
+        "real-estate-agents",
+        "marketing-agencies",
+        "ecommerce-sellers",
+        "teachers",
+        "freelancers"
+      ],
+      "countries": [
+        "us",
+        "uk",
+        "au",
+        "ca",
+        "nz",
+        "ie",
+        "sg",
+        "za",
+        "in",
+        "ph"
+      ],
+      "useCases": [
+        "design",
+        "presentations",
+        "social media"
+      ],
+      "affiliateAvailable": true,
+      "lastCheckedAt": null
+    },
+    {
+      "name": "Notion AI",
+      "slug": "notion-ai",
+      "summary": "AI features inside Notion for notes, docs, wikis, and team knowledge management.",
+      "categories": [
+        "ai-writing",
+        "ai-project-management"
+      ],
+      "pricingModel": "paid add-on",
+      "startingPrice": null,
+      "currency": "USD",
+      "freePlanAvailable": false,
+      "trialAvailable": false,
+      "bestFor": [
+        "teams already using Notion",
+        "knowledge bases",
+        "project notes"
+      ],
+      "notBestFor": [
+        "users outside the Notion ecosystem"
+      ],
+      "pros": [
+        "integrated with workspace docs",
+        "useful for summaries"
+      ],
+      "cons": [
+        "best value if already using Notion"
+      ],
+      "professions": [
+        "consultants",
+        "freelancers",
+        "marketing-agencies",
+        "developers"
+      ],
+      "countries": [
+        "us",
+        "uk",
+        "au",
+        "ca",
+        "sg"
+      ],
+      "useCases": [
+        "notes",
+        "summaries",
+        "project documentation"
+      ],
+      "affiliateAvailable": false,
+      "lastCheckedAt": null
+    },
+    {
+      "name": "Fireflies.ai",
+      "slug": "fireflies-ai",
+      "summary": "AI meeting assistant for transcription, notes, summaries, and conversation intelligence.",
+      "categories": [
+        "ai-meeting-notes"
+      ],
+      "pricingModel": "freemium",
+      "startingPrice": null,
+      "currency": "USD",
+      "freePlanAvailable": true,
+      "trialAvailable": true,
+      "bestFor": [
+        "meeting-heavy teams",
+        "sales calls",
+        "client calls"
+      ],
+      "notBestFor": [
+        "teams that cannot record meetings"
+      ],
+      "pros": [
+        "meeting summaries",
+        "searchable transcripts"
+      ],
+      "cons": [
+        "privacy and consent must be managed"
+      ],
+      "professions": [
+        "sales-teams",
+        "consultants",
+        "recruiters",
+        "accountants"
+      ],
+      "countries": [
+        "us",
+        "uk",
+        "au",
+        "ca",
+        "in",
+        "ph"
+      ],
+      "useCases": [
+        "meeting notes",
+        "call summaries"
+      ],
+      "affiliateAvailable": true,
+      "lastCheckedAt": null
+    },
+    {
+      "name": "HubSpot",
+      "slug": "hubspot",
+      "summary": "CRM and marketing platform with AI features for sales, marketing, and customer operations.",
+      "categories": [
+        "ai-crm",
+        "ai-sales-automation"
+      ],
+      "pricingModel": "freemium/paid",
+      "startingPrice": null,
+      "currency": "USD",
+      "freePlanAvailable": true,
+      "trialAvailable": true,
+      "bestFor": [
+        "CRM",
+        "marketing automation",
+        "sales teams"
+      ],
+      "notBestFor": [
+        "users wanting only a lightweight note app"
+      ],
+      "pros": [
+        "broad CRM ecosystem",
+        "strong business workflows"
+      ],
+      "cons": [
+        "cost can grow with scale"
+      ],
+      "professions": [
+        "sales-teams",
+        "real-estate-agents",
+        "marketing-agencies",
+        "consultants"
+      ],
+      "countries": [
+        "us",
+        "uk",
+        "au",
+        "ca",
+        "sg",
+        "ie"
+      ],
+      "useCases": [
+        "CRM",
+        "lead management",
+        "marketing automation"
+      ],
+      "affiliateAvailable": true,
+      "lastCheckedAt": null
+    },
+    {
+      "name": "GitHub Copilot",
+      "slug": "github-copilot",
+      "summary": "AI coding assistant for code completion, chat, debugging, and developer productivity.",
+      "categories": [
+        "ai-coding"
+      ],
+      "pricingModel": "paid/freemium by user type",
+      "startingPrice": null,
+      "currency": "USD",
+      "freePlanAvailable": false,
+      "trialAvailable": true,
+      "bestFor": [
+        "developers",
+        "software teams",
+        "coding help"
+      ],
+      "notBestFor": [
+        "non-technical business tasks"
+      ],
+      "pros": [
+        "integrated with developer workflows",
+        "useful for code suggestions"
+      ],
+      "cons": [
+        "code must be reviewed carefully"
+      ],
+      "professions": [
+        "developers"
+      ],
+      "countries": [
+        "us",
+        "uk",
+        "au",
+        "ca",
+        "nz",
+        "ie",
+        "sg",
+        "in"
+      ],
+      "useCases": [
+        "coding",
+        "debugging",
+        "documentation"
+      ],
+      "affiliateAvailable": false,
+      "lastCheckedAt": null
+    }
+  ],
+  "comparisons": [
+    {
+      "slug": "chatgpt-vs-claude",
+      "toolA": "chatgpt",
+      "toolB": "claude",
+      "summaryVerdict": "ChatGPT is the broader general-purpose assistant; Claude is often a strong fit for long-form writing and document-heavy workflows. Verify current features and plans before publishing.",
+      "primaryUseCase": "general business AI assistant",
+      "winnerByUseCase": {
+        "general use": "ChatGPT",
+        "long document analysis": "Claude",
+        "coding help": "Depends on workflow"
+      },
+      "pricingNotes": "Pricing changes frequently; verify before publishing."
+    },
+    {
+      "slug": "jasper-vs-copy-ai",
+      "toolA": "jasper",
+      "toolB": "copy-ai",
+      "summaryVerdict": "Jasper is usually positioned for marketing teams and brand content; Copy.ai is often positioned around go-to-market and sales/marketing workflows.",
+      "primaryUseCase": "marketing content",
+      "winnerByUseCase": {
+        "brand campaigns": "Jasper",
+        "sales outreach": "Copy.ai"
+      },
+      "pricingNotes": "Verify pricing before publishing."
+    }
+  ],
+  "alternativeSets": [
+    {
+      "slug": "grammarly-alternatives",
+      "baseToolSlug": "grammarly",
+      "baseToolName": "Grammarly",
+      "reason": "Users may want lower cost, different AI writing features, team workflows, or specialised writing tools.",
+      "candidateSlugs": [
+        "chatgpt",
+        "claude",
+        "jasper",
+        "copy-ai"
+      ],
+      "bestFreeOption": "ChatGPT",
+      "bestBusinessOption": "Jasper",
+      "finalVerdict": "Choose based on whether you need proofreading, generation, brand workflows, or document analysis."
+    },
+    {
+      "slug": "jasper-alternatives",
+      "baseToolSlug": "jasper",
+      "baseToolName": "Jasper",
+      "reason": "Users may want a cheaper or more general-purpose AI writing tool.",
+      "candidateSlugs": [
+        "copy-ai",
+        "chatgpt",
+        "claude",
+        "notion-ai"
+      ],
+      "bestFreeOption": "ChatGPT",
+      "bestBusinessOption": "Copy.ai",
+      "finalVerdict": "Choose based on whether your workflow is marketing copy, sales copy, or broad content support."
+    }
+  ],
+  "workflows": [
+    {
+      "title": "AI Client Onboarding Workflow",
+      "slug": "ai-client-onboarding-workflow",
+      "problem": "New client onboarding is slow when documents, emails, meeting notes, and project plans are scattered.",
+      "toolsNeeded": [
+        "ChatGPT or Claude",
+        "Notion AI",
+        "Fireflies.ai",
+        "HubSpot"
+      ],
+      "relatedProfession": "consultants",
+      "steps": [
+        {
+          "title": "Collect client context",
+          "description": "Create an intake form and summarise responses."
+        },
+        {
+          "title": "Summarise kickoff call",
+          "description": "Use a meeting assistant to generate notes and action items."
+        },
+        {
+          "title": "Generate project plan",
+          "description": "Turn goals, deliverables, and deadlines into a clear plan."
+        },
+        {
+          "title": "Draft welcome email",
+          "description": "Send next steps, timeline, and responsibilities."
+        }
+      ],
+      "prompts": [
+        "Turn these onboarding notes into a concise client project brief with goals, risks, deliverables, and next actions."
+      ],
+      "templates": [
+        "Client onboarding checklist",
+        "Kickoff call summary template"
+      ]
+    },
+    {
+      "title": "AI Cold Email Follow-Up Workflow",
+      "slug": "ai-cold-email-follow-up-workflow",
+      "problem": "Sales teams lose leads when follow-up is inconsistent or generic.",
+      "toolsNeeded": [
+        "Copy.ai",
+        "ChatGPT",
+        "HubSpot"
+      ],
+      "relatedProfession": "sales-teams",
+      "steps": [
+        {
+          "title": "Define target audience",
+          "description": "Capture role, industry, pain point, and offer."
+        },
+        {
+          "title": "Generate email variants",
+          "description": "Create 3 subject lines and 2 email versions."
+        },
+        {
+          "title": "Add CRM task",
+          "description": "Schedule follow-up in CRM."
+        },
+        {
+          "title": "Analyse replies",
+          "description": "Tag objections and improve future copy."
+        }
+      ],
+      "prompts": [
+        "Write a concise cold email to [audience] about [offer], focused on [pain point]. Keep it under 120 words."
+      ],
+      "templates": [
+        "Cold email sequence template"
+      ]
+    }
+  ],
+  "promptTemplates": [
+    {
+      "title": "ChatGPT Prompts for Recruiters",
+      "slug": "chatgpt-prompts-for-recruiters",
+      "profession": "recruiters",
+      "task": "candidate outreach and screening",
+      "prompt": "Act as a recruiter. Draft a concise candidate outreach message for a [role] candidate with experience in [skills]. The tone should be professional, specific, and not overly enthusiastic.",
+      "refinementPrompt": "Rewrite the message for a more senior candidate and add one sentence explaining why the role is relevant.",
+      "mistakesToAvoid": [
+        "Do not invent candidate experience.",
+        "Do not make salary or visa claims unless provided."
+      ]
+    },
+    {
+      "title": "ChatGPT Prompts for Real Estate Agents",
+      "slug": "chatgpt-prompts-for-real-estate-agents",
+      "profession": "real-estate-agents",
+      "task": "property listing copy",
+      "prompt": "Write a property listing description for a [property type] in [location]. Include [features], avoid exaggeration, and use a clear, premium but factual tone.",
+      "refinementPrompt": "Create a shorter version for a portal listing and a warmer version for social media.",
+      "mistakesToAvoid": [
+        "Do not make unverified claims about schools, safety, or investment returns.",
+        "Do not use discriminatory language."
+      ]
+    }
+  ]
+}
