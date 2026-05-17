@@ -67,6 +67,13 @@ export const staticSeoRoutes: SeoRoute[] = [
     quality: strongStaticQuality
   },
   {
+    path: "/best-ai-tools/",
+    group: "static",
+    title: "Best AI Tools for Small Business Workflows",
+    description: "A workflow-first guide to the best AI tools for US and UK small businesses, with shortlists by use case and team.",
+    quality: strongStaticQuality
+  },
+  {
     path: "/categories/",
     group: "categories",
     title: "AI Tool Categories",

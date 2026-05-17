@@ -71,6 +71,41 @@ export function AffiliateDisclosure() {
   );
 }
 
+export function PublisherTrustPanel() {
+  const items = [
+    {
+      title: "Workflow-first scoring",
+      description: "Tools are judged by the jobs they support, not by vendor popularity alone."
+    },
+    {
+      title: "Source-linked records",
+      description: "Pricing and claims stay conservative until there is a vendor source URL and verification date."
+    },
+    {
+      title: "Useful page clusters",
+      description: "Core pages link into workflow kits, comparisons, alternatives, prompts, templates, and free planners."
+    }
+  ];
+
+  return (
+    <section className="rounded-md border border-line bg-white p-6">
+      <h2 className="text-2xl font-bold text-ink">Why trust WorkWise</h2>
+      <p className="mt-3 text-sm leading-6 text-muted">
+        WorkWise is built around practical software decisions for small teams. The goal is to help readers choose a stack
+        they can actually implement, then keep every recommendation easy to refresh as tools change.
+      </p>
+      <div className="mt-5 grid gap-4 md:grid-cols-3">
+        {items.map((item) => (
+          <div key={item.title} className="rounded-md bg-panel p-4">
+            <p className="font-semibold text-ink">{item.title}</p>
+            <p className="mt-2 text-sm leading-6 text-muted">{item.description}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 export function DisplayAdSlot({ label = "Display ad placeholder" }: { label?: string }) {
   return (
     <aside className="rounded-md border border-dashed border-line bg-white p-5 text-center text-sm text-muted" aria-label={label}>

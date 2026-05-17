@@ -33,6 +33,7 @@ export function routeInventory() {
   return new Set([
     "/",
     "/ai-tools/",
+    "/best-ai-tools/",
     "/categories/",
     "/use-cases/",
     "/professions/",

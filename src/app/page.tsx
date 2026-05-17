@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, Database, FileSearch, GitCompare, ListChecks, Tags, Workflow } from "lucide-react";
-import { AffiliateDisclosure, DemoDataNotice, DisplayAdSlot, NewsletterCTA, PageHero, ToolGrid, VerdictBox, WorkflowKitCard } from "@/components/Blocks";
+import { AffiliateDisclosure, DemoDataNotice, DisplayAdSlot, NewsletterCTA, PageHero, PublisherTrustPanel, ToolGrid, VerdictBox, WorkflowKitCard } from "@/components/Blocks";
 import { SectionHeader } from "@/components/Shell";
 import { freeTools } from "@/lib/free-tools";
 import { listAlternativeSets, listCategories, listComparisons, listCountries, listProfessions, listTools, listWorkflows } from "@/lib/repository";
@@ -38,6 +38,9 @@ export default async function HomePage() {
             Browse tools
             <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </Link>
+          <Link href="/best-ai-tools/" className="rounded-md border border-line bg-white px-5 py-3 text-sm font-semibold text-ink">
+            Best AI tools
+          </Link>
           <Link href="/free-tools/ai-tool-recommender/" className="rounded-md border border-line bg-white px-5 py-3 text-sm font-semibold text-ink">
             Use recommender
           </Link>
@@ -69,6 +72,10 @@ export default async function HomePage() {
             ))}
           </div>
         </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+        <PublisherTrustPanel />
       </section>
 
       <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">

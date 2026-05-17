@@ -53,6 +53,13 @@ export default function AdminPage() {
     `${weakKits.length} workflow kits need more supporting tools, prompts, or comparisons.`,
     `${thinRoutes.length} SEO routes score below 7.`
   ];
+  const gscWorkflow = [
+    "Export Search Console queries weekly once impressions start landing.",
+    "Prioritise pages with impressions and low CTR before creating new pages.",
+    "For average position 8-20, improve the intro, comparison table, FAQs, and internal links.",
+    "For average position 20-50, add supporting workflow/use-case links and strengthen the page angle.",
+    "For zero impressions after 30 days, review whether the page has a distinct search intent."
+  ];
 
   return (
     <>
@@ -120,6 +127,8 @@ export default function AdminPage() {
             ]}
           />
         </section>
+
+        <OpsPanel title="Search Console refresh workflow" rows={gscWorkflow} />
 
         <OpsPanel title="Next recommended actions" rows={nextActions} />
 

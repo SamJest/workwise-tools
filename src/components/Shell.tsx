@@ -4,6 +4,7 @@ import { WorkWiseLogo } from "@/components/Logo";
 import { siteConfig } from "@/lib/seo";
 
 const navItems = [
+  { href: "/best-ai-tools/", label: "Best tools" },
   { href: "/ai-tools/", label: "AI tools" },
   { href: "/categories/", label: "Categories" },
   { href: "/use-cases/", label: "Use cases" },
@@ -56,6 +57,7 @@ export function Footer() {
           title="Research"
           links={[
             { href: "/ai-tools/", label: "Tool directory" },
+            { href: "/best-ai-tools/", label: "Best AI tools" },
             { href: "/categories/", label: "Categories" },
             { href: "/use-cases/", label: "Use cases" },
             { href: "/comparisons/", label: "Comparisons" },
