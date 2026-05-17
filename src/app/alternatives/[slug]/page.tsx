@@ -6,6 +6,7 @@ import {
   ComparisonTable,
   ContentQualityPanel,
   DataFreshnessNotice,
+  DecisionGuide,
   FAQBlock,
   LastUpdated,
   MethodologyBox,
@@ -76,6 +77,7 @@ export default async function AlternativesPage({ params }: RouteProps) {
           <VerdictBox>{set.finalVerdict || "Choose based on workflow fit, pricing, and verified feature needs."}</VerdictBox>
           <ContentQualityPanel profile={profile} />
           <DataFreshnessNotice date={set.lastCheckedAt} />
+          <DecisionGuide tools={candidates} />
           <ToolGrid tools={candidates} />
           <ComparisonTable tools={candidates} />
           <section className="grid gap-4 md:grid-cols-2">

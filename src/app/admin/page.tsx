@@ -3,6 +3,7 @@ import { AlertTriangle, Database, FileInput, ListChecks, ShieldCheck } from "luc
 import { PageHero } from "@/components/Blocks";
 import { getSeedData } from "@/lib/data";
 import { buildSeoRoutes } from "@/lib/route-registry";
+import { workflowKits } from "@/lib/workflow-kits";
 
 export const metadata: Metadata = {
   title: "Admin Operations",
@@ -33,6 +34,25 @@ export default function AdminPage() {
   const noindexRoutes = routes.filter((route) => !route.quality.indexable);
   const affiliateTools = data.tools.filter((tool) => tool.affiliateAvailable);
   const missingAffiliateUrls = affiliateTools.filter((tool) => !tool.affiliateUrl);
+  const unverifiedTools = data.tools.filter((tool) => tool.verificationStatus !== "verified");
+  const missingSourceTools = data.tools.filter((tool) => !tool.sourceUrls.length || !tool.pricingPageUrl);
+  const staleTools = data.tools.filter((tool) => {
+    const date = tool.lastVerifiedAt || tool.lastCheckedAt;
+    if (!date) return true;
+    return Date.now() - new Date(date).getTime() > 1000 * 60 * 60 * 24 * 90;
+  });
+  const weakKits = workflowKits.filter((kit) => {
+    const toolCount = data.tools.filter((tool) => tool.professions.includes(kit.professionSlug)).length;
+    return toolCount < 5 || kit.comparisonSlugs.length < 2 || kit.promptSlugs.length < 1;
+  });
+  const thinRoutes = routes.filter((route) => route.quality.score < 7);
+  const nextActions = [
+    `${unverifiedTools.length} source-linked tools need hands-on verification before exact pricing or review claims.`,
+    `${staleTools.length} tool records are stale or missing verification dates.`,
+    `${missingSourceTools.length} tools are missing pricing/source URLs.`,
+    `${weakKits.length} workflow kits need more supporting tools, prompts, or comparisons.`,
+    `${thinRoutes.length} SEO routes score below 7.`
+  ];
 
   return (
     <>
@@ -56,8 +76,15 @@ export default function AdminPage() {
           <MetricCard icon={<Database className="h-5 w-5" />} label="Tools" value={data.tools.length} />
           <MetricCard icon={<ShieldCheck className="h-5 w-5" />} label="Indexable routes" value={indexableRoutes.length} />
           <MetricCard icon={<AlertTriangle className="h-5 w-5" />} label="Noindex routes" value={noindexRoutes.length} />
-          <MetricCard icon={<FileInput className="h-5 w-5" />} label="Affiliate gaps" value={missingAffiliateUrls.length} />
+          <MetricCard icon={<FileInput className="h-5 w-5" />} label="Source gaps" value={missingSourceTools.length} />
         </div>
+
+        <section className="grid gap-4 md:grid-cols-4">
+          <MetricCard icon={<ShieldCheck className="h-5 w-5" />} label="Workflow kits" value={workflowKits.length} />
+          <MetricCard icon={<AlertTriangle className="h-5 w-5" />} label="Unverified tools" value={unverifiedTools.length} />
+          <MetricCard icon={<AlertTriangle className="h-5 w-5" />} label="Stale tools" value={staleTools.length} />
+          <MetricCard icon={<ListChecks className="h-5 w-5" />} label="Thin routes" value={thinRoutes.length} />
+        </section>
 
         <section className="rounded-md border border-line bg-white p-6">
           <div className="flex items-center gap-3">
@@ -93,6 +120,8 @@ export default function AdminPage() {
             ]}
           />
         </section>
+
+        <OpsPanel title="Next recommended actions" rows={nextActions} />
 
         <div className="rounded-md border border-line bg-white p-5 text-sm leading-6 text-muted">
           Detailed workflow notes live in <code className="rounded-md bg-panel px-2 py-1 text-ink">docs/data-operations.md</code>.

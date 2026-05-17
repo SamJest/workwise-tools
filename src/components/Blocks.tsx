@@ -269,6 +269,8 @@ export function ComparisonTable({ tools }: { tools: Tool[] }) {
               <th className="px-4 py-3 font-semibold">Tool</th>
               <th className="px-4 py-3 font-semibold">Pricing</th>
               <th className="px-4 py-3 font-semibold">Best for</th>
+              <th className="px-4 py-3 font-semibold">Setup</th>
+              <th className="px-4 py-3 font-semibold">Privacy</th>
               <th className="px-4 py-3 font-semibold">Limitations</th>
               <th className="px-4 py-3 font-semibold">Disclosure</th>
             </tr>
@@ -281,6 +283,8 @@ export function ComparisonTable({ tools }: { tools: Tool[] }) {
                 </td>
                 <td className="px-4 py-4 text-muted">{tool.pricingModel || "Verify pricing"}</td>
                 <td className="px-4 py-4 text-muted">{tool.bestFor.slice(0, 2).join(", ")}</td>
+                <td className="px-4 py-4 capitalize text-muted">{tool.setupDifficulty || "Verify"}</td>
+                <td className="px-4 py-4 capitalize text-muted">{tool.privacyRisk || "Verify"}</td>
                 <td className="px-4 py-4 text-muted">{tool.notBestFor[0] || "Not yet reviewed"}</td>
                 <td className="px-4 py-4 text-muted">{tool.affiliateAvailable ? "Affiliate-ready" : "No affiliate flag"}</td>
               </tr>
@@ -289,6 +293,62 @@ export function ComparisonTable({ tools }: { tools: Tool[] }) {
         </table>
       </div>
     </div>
+  );
+}
+
+export function ToolVerificationPanel({ tool }: { tool: Tool }) {
+  return (
+    <section className="rounded-md border border-line bg-white p-6">
+      <h2 className="text-2xl font-bold text-ink">Publisher verification</h2>
+      <div className="mt-5 grid gap-4 md:grid-cols-2">
+        <Metric label="Verification" value={tool.verificationStatus.replaceAll("-", " ")} />
+        <Metric label="Setup difficulty" value={tool.setupDifficulty || "Verify"} />
+        <Metric label="Privacy risk" value={tool.privacyRisk || "Verify"} />
+        <Metric label="Last verified" value={tool.lastVerifiedAt ? new Date(tool.lastVerifiedAt).toLocaleDateString("en-GB") : "Needs verification"} />
+      </div>
+      {tool.freePlanReality ? <p className="mt-4 text-sm leading-6 text-muted">{tool.freePlanReality}</p> : null}
+      {tool.bestForTeams.length ? (
+        <div className="mt-4 flex flex-wrap gap-2">
+          {tool.bestForTeams.map((team) => (
+            <Badge key={team}>{team}</Badge>
+          ))}
+        </div>
+      ) : null}
+      <div className="mt-5 flex flex-wrap gap-3">
+        {tool.pricingPageUrl ? (
+          <a href={tool.pricingPageUrl} target="_blank" rel="nofollow noopener noreferrer" className="text-sm font-semibold text-brand">
+            Pricing source
+          </a>
+        ) : null}
+        {tool.sourceUrls.map((url) => (
+          <a key={url} href={url} target="_blank" rel="nofollow noopener noreferrer" className="text-sm font-semibold text-muted hover:text-ink">
+            Source
+          </a>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+export function DecisionGuide({ tools }: { tools: Tool[] }) {
+  if (!tools.length) return null;
+
+  return (
+    <section className="rounded-md border border-line bg-white p-6">
+      <h2 className="text-2xl font-bold text-ink">Decision guide</h2>
+      <div className="mt-5 grid gap-4 md:grid-cols-2">
+        {tools.map((tool) => (
+          <div key={tool.slug} className="rounded-md bg-panel p-4">
+            <p className="font-semibold text-ink">Choose {tool.name} if...</p>
+            <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-6 text-muted">
+              <li>{tool.bestFor[0] || "it matches the primary workflow"}</li>
+              <li>{tool.bestForTeams[0] || "your team can support the setup and review process"}</li>
+              <li>{tool.freePlanReality || "current pricing and plan limits work for your budget"}</li>
+            </ul>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 }
 

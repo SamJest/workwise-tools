@@ -17,6 +17,7 @@ import {
   NotBestForBlock,
   QualityWarning,
   RelatedPages,
+  ToolVerificationPanel,
   VendorCtaCard,
   VerdictBox
 } from "@/components/Blocks";
@@ -93,6 +94,7 @@ export default async function ToolDetailPage({ params }: RouteProps) {
             recommendation until pricing and feature claims are verified.
           </VerdictBox>
           <DataFreshnessNotice date={tool.lastCheckedAt} />
+          <ToolVerificationPanel tool={tool} />
           <ProsCons pros={tool.pros} cons={tool.cons} />
           <BestForGrid items={tool.bestFor} />
           <NotBestForBlock items={tool.notBestFor} />

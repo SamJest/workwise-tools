@@ -6,6 +6,7 @@ import {
   ComparisonTable,
   ContentQualityPanel,
   DataFreshnessNotice,
+  DecisionGuide,
   FAQBlock,
   LastUpdated,
   MethodologyBox,
@@ -79,6 +80,7 @@ export default async function ComparisonPage({ params }: RouteProps) {
           <VerdictBox>{comparison.summaryVerdict}</VerdictBox>
           <ContentQualityPanel profile={profile} />
           <DataFreshnessNotice date={comparison.lastCheckedAt} />
+          <DecisionGuide tools={tools} />
           <ComparisonTable tools={tools} />
           <section className="rounded-md border border-line bg-white p-6">
             <h2 className="text-2xl font-bold text-ink">Use-case winners</h2>

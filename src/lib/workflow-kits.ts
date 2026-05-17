@@ -88,6 +88,10 @@ export const workflowKits: WorkflowKit[] = [
   }
 ];
 
+export function getWorkflowKit(slug: string): WorkflowKit | undefined {
+  return workflowKits.find((kit) => kit.slug === slug);
+}
+
 export function kitLinks(kit: WorkflowKit): SiteLink[] {
   return [
     {

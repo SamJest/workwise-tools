@@ -18,6 +18,13 @@ model Tool {
   description        String?
   websiteUrl         String?
   affiliateUrl       String?
+  pricingPageUrl     String?
+  sourceUrls         String[]
+  verificationStatus String?             @default("starter")
+  setupDifficulty    String?
+  freePlanReality    String?
+  privacyRisk        String?
+  bestForTeams       String[]
   logoUrl            String?
   pricingModel       String?
   startingPrice      Decimal?
@@ -32,6 +39,7 @@ model Tool {
   isSponsored        Boolean             @default(false)
   affiliateAvailable Boolean             @default(false)
   lastCheckedAt      DateTime?
+  lastVerifiedAt     DateTime?
   createdAt          DateTime            @default(now())
   updatedAt          DateTime            @updatedAt
 

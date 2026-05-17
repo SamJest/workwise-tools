@@ -35,6 +35,64 @@ const commonToneOptions = ["clear and practical", "friendly", "direct", "premium
 
 export const freeTools: FreeToolDefinition[] = [
   {
+    title: "AI Stack Builder",
+    slug: "ai-stack-builder",
+    description: "Build a practical starter stack for a workflow, budget, team size, and risk profile.",
+    inputSummary: "Team type, workflow, budget, risk level, current tools, and country.",
+    outputSummary: "Recommended stack layers, tool categories, review checks, and related workflow kits.",
+    fields: [
+      { name: "teamType", label: "Team type", type: "select", defaultValue: "marketing agency", options: ["marketing agency", "ecommerce seller", "sales team", "consultant", "real estate team"], required: true },
+      { name: "workflow", label: "Workflow", type: "text", defaultValue: "turn client notes into campaign briefs", required: true },
+      { name: "budget", label: "Budget", type: "select", defaultValue: "lean", options: ["lean", "moderate", "scaling", "enterprise"], required: true },
+      { name: "riskLevel", label: "Risk level", type: "select", defaultValue: "medium", options: ["low", "medium", "high"], required: true },
+      { name: "currentTools", label: "Current tools", type: "textarea", defaultValue: "Google Workspace, CRM, ChatGPT", required: true },
+      { name: "country", label: "Country", type: "select", defaultValue: "United Kingdom", options: ["United States", "United Kingdom", "Australia", "Canada", "Ireland", "Singapore"], required: true }
+    ],
+    related: [
+      { title: "Workflow kits", href: "/workflow-kits/", description: "Match the stack to a complete topic cluster." },
+      { title: "AI tools directory", href: "/ai-tools/", description: "Browse the supporting tool records." }
+    ]
+  },
+  {
+    title: "AI Workflow ROI Calculator",
+    slug: "ai-workflow-roi-calculator",
+    description: "Estimate whether an AI workflow is worth testing based on time saved, tool spend, and review overhead.",
+    inputSummary: "Hours saved, hourly cost, users, monthly tool cost, setup hours, and review overhead.",
+    outputSummary: "Monthly value, costs, payback estimate, and rollout caution notes.",
+    fields: [
+      { name: "hoursSaved", label: "Hours saved per person/month", type: "number", defaultValue: "6", min: 0, max: 500, required: true },
+      { name: "hourlyCost", label: "Hourly cost", type: "number", defaultValue: "35", min: 0, max: 10000, required: true },
+      { name: "users", label: "Users", type: "number", defaultValue: "5", min: 1, max: 5000, required: true },
+      { name: "monthlyToolCost", label: "Monthly tool cost", type: "number", defaultValue: "250", min: 0, max: 1000000, required: true },
+      { name: "setupHours", label: "One-time setup hours", type: "number", defaultValue: "12", min: 0, max: 10000, required: true },
+      { name: "reviewOverhead", label: "Review overhead %", type: "number", defaultValue: "20", min: 0, max: 100, required: true },
+      { name: "currency", label: "Currency", type: "select", defaultValue: "GBP", options: ["GBP", "USD", "EUR", "AUD", "CAD"], required: true }
+    ],
+    related: [
+      { title: "Display ad readiness checklist", href: "/free-tools/display-ad-readiness-checklist/", description: "Check monetisation timing after content grows." },
+      { title: "SaaS cost calculator", href: "/free-tools/saas-cost-calculator/", description: "Estimate broader software spend." }
+    ]
+  },
+  {
+    title: "Software Buying Checklist Generator",
+    slug: "software-buying-checklist-generator",
+    description: "Generate a buying checklist for an AI or SaaS tool before committing to a paid plan.",
+    inputSummary: "Tool category, buyer type, data sensitivity, team size, country, and contract length.",
+    outputSummary: "Buying checklist, vendor questions, red flags, and rollout checks.",
+    fields: [
+      { name: "toolCategory", label: "Tool category", type: "select", defaultValue: "AI writing", options: ["AI writing", "CRM", "customer support", "meeting notes", "SEO", "project management", "automation"], required: true },
+      { name: "buyerType", label: "Buyer type", type: "select", defaultValue: "small business owner", options: ["small business owner", "agency owner", "sales manager", "consultant", "operations manager"], required: true },
+      { name: "dataSensitivity", label: "Data sensitivity", type: "select", defaultValue: "medium", options: ["low", "medium", "high"], required: true },
+      { name: "teamSize", label: "Team size", type: "number", defaultValue: "6", min: 1, max: 5000, required: true },
+      { name: "country", label: "Country", type: "select", defaultValue: "United Kingdom", options: ["United States", "United Kingdom", "Australia", "Canada", "Ireland", "Singapore"], required: true },
+      { name: "contractLength", label: "Contract length", type: "select", defaultValue: "monthly", options: ["monthly", "annual", "multi-year"], required: true }
+    ],
+    related: [
+      { title: "How we review AI tools", href: "/how-we-review-ai-tools/", description: "Understand the review framework." },
+      { title: "Tool directory", href: "/ai-tools/", description: "Compare candidate tools." }
+    ]
+  },
+  {
     title: "Workflow Kit Planner",
     slug: "workflow-kit-planner",
     description: "Build a first-pass AI workflow kit with tasks, tools, prompts, checks, and related page ideas.",
@@ -199,6 +257,12 @@ export function validateFreeToolInput(tool: FreeToolDefinition, values: Record<s
 
 export function generateFreeToolResult(slug: string, values: Record<string, string>): FreeToolResult {
   switch (slug) {
+    case "ai-stack-builder":
+      return generateAiStack(values);
+    case "ai-workflow-roi-calculator":
+      return generateWorkflowRoi(values);
+    case "software-buying-checklist-generator":
+      return generateBuyingChecklist(values);
     case "workflow-kit-planner":
       return generateWorkflowKit(values);
     case "display-ad-readiness-checklist":
@@ -251,6 +315,128 @@ export function calculateSaasCost(input: {
     annualBeforeDiscount,
     annual: annualBeforeDiscount - annualSavings,
     annualSavings
+  };
+}
+
+function generateAiStack(values: Record<string, string>): FreeToolResult {
+  const team = values.teamType || "team";
+  const workflow = values.workflow || "workflow";
+  const budget = values.budget || "lean";
+  const risk = values.riskLevel || "medium";
+
+  return {
+    title: `AI stack for a ${team}`,
+    summary: `A ${budget} stack for ${workflow}, with ${risk} risk controls.`,
+    sections: [
+      {
+        heading: "Recommended stack layers",
+        body: [
+          "Drafting layer: a general AI assistant for first drafts, analysis, and prompt testing.",
+          "System of record: a CRM, database, or project tool that owns tasks, contacts, approvals, and history.",
+          "Specialist layer: one task-specific tool for SEO, support, meetings, sales, design, or automation.",
+          "Review layer: a human approval checkpoint before customer-facing, legal, financial, or privacy-sensitive output goes live."
+        ]
+      },
+      {
+        heading: "Fit checks",
+        body: [
+          `Current tools to integrate: ${values.currentTools || "not supplied"}.`,
+          `Country context: ${values.country || "not supplied"}. Check currency, terminology, data processing, and availability.`,
+          `Risk level: ${risk}. Higher-risk workflows need stricter review, source logging, and permission controls.`
+        ]
+      }
+    ],
+    ctas: [
+      { title: "Workflow kits", href: "/workflow-kits/", description: "Match this stack to a complete WorkWise kit." },
+      { title: "AI tool recommender", href: "/free-tools/ai-tool-recommender/", description: "Generate a narrower shortlist." }
+    ]
+  };
+}
+
+function generateWorkflowRoi(values: Record<string, string>): FreeToolResult {
+  const currency = values.currency || "GBP";
+  const hoursSaved = Number(values.hoursSaved) || 0;
+  const hourlyCost = Number(values.hourlyCost) || 0;
+  const users = Number(values.users) || 1;
+  const monthlyToolCost = Number(values.monthlyToolCost) || 0;
+  const setupHours = Number(values.setupHours) || 0;
+  const reviewOverhead = Number(values.reviewOverhead) || 0;
+  const grossValue = hoursSaved * hourlyCost * users;
+  const reviewCost = grossValue * (reviewOverhead / 100);
+  const monthlyNet = grossValue - reviewCost - monthlyToolCost;
+  const setupCost = setupHours * hourlyCost;
+  const paybackMonths = monthlyNet > 0 ? setupCost / monthlyNet : Infinity;
+  const format = (amount: number) => amount.toLocaleString("en-US", { style: "currency", currency });
+
+  return {
+    title: "AI workflow ROI estimate",
+    summary: monthlyNet > 0 ? `Estimated monthly net value: ${format(monthlyNet)}.` : "This workflow needs a smaller pilot or cheaper stack before rollout.",
+    sections: [
+      {
+        heading: "Estimate",
+        body: [
+          `Gross monthly time value: ${format(grossValue)}`,
+          `Review overhead: ${format(reviewCost)}`,
+          `Monthly tool cost: ${format(monthlyToolCost)}`,
+          `One-time setup cost estimate: ${format(setupCost)}`,
+          `Estimated payback: ${Number.isFinite(paybackMonths) ? `${paybackMonths.toFixed(1)} months` : "not positive yet"}`
+        ]
+      },
+      {
+        heading: "Rollout cautions",
+        body: [
+          "Treat this as a directional estimate, not a finance model.",
+          "Pilot with one team before buying annual plans.",
+          "Track actual time saved, review failures, customer impact, and adoption after 30 days."
+        ]
+      }
+    ],
+    ctas: [
+      { title: "AI stack builder", href: "/free-tools/ai-stack-builder/", description: "Design the stack behind the ROI estimate." },
+      { title: "Workflow kits", href: "/workflow-kits/", description: "Find a workflow cluster to test." }
+    ]
+  };
+}
+
+function generateBuyingChecklist(values: Record<string, string>): FreeToolResult {
+  const category = values.toolCategory || "AI tool";
+  const sensitivity = values.dataSensitivity || "medium";
+
+  return {
+    title: `${category} buying checklist`,
+    summary: `A buying checklist for a ${values.buyerType || "buyer"} in ${values.country || "your market"} with ${sensitivity} data sensitivity.`,
+    sections: [
+      {
+        heading: "Vendor questions",
+        body: [
+          "Which plan includes the exact AI, automation, export, and team features we need?",
+          "Where is customer or client data processed, stored, retained, and used for model training?",
+          "What happens if we cancel, downgrade, or need to export our data?",
+          `What changes if we grow beyond ${values.teamSize || "the current"} users?`
+        ]
+      },
+      {
+        heading: "Red flags",
+        body: [
+          "No clear pricing page or unclear add-on costs.",
+          "No practical way to review AI outputs before they reach customers.",
+          "Annual or multi-year commitment before the workflow is tested.",
+          sensitivity === "high" ? "Weak privacy, audit, retention, or permission controls." : "Feature limits hidden behind sales calls."
+        ]
+      },
+      {
+        heading: "Pilot checklist",
+        body: [
+          "Run a 14-30 day pilot with one workflow and one accountable owner.",
+          "Measure adoption, time saved, review time, error rate, and whether outputs are good enough for real use.",
+          `Avoid ${values.contractLength || "long"} commitments until the pilot proves value.`
+        ]
+      }
+    ],
+    ctas: [
+      { title: "How we review AI tools", href: "/how-we-review-ai-tools/", description: "See the WorkWise review method." },
+      { title: "SaaS cost calculator", href: "/free-tools/saas-cost-calculator/", description: "Estimate recurring software costs." }
+    ]
   };
 }
 

@@ -13,6 +13,7 @@ import type {
 import { freeTools } from "./free-tools";
 import { getPageQualityScore } from "./quality";
 import { currentYear, truncateDescription } from "./seo";
+import { workflowKits } from "./workflow-kits";
 
 export type RouteGroup =
   | "static"
@@ -22,9 +23,11 @@ export type RouteGroup =
   | "comparisons"
   | "alternatives"
   | "workflows"
+  | "workflow-kits"
   | "prompts"
   | "templates"
-  | "free-tools";
+  | "free-tools"
+  | "country-professions";
 
 export type SeoRoute = {
   path: string;
@@ -92,6 +95,13 @@ export const staticSeoRoutes: SeoRoute[] = [
     group: "workflows",
     title: "AI Workflow Guides",
     description: "Step-by-step AI workflows with tools, prompts, templates, automation notes, and related guides.",
+    quality: strongStaticQuality
+  },
+  {
+    path: "/workflow-kits/",
+    group: "workflow-kits",
+    title: "AI Workflow Kits",
+    description: "Complete workflow hubs linking tools, comparisons, alternatives, prompts, free tools, and country context.",
     quality: strongStaticQuality
   },
   {
@@ -187,9 +197,11 @@ export function buildSeoRoutes(data: SeedData): SeoRoute[] {
     ...data.tools.map((tool) => toolRoute(tool, context)),
     ...data.professions.map((profession) => professionRoute(profession, context)),
     ...data.countries.map((country) => countryRoute(country, context)),
+    ...countryProfessionRoutes(context),
     ...data.comparisons.map((comparison) => comparisonRoute(comparison, context)),
     ...data.alternativeSets.map((set) => alternativeRoute(set, context)),
     ...data.workflows.map((workflow) => workflowRoute(workflow, context)),
+    ...workflowKits.map((kit) => workflowKitRoute(kit, context)),
     ...data.promptTemplates.map((prompt) => promptRoute(prompt, context)),
     ...data.promptTemplates.map((template) => templateRoute(template, context)),
     ...freeTools.map((tool) => ({
@@ -202,6 +214,13 @@ export function buildSeoRoutes(data: SeedData): SeoRoute[] {
     }))
   ];
 }
+
+export const priorityCountryProfessionPairs = workflowKits.flatMap((kit) =>
+  kit.countrySlugs.map((countrySlug) => ({
+    country: countrySlug,
+    profession: kit.professionSlug
+  }))
+);
 
 function createRouteContext(data: SeedData) {
   return {
@@ -279,6 +298,37 @@ function countryRoute(country: Country, context: ReturnType<typeof createRouteCo
   };
 }
 
+function countryProfessionRoutes(context: ReturnType<typeof createRouteContext>): SeoRoute[] {
+  return priorityCountryProfessionPairs
+    .map(({ country: countrySlug, profession: professionSlug }) => {
+      const country = context.countryBySlug.get(countrySlug);
+      const profession = context.professionBySlug.get(professionSlug);
+      if (!country || !profession) return undefined;
+      const tools = context.tools.filter((tool) => tool.countries.includes(country.slug) && tool.professions.includes(profession.slug));
+
+      return {
+        path: `/countries/${country.slug}/${profession.slug}/`,
+        group: "country-professions" as const,
+        title: `${profession.name} AI Tools in ${country.name}`,
+        description: truncateDescription(
+          `Compare AI tools for ${profession.name.toLowerCase()} in ${country.name}, including ${country.currency} context, local terminology, privacy notes, and workflow fit.`,
+          155
+        ),
+        parent: `/countries/${country.slug}/`,
+        quality: getPageQualityScore({
+          matchingTools: tools,
+          valueBlocks: ["country-note", "profession-context", "ranked-tools", "workflow", "faqs"],
+          intro: `${profession.name} AI tools in ${country.name} with ${country.currency} context and ${country.privacyNotes.join(" ")}`,
+          internalLinks: [...professionInternalLinks(profession, context), ...countryInternalLinks(country, context)],
+          lastUpdated: new Date().toISOString(),
+          hasAuthor: true,
+          requiresThreeTools: true
+        })
+      };
+    })
+    .filter(Boolean) as SeoRoute[];
+}
+
 function comparisonRoute(comparison: Comparison, context: ReturnType<typeof createRouteContext>): SeoRoute {
   const toolA = context.toolBySlug.get(comparison.toolA);
   const toolB = context.toolBySlug.get(comparison.toolB);
@@ -337,6 +387,28 @@ function workflowRoute(workflow: Workflow, context: ReturnType<typeof createRout
       internalLinks: links,
       lastUpdated: workflow.lastUpdatedAt,
       hasAuthor: true
+    })
+  };
+}
+
+function workflowKitRoute(kit: (typeof workflowKits)[number], context: ReturnType<typeof createRouteContext>): SeoRoute {
+  const profession = context.professionBySlug.get(kit.professionSlug);
+  const tools = profession ? context.tools.filter((tool) => tool.professions.includes(profession.slug)) : [];
+
+  return {
+    path: `/workflow-kits/${kit.slug}/`,
+    group: "workflow-kits",
+    title: kit.title,
+    description: truncateDescription(kit.summary, 155),
+    parent: "/workflow-kits/",
+    quality: getPageQualityScore({
+      matchingTools: tools,
+      valueBlocks: ["kit-overview", "workflow", "tools", "comparisons", "alternatives", "prompts", "country-notes"],
+      intro: kit.summary,
+      internalLinks: profession ? professionInternalLinks(profession, context) : [],
+      lastUpdated: new Date().toISOString(),
+      hasAuthor: true,
+      requiresThreeTools: true
     })
   };
 }

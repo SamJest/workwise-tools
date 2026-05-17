@@ -35,6 +35,13 @@ export const toolSchema = z.object({
   description: z.string().optional(),
   websiteUrl: z.string().url().optional(),
   affiliateUrl: z.string().url().optional(),
+  pricingPageUrl: z.string().url().optional(),
+  sourceUrls: z.array(z.string().url()).default([]),
+  verificationStatus: z.enum(["starter", "source-linked", "verified"]).default("starter"),
+  setupDifficulty: z.enum(["low", "medium", "high"]).optional(),
+  freePlanReality: z.string().optional(),
+  privacyRisk: z.enum(["low", "medium", "high"]).optional(),
+  bestForTeams: stringArray.default([]),
   logoUrl: z.string().optional(),
   categories: stringArray,
   pricingModel: z.string().optional(),
@@ -51,7 +58,8 @@ export const toolSchema = z.object({
   useCases: stringArray,
   affiliateAvailable: z.boolean(),
   isSponsored: z.boolean().optional(),
-  lastCheckedAt: z.string().nullable()
+  lastCheckedAt: z.string().nullable(),
+  lastVerifiedAt: z.string().nullable().optional()
 });
 
 export const seedDataSchema = z.object({

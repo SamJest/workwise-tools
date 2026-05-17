@@ -364,6 +364,13 @@ function mapTool(tool: any): Tool {
     description: tool.description ?? undefined,
     websiteUrl: tool.websiteUrl ?? undefined,
     affiliateUrl: tool.affiliateUrl ?? undefined,
+    pricingPageUrl: tool.pricingPageUrl ?? undefined,
+    sourceUrls: tool.sourceUrls ?? [],
+    verificationStatus: tool.verificationStatus ?? "starter",
+    setupDifficulty: tool.setupDifficulty ?? undefined,
+    freePlanReality: tool.freePlanReality ?? undefined,
+    privacyRisk: tool.privacyRisk ?? undefined,
+    bestForTeams: tool.bestForTeams ?? [],
     logoUrl: tool.logoUrl ?? undefined,
     categories: tool.categories?.map((category: any) => category.slug) ?? [],
     pricingModel: tool.pricingModel ?? undefined,
@@ -380,7 +387,8 @@ function mapTool(tool: any): Tool {
     useCases: tool.useCases?.map((useCase: any) => useCase.slug ?? useCase.name) ?? [],
     affiliateAvailable: tool.affiliateAvailable,
     isSponsored: tool.isSponsored,
-    lastCheckedAt: tool.lastCheckedAt ? new Date(tool.lastCheckedAt).toISOString() : null
+    lastCheckedAt: tool.lastCheckedAt ? new Date(tool.lastCheckedAt).toISOString() : null,
+    lastVerifiedAt: tool.lastVerifiedAt ? new Date(tool.lastVerifiedAt).toISOString() : null
   };
 }
 

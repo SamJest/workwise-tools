@@ -4,6 +4,7 @@ export type AnalyticsEventName =
   | "outbound_click"
   | "newsletter_submit"
   | "free_tool_copy"
+  | "free_tool_submit"
   | "free_tool_reset";
 
 export type AnalyticsPayload = {

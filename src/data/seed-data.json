@@ -552,7 +552,22 @@
         "prompting"
       ],
       "affiliateAvailable": false,
-      "lastCheckedAt": "2026-05-17"
+      "lastCheckedAt": "2026-05-17",
+      "pricingPageUrl": "https://openai.com/chatgpt/pricing/",
+      "sourceUrls": [
+        "https://chatgpt.com/",
+        "https://openai.com/chatgpt/pricing/"
+      ],
+      "verificationStatus": "source-linked",
+      "setupDifficulty": "low",
+      "freePlanReality": "Free access exists, but limits and model availability can change by plan and region.",
+      "privacyRisk": "medium",
+      "bestForTeams": [
+        "solo operators",
+        "small teams testing AI workflows",
+        "teams needing broad drafting and analysis"
+      ],
+      "lastVerifiedAt": "2026-05-17"
     },
     {
       "name": "Claude",
@@ -608,7 +623,22 @@
         "research"
       ],
       "affiliateAvailable": false,
-      "lastCheckedAt": "2026-05-17"
+      "lastCheckedAt": "2026-05-17",
+      "pricingPageUrl": "https://www.anthropic.com/pricing",
+      "sourceUrls": [
+        "https://claude.ai/",
+        "https://www.anthropic.com/pricing"
+      ],
+      "verificationStatus": "source-linked",
+      "setupDifficulty": "low",
+      "freePlanReality": "Free access may be available with usage limits; teams should verify plan details before relying on it.",
+      "privacyRisk": "medium",
+      "bestForTeams": [
+        "consultants",
+        "writers",
+        "document-heavy teams"
+      ],
+      "lastVerifiedAt": "2026-05-17"
     },
     {
       "name": "Jasper",
@@ -656,7 +686,22 @@
         "ad copy"
       ],
       "affiliateAvailable": false,
-      "lastCheckedAt": "2026-05-17"
+      "lastCheckedAt": "2026-05-17",
+      "pricingPageUrl": "https://www.jasper.ai/pricing",
+      "sourceUrls": [
+        "https://www.jasper.ai/",
+        "https://www.jasper.ai/pricing"
+      ],
+      "verificationStatus": "source-linked",
+      "setupDifficulty": "medium",
+      "freePlanReality": "Typically positioned as a paid marketing platform; verify trial and plan access.",
+      "privacyRisk": "medium",
+      "bestForTeams": [
+        "marketing teams",
+        "agencies",
+        "brand content teams"
+      ],
+      "lastVerifiedAt": "2026-05-17"
     },
     {
       "name": "Copy.ai",
@@ -707,7 +752,22 @@
         "content ideas"
       ],
       "affiliateAvailable": false,
-      "lastCheckedAt": "2026-05-17"
+      "lastCheckedAt": "2026-05-17",
+      "pricingPageUrl": "https://www.copy.ai/prices",
+      "sourceUrls": [
+        "https://www.copy.ai/",
+        "https://www.copy.ai/prices"
+      ],
+      "verificationStatus": "source-linked",
+      "setupDifficulty": "low",
+      "freePlanReality": "Free or entry access may be available, but workflow and team limits should be checked.",
+      "privacyRisk": "medium",
+      "bestForTeams": [
+        "sales teams",
+        "go-to-market teams",
+        "marketing agencies"
+      ],
+      "lastVerifiedAt": "2026-05-17"
     },
     {
       "name": "Grammarly",
@@ -761,7 +821,22 @@
         "proofreading"
       ],
       "affiliateAvailable": false,
-      "lastCheckedAt": "2026-05-17"
+      "lastCheckedAt": "2026-05-17",
+      "pricingPageUrl": "https://www.grammarly.com/plans",
+      "sourceUrls": [
+        "https://www.grammarly.com/",
+        "https://www.grammarly.com/plans"
+      ],
+      "verificationStatus": "source-linked",
+      "setupDifficulty": "low",
+      "freePlanReality": "Free writing assistance is usually available; advanced AI, team, and governance features require verification.",
+      "privacyRisk": "medium",
+      "bestForTeams": [
+        "client-facing teams",
+        "sales teams",
+        "freelancers"
+      ],
+      "lastVerifiedAt": "2026-05-17"
     },
     {
       "name": "Canva",
@@ -817,7 +892,22 @@
         "social media"
       ],
       "affiliateAvailable": false,
-      "lastCheckedAt": "2026-05-17"
+      "lastCheckedAt": "2026-05-17",
+      "pricingPageUrl": "https://www.canva.com/pricing/",
+      "sourceUrls": [
+        "https://www.canva.com/",
+        "https://www.canva.com/pricing/"
+      ],
+      "verificationStatus": "source-linked",
+      "setupDifficulty": "low",
+      "freePlanReality": "A free plan is available, but brand, AI, team, and asset limits vary by plan.",
+      "privacyRisk": "low",
+      "bestForTeams": [
+        "small marketing teams",
+        "real estate agents",
+        "ecommerce sellers"
+      ],
+      "lastVerifiedAt": "2026-05-17"
     },
     {
       "name": "Notion AI",
@@ -868,7 +958,22 @@
         "project documentation"
       ],
       "affiliateAvailable": false,
-      "lastCheckedAt": "2026-05-17"
+      "lastCheckedAt": "2026-05-17",
+      "pricingPageUrl": "https://www.notion.com/pricing",
+      "sourceUrls": [
+        "https://www.notion.com/product/ai",
+        "https://www.notion.com/pricing"
+      ],
+      "verificationStatus": "source-linked",
+      "setupDifficulty": "medium",
+      "freePlanReality": "Best value depends on workspace and AI add-on access; verify current plan packaging.",
+      "privacyRisk": "medium",
+      "bestForTeams": [
+        "consultants",
+        "content operations teams",
+        "project teams"
+      ],
+      "lastVerifiedAt": "2026-05-17"
     },
     {
       "name": "Fireflies.ai",
@@ -919,7 +1024,22 @@
         "call summaries"
       ],
       "affiliateAvailable": false,
-      "lastCheckedAt": "2026-05-17"
+      "lastCheckedAt": "2026-05-17",
+      "pricingPageUrl": "https://fireflies.ai/pricing",
+      "sourceUrls": [
+        "https://fireflies.ai/",
+        "https://fireflies.ai/pricing"
+      ],
+      "verificationStatus": "source-linked",
+      "setupDifficulty": "medium",
+      "freePlanReality": "Free meeting capture may be available with limits; recording consent and retention rules matter.",
+      "privacyRisk": "high",
+      "bestForTeams": [
+        "sales teams",
+        "consultants",
+        "meeting-heavy teams"
+      ],
+      "lastVerifiedAt": "2026-05-17"
     },
     {
       "name": "HubSpot",
@@ -972,7 +1092,22 @@
         "marketing automation"
       ],
       "affiliateAvailable": false,
-      "lastCheckedAt": "2026-05-17"
+      "lastCheckedAt": "2026-05-17",
+      "pricingPageUrl": "https://www.hubspot.com/pricing",
+      "sourceUrls": [
+        "https://www.hubspot.com/",
+        "https://www.hubspot.com/pricing"
+      ],
+      "verificationStatus": "source-linked",
+      "setupDifficulty": "high",
+      "freePlanReality": "Free CRM tools are available, but automation, AI, and scale usually depend on paid hubs.",
+      "privacyRisk": "high",
+      "bestForTeams": [
+        "sales teams",
+        "marketing agencies",
+        "customer operations teams"
+      ],
+      "lastVerifiedAt": "2026-05-17"
     },
     {
       "name": "GitHub Copilot",
@@ -1022,7 +1157,22 @@
         "documentation"
       ],
       "affiliateAvailable": false,
-      "lastCheckedAt": "2026-05-17"
+      "lastCheckedAt": "2026-05-17",
+      "pricingPageUrl": "https://github.com/features/copilot/plans",
+      "sourceUrls": [
+        "https://github.com/features/copilot",
+        "https://github.com/features/copilot/plans"
+      ],
+      "verificationStatus": "source-linked",
+      "setupDifficulty": "medium",
+      "freePlanReality": "Free access depends on user type and current GitHub plan rules; team governance needs plan checks.",
+      "privacyRisk": "medium",
+      "bestForTeams": [
+        "developers",
+        "software teams",
+        "technical founders"
+      ],
+      "lastVerifiedAt": "2026-05-17"
     },
     {
       "name": "Klaviyo AI",
@@ -1077,7 +1227,22 @@
         "ecommerce automation"
       ],
       "affiliateAvailable": false,
-      "lastCheckedAt": "2026-05-17"
+      "lastCheckedAt": "2026-05-17",
+      "pricingPageUrl": "https://www.klaviyo.com/pricing",
+      "sourceUrls": [
+        "https://ai.klaviyo.com/",
+        "https://www.klaviyo.com/pricing"
+      ],
+      "verificationStatus": "source-linked",
+      "setupDifficulty": "high",
+      "freePlanReality": "Pricing and value depend on contact volume, channels, and ecommerce data depth.",
+      "privacyRisk": "high",
+      "bestForTeams": [
+        "ecommerce sellers",
+        "retention marketers",
+        "B2C lifecycle teams"
+      ],
+      "lastVerifiedAt": "2026-05-17"
     },
     {
       "name": "Shopify Magic",
@@ -1133,7 +1298,22 @@
         "ecommerce design"
       ],
       "affiliateAvailable": false,
-      "lastCheckedAt": "2026-05-17"
+      "lastCheckedAt": "2026-05-17",
+      "pricingPageUrl": "https://www.shopify.com/pricing",
+      "sourceUrls": [
+        "https://www.shopify.com/magic/",
+        "https://www.shopify.com/pricing"
+      ],
+      "verificationStatus": "source-linked",
+      "setupDifficulty": "medium",
+      "freePlanReality": "AI features are tied to Shopify access and supported surfaces; verify plan and region availability.",
+      "privacyRisk": "medium",
+      "bestForTeams": [
+        "Shopify merchants",
+        "ecommerce teams",
+        "store operators"
+      ],
+      "lastVerifiedAt": "2026-05-17"
     },
     {
       "name": "Semrush",
@@ -1184,7 +1364,22 @@
         "competitor analysis"
       ],
       "affiliateAvailable": false,
-      "lastCheckedAt": "2026-05-17"
+      "lastCheckedAt": "2026-05-17",
+      "pricingPageUrl": "https://www.semrush.com/prices/",
+      "sourceUrls": [
+        "https://www.semrush.com/",
+        "https://www.semrush.com/prices/"
+      ],
+      "verificationStatus": "source-linked",
+      "setupDifficulty": "high",
+      "freePlanReality": "Limited free access may exist; serious agency workflows usually require paid plans and add-ons.",
+      "privacyRisk": "medium",
+      "bestForTeams": [
+        "marketing agencies",
+        "SEO teams",
+        "content strategists"
+      ],
+      "lastVerifiedAt": "2026-05-17"
     },
     {
       "name": "Fathom",
@@ -1235,7 +1430,22 @@
         "client updates"
       ],
       "affiliateAvailable": false,
-      "lastCheckedAt": "2026-05-17"
+      "lastCheckedAt": "2026-05-17",
+      "pricingPageUrl": "https://fathom.video/pricing",
+      "sourceUrls": [
+        "https://fathom.video/",
+        "https://fathom.video/pricing"
+      ],
+      "verificationStatus": "source-linked",
+      "setupDifficulty": "low",
+      "freePlanReality": "Free meeting notes may be available, but team features and retention controls should be checked.",
+      "privacyRisk": "high",
+      "bestForTeams": [
+        "consultants",
+        "sales teams",
+        "small agencies"
+      ],
+      "lastVerifiedAt": "2026-05-17"
     },
     {
       "name": "Airtable AI",
@@ -1287,7 +1497,22 @@
         "workflow tracking"
       ],
       "affiliateAvailable": false,
-      "lastCheckedAt": "2026-05-17"
+      "lastCheckedAt": "2026-05-17",
+      "pricingPageUrl": "https://www.airtable.com/pricing",
+      "sourceUrls": [
+        "https://www.airtable.com/platform/ai",
+        "https://www.airtable.com/pricing"
+      ],
+      "verificationStatus": "source-linked",
+      "setupDifficulty": "high",
+      "freePlanReality": "AI access depends on Airtable plan and workspace settings; verify current packaging.",
+      "privacyRisk": "medium",
+      "bestForTeams": [
+        "content operations teams",
+        "consultants",
+        "workflow-heavy SMBs"
+      ],
+      "lastVerifiedAt": "2026-05-17"
     },
     {
       "name": "Tidio",
@@ -1337,7 +1562,1680 @@
         "FAQ triage"
       ],
       "affiliateAvailable": false,
-      "lastCheckedAt": "2026-05-17"
+      "lastCheckedAt": "2026-05-17",
+      "pricingPageUrl": "https://www.tidio.com/pricing/",
+      "sourceUrls": [
+        "https://www.tidio.com/",
+        "https://www.tidio.com/pricing/"
+      ],
+      "verificationStatus": "source-linked",
+      "setupDifficulty": "medium",
+      "freePlanReality": "Free chat tools may be available, but automation, AI, and support limits should be checked.",
+      "privacyRisk": "high",
+      "bestForTeams": [
+        "ecommerce support teams",
+        "small support teams",
+        "online stores"
+      ],
+      "lastVerifiedAt": "2026-05-17"
+    },
+    {
+      "name": "Gorgias",
+      "slug": "gorgias",
+      "summary": "Customer support platform for ecommerce stores with automation and AI support workflows.",
+      "description": "Gorgias is a support platform built around ecommerce stores. It is relevant for Shopify and DTC teams that need support tickets, customer context, automation, and AI-assisted responses connected to order data.",
+      "websiteUrl": "https://www.gorgias.com/",
+      "pricingPageUrl": "https://www.gorgias.com/pricing",
+      "sourceUrls": [
+        "https://www.gorgias.com/",
+        "https://www.gorgias.com/pricing"
+      ],
+      "verificationStatus": "source-linked",
+      "setupDifficulty": "medium",
+      "freePlanReality": "Free access is not the main buying case; verify trial and ticket-volume pricing.",
+      "privacyRisk": "high",
+      "bestForTeams": [
+        "ecommerce support teams",
+        "Shopify stores",
+        "DTC brands"
+      ],
+      "categories": [
+        "ai-customer-support",
+        "ai-crm"
+      ],
+      "pricingModel": "paid platform",
+      "startingPrice": null,
+      "currency": "USD",
+      "freePlanAvailable": false,
+      "trialAvailable": true,
+      "bestFor": [
+        "ecommerce support",
+        "helpdesk automation",
+        "Shopify support"
+      ],
+      "notBestFor": [
+        "teams outside ecommerce",
+        "stores without enough support volume"
+      ],
+      "pros": [
+        "built for ecommerce support",
+        "connects support context to store workflows"
+      ],
+      "cons": [
+        "pricing and value depend on ticket volume",
+        "requires careful automation review"
+      ],
+      "professions": [
+        "ecommerce-sellers",
+        "marketing-agencies"
+      ],
+      "countries": [
+        "us",
+        "uk",
+        "au",
+        "ca",
+        "ie",
+        "sg"
+      ],
+      "useCases": [
+        "customer support",
+        "ecommerce automation",
+        "helpdesk"
+      ],
+      "affiliateAvailable": false,
+      "lastCheckedAt": "2026-05-17",
+      "lastVerifiedAt": "2026-05-17"
+    },
+    {
+      "name": "Zendesk AI",
+      "slug": "zendesk-ai",
+      "summary": "AI features and agents inside Zendesk for customer service and support operations.",
+      "description": "Zendesk AI supports customer service teams with AI agents, ticket triage, agent assistance, knowledge workflows, and automated resolutions. It fits larger support teams that already need helpdesk governance.",
+      "websiteUrl": "https://www.zendesk.com/ai/",
+      "pricingPageUrl": "https://www.zendesk.com/pricing/",
+      "sourceUrls": [
+        "https://www.zendesk.com/ai/",
+        "https://www.zendesk.com/pricing/"
+      ],
+      "verificationStatus": "source-linked",
+      "setupDifficulty": "high",
+      "freePlanReality": "Zendesk may offer trials, but advanced AI and automated resolutions should be checked against current plans.",
+      "privacyRisk": "high",
+      "bestForTeams": [
+        "support teams",
+        "customer operations teams",
+        "larger ecommerce teams"
+      ],
+      "categories": [
+        "ai-customer-support",
+        "ai-crm"
+      ],
+      "pricingModel": "paid platform/add-on",
+      "startingPrice": null,
+      "currency": "USD",
+      "freePlanAvailable": false,
+      "trialAvailable": true,
+      "bestFor": [
+        "customer service AI",
+        "ticket triage",
+        "support automation"
+      ],
+      "notBestFor": [
+        "tiny teams that only need live chat"
+      ],
+      "pros": [
+        "mature helpdesk ecosystem",
+        "strong support operations fit"
+      ],
+      "cons": [
+        "AI pricing and packaging require careful verification",
+        "setup can be complex"
+      ],
+      "professions": [
+        "sales-teams",
+        "ecommerce-sellers",
+        "marketing-agencies"
+      ],
+      "countries": [
+        "us",
+        "uk",
+        "au",
+        "ca",
+        "ie",
+        "sg"
+      ],
+      "useCases": [
+        "support automation",
+        "AI agents",
+        "ticket triage"
+      ],
+      "affiliateAvailable": false,
+      "lastCheckedAt": "2026-05-17",
+      "lastVerifiedAt": "2026-05-17"
+    },
+    {
+      "name": "Mailchimp",
+      "slug": "mailchimp",
+      "summary": "Email marketing and automation platform with AI-assisted campaign tools for small businesses.",
+      "description": "Mailchimp helps small businesses manage email campaigns, audiences, automations, landing pages, and marketing content. It is useful in WorkWise clusters where teams need practical campaign execution rather than only writing help.",
+      "websiteUrl": "https://mailchimp.com/",
+      "pricingPageUrl": "https://mailchimp.com/pricing/",
+      "sourceUrls": [
+        "https://mailchimp.com/",
+        "https://mailchimp.com/pricing/"
+      ],
+      "verificationStatus": "source-linked",
+      "setupDifficulty": "medium",
+      "freePlanReality": "Free plans may exist with contact, send, and feature limits that must be verified.",
+      "privacyRisk": "medium",
+      "bestForTeams": [
+        "small businesses",
+        "agencies managing simple email programs",
+        "ecommerce sellers"
+      ],
+      "categories": [
+        "ai-crm",
+        "ai-writing"
+      ],
+      "pricingModel": "freemium/paid",
+      "startingPrice": null,
+      "currency": "USD",
+      "freePlanAvailable": true,
+      "trialAvailable": true,
+      "bestFor": [
+        "email campaigns",
+        "small business marketing",
+        "audience management"
+      ],
+      "notBestFor": [
+        "teams needing deep ecommerce-only lifecycle tools"
+      ],
+      "pros": [
+        "familiar email marketing workflow",
+        "broad small-business adoption"
+      ],
+      "cons": [
+        "advanced automation may require paid plans",
+        "cost scales with contacts"
+      ],
+      "professions": [
+        "marketing-agencies",
+        "ecommerce-sellers",
+        "consultants"
+      ],
+      "countries": [
+        "us",
+        "uk",
+        "au",
+        "ca",
+        "ie",
+        "sg"
+      ],
+      "useCases": [
+        "email marketing",
+        "campaign automation",
+        "audience management"
+      ],
+      "affiliateAvailable": false,
+      "lastCheckedAt": "2026-05-17",
+      "lastVerifiedAt": "2026-05-17"
+    },
+    {
+      "name": "Omnisend",
+      "slug": "omnisend",
+      "summary": "Email and SMS marketing automation platform for ecommerce lifecycle campaigns.",
+      "description": "Omnisend is an ecommerce marketing automation platform for email, SMS, segmentation, and lifecycle campaigns. It fits sellers that want marketing flows tied to store behaviour rather than generic newsletters.",
+      "websiteUrl": "https://www.omnisend.com/",
+      "pricingPageUrl": "https://www.omnisend.com/pricing/",
+      "sourceUrls": [
+        "https://www.omnisend.com/",
+        "https://www.omnisend.com/pricing/"
+      ],
+      "verificationStatus": "source-linked",
+      "setupDifficulty": "medium",
+      "freePlanReality": "Free and paid tiers vary by contacts and sends; verify current limits before publishing claims.",
+      "privacyRisk": "high",
+      "bestForTeams": [
+        "ecommerce sellers",
+        "retention teams",
+        "Shopify stores"
+      ],
+      "categories": [
+        "ai-crm",
+        "ai-sales-automation"
+      ],
+      "pricingModel": "freemium/paid",
+      "startingPrice": null,
+      "currency": "USD",
+      "freePlanAvailable": true,
+      "trialAvailable": true,
+      "bestFor": [
+        "ecommerce email",
+        "SMS campaigns",
+        "lifecycle marketing"
+      ],
+      "notBestFor": [
+        "non-ecommerce B2B sales teams"
+      ],
+      "pros": [
+        "built around ecommerce marketing",
+        "supports email and SMS workflows"
+      ],
+      "cons": [
+        "contact-based costs can grow",
+        "requires clean customer data"
+      ],
+      "professions": [
+        "ecommerce-sellers",
+        "marketing-agencies"
+      ],
+      "countries": [
+        "us",
+        "uk",
+        "au",
+        "ca",
+        "ie",
+        "sg"
+      ],
+      "useCases": [
+        "email marketing",
+        "SMS marketing",
+        "ecommerce automation"
+      ],
+      "affiliateAvailable": false,
+      "lastCheckedAt": "2026-05-17",
+      "lastVerifiedAt": "2026-05-17"
+    },
+    {
+      "name": "Surfer",
+      "slug": "surfer",
+      "summary": "SEO content optimisation platform for briefs, content scoring, and search-focused writing workflows.",
+      "description": "Surfer supports SEO content workflows with content editors, briefs, SERP analysis, and optimisation guidance. It fits agencies that need a content production layer after keyword research.",
+      "websiteUrl": "https://surferseo.com/",
+      "pricingPageUrl": "https://surferseo.com/pricing/",
+      "sourceUrls": [
+        "https://surferseo.com/",
+        "https://surferseo.com/pricing/"
+      ],
+      "verificationStatus": "source-linked",
+      "setupDifficulty": "medium",
+      "freePlanReality": "Free access is not the main workflow; verify trial, credits, and plan limits.",
+      "privacyRisk": "medium",
+      "bestForTeams": [
+        "SEO agencies",
+        "content teams",
+        "ecommerce content teams"
+      ],
+      "categories": [
+        "ai-seo",
+        "ai-writing"
+      ],
+      "pricingModel": "paid platform",
+      "startingPrice": null,
+      "currency": "USD",
+      "freePlanAvailable": false,
+      "trialAvailable": true,
+      "bestFor": [
+        "SEO content briefs",
+        "content optimisation",
+        "agency content workflows"
+      ],
+      "notBestFor": [
+        "teams that only need simple copywriting"
+      ],
+      "pros": [
+        "strong SEO content workflow",
+        "useful for briefs and on-page optimisation"
+      ],
+      "cons": [
+        "requires editorial judgment",
+        "plan limits need verification"
+      ],
+      "professions": [
+        "marketing-agencies",
+        "ecommerce-sellers",
+        "consultants"
+      ],
+      "countries": [
+        "us",
+        "uk",
+        "au",
+        "ca",
+        "ie",
+        "sg"
+      ],
+      "useCases": [
+        "SEO briefs",
+        "content optimisation",
+        "AI content workflows"
+      ],
+      "affiliateAvailable": false,
+      "lastCheckedAt": "2026-05-17",
+      "lastVerifiedAt": "2026-05-17"
+    },
+    {
+      "name": "Ahrefs",
+      "slug": "ahrefs",
+      "summary": "SEO platform for keyword research, backlinks, competitor analysis, and content planning.",
+      "description": "Ahrefs is an SEO platform used for keyword research, competitor analysis, backlink research, content planning, and site audits. It supports the research side of marketing agency workflows.",
+      "websiteUrl": "https://ahrefs.com/",
+      "pricingPageUrl": "https://ahrefs.com/pricing",
+      "sourceUrls": [
+        "https://ahrefs.com/",
+        "https://ahrefs.com/pricing"
+      ],
+      "verificationStatus": "source-linked",
+      "setupDifficulty": "high",
+      "freePlanReality": "Free tools may exist, but the core platform is paid; verify current plan access.",
+      "privacyRisk": "medium",
+      "bestForTeams": [
+        "SEO teams",
+        "agencies",
+        "content strategists"
+      ],
+      "categories": [
+        "ai-seo"
+      ],
+      "pricingModel": "paid platform",
+      "startingPrice": null,
+      "currency": "USD",
+      "freePlanAvailable": false,
+      "trialAvailable": false,
+      "bestFor": [
+        "keyword research",
+        "competitor analysis",
+        "SEO audits"
+      ],
+      "notBestFor": [
+        "teams that only need AI drafting"
+      ],
+      "pros": [
+        "deep SEO research data",
+        "strong competitor and backlink analysis"
+      ],
+      "cons": [
+        "not a simple writing assistant",
+        "cost can be high for light use"
+      ],
+      "professions": [
+        "marketing-agencies",
+        "ecommerce-sellers",
+        "consultants"
+      ],
+      "countries": [
+        "us",
+        "uk",
+        "au",
+        "ca",
+        "ie",
+        "sg"
+      ],
+      "useCases": [
+        "SEO research",
+        "content planning",
+        "site audits"
+      ],
+      "affiliateAvailable": false,
+      "lastCheckedAt": "2026-05-17",
+      "lastVerifiedAt": "2026-05-17"
+    },
+    {
+      "name": "Buffer",
+      "slug": "buffer",
+      "summary": "Social media scheduling and planning platform for small teams and agencies.",
+      "description": "Buffer helps teams plan, schedule, and analyse social content across channels. It supports agency and small-business workflows where AI-generated content needs a publishing calendar and approval rhythm.",
+      "websiteUrl": "https://buffer.com/",
+      "pricingPageUrl": "https://buffer.com/pricing",
+      "sourceUrls": [
+        "https://buffer.com/",
+        "https://buffer.com/pricing"
+      ],
+      "verificationStatus": "source-linked",
+      "setupDifficulty": "low",
+      "freePlanReality": "Free plan availability and channel limits should be checked before publishing.",
+      "privacyRisk": "medium",
+      "bestForTeams": [
+        "small agencies",
+        "real estate teams",
+        "solo marketers"
+      ],
+      "categories": [
+        "ai-project-management",
+        "ai-writing"
+      ],
+      "pricingModel": "freemium/paid",
+      "startingPrice": null,
+      "currency": "USD",
+      "freePlanAvailable": true,
+      "trialAvailable": true,
+      "bestFor": [
+        "social scheduling",
+        "content calendars",
+        "small team publishing"
+      ],
+      "notBestFor": [
+        "teams needing full enterprise social listening"
+      ],
+      "pros": [
+        "simple social scheduling",
+        "good fit for lean teams"
+      ],
+      "cons": [
+        "advanced analytics and channels may require paid plans"
+      ],
+      "professions": [
+        "marketing-agencies",
+        "ecommerce-sellers",
+        "real-estate-agents"
+      ],
+      "countries": [
+        "us",
+        "uk",
+        "au",
+        "ca",
+        "ie",
+        "sg"
+      ],
+      "useCases": [
+        "social media",
+        "content scheduling",
+        "campaign planning"
+      ],
+      "affiliateAvailable": false,
+      "lastCheckedAt": "2026-05-17",
+      "lastVerifiedAt": "2026-05-17"
+    },
+    {
+      "name": "Hootsuite",
+      "slug": "hootsuite",
+      "summary": "Social media management platform for scheduling, analytics, and team publishing workflows.",
+      "description": "Hootsuite supports social scheduling, engagement, analytics, and team workflows. It fits agencies and larger SMBs that need more controls than a simple scheduler.",
+      "websiteUrl": "https://www.hootsuite.com/",
+      "pricingPageUrl": "https://www.hootsuite.com/plans",
+      "sourceUrls": [
+        "https://www.hootsuite.com/",
+        "https://www.hootsuite.com/plans"
+      ],
+      "verificationStatus": "source-linked",
+      "setupDifficulty": "medium",
+      "freePlanReality": "Trial and plan availability should be verified; free access may be limited or unavailable.",
+      "privacyRisk": "medium",
+      "bestForTeams": [
+        "agencies",
+        "multi-channel social teams",
+        "larger SMB marketers"
+      ],
+      "categories": [
+        "ai-project-management",
+        "ai-writing"
+      ],
+      "pricingModel": "paid platform",
+      "startingPrice": null,
+      "currency": "USD",
+      "freePlanAvailable": false,
+      "trialAvailable": true,
+      "bestFor": [
+        "social media management",
+        "team publishing",
+        "analytics"
+      ],
+      "notBestFor": [
+        "solo users wanting a very lightweight scheduler"
+      ],
+      "pros": [
+        "broad social management features",
+        "team workflow controls"
+      ],
+      "cons": [
+        "can be expensive for small teams",
+        "setup and governance matter"
+      ],
+      "professions": [
+        "marketing-agencies",
+        "real-estate-agents",
+        "ecommerce-sellers"
+      ],
+      "countries": [
+        "us",
+        "uk",
+        "au",
+        "ca",
+        "ie",
+        "sg"
+      ],
+      "useCases": [
+        "social media",
+        "campaign reporting",
+        "content approvals"
+      ],
+      "affiliateAvailable": false,
+      "lastCheckedAt": "2026-05-17",
+      "lastVerifiedAt": "2026-05-17"
+    },
+    {
+      "name": "Descript",
+      "slug": "descript",
+      "summary": "AI-assisted audio and video editing platform for podcasts, clips, and content repurposing.",
+      "description": "Descript helps teams edit audio and video, create clips, transcribe recordings, and repurpose content. It fits agencies and consultants turning calls, webinars, and demos into marketing assets.",
+      "websiteUrl": "https://www.descript.com/",
+      "pricingPageUrl": "https://www.descript.com/pricing",
+      "sourceUrls": [
+        "https://www.descript.com/",
+        "https://www.descript.com/pricing"
+      ],
+      "verificationStatus": "source-linked",
+      "setupDifficulty": "medium",
+      "freePlanReality": "Free access may exist with export and feature limits; verify current plan rules.",
+      "privacyRisk": "medium",
+      "bestForTeams": [
+        "content teams",
+        "consultants",
+        "small agencies"
+      ],
+      "categories": [
+        "ai-video",
+        "ai-meeting-notes"
+      ],
+      "pricingModel": "freemium/paid",
+      "startingPrice": null,
+      "currency": "USD",
+      "freePlanAvailable": true,
+      "trialAvailable": true,
+      "bestFor": [
+        "video editing",
+        "podcast editing",
+        "content repurposing"
+      ],
+      "notBestFor": [
+        "teams needing high-end motion graphics only"
+      ],
+      "pros": [
+        "text-based editing workflow",
+        "good for repurposing long-form content"
+      ],
+      "cons": [
+        "media exports and AI features have plan limits"
+      ],
+      "professions": [
+        "marketing-agencies",
+        "consultants",
+        "ecommerce-sellers"
+      ],
+      "countries": [
+        "us",
+        "uk",
+        "au",
+        "ca",
+        "ie",
+        "sg"
+      ],
+      "useCases": [
+        "video editing",
+        "transcription",
+        "content repurposing"
+      ],
+      "affiliateAvailable": false,
+      "lastCheckedAt": "2026-05-17",
+      "lastVerifiedAt": "2026-05-17"
+    },
+    {
+      "name": "Loom",
+      "slug": "loom",
+      "summary": "Video messaging and screen recording tool with AI summaries and async communication features.",
+      "description": "Loom helps teams record screen videos, product walkthroughs, client updates, and async explanations. AI features can support summaries, titles, and faster follow-up.",
+      "websiteUrl": "https://www.loom.com/",
+      "pricingPageUrl": "https://www.loom.com/pricing",
+      "sourceUrls": [
+        "https://www.loom.com/",
+        "https://www.loom.com/pricing"
+      ],
+      "verificationStatus": "source-linked",
+      "setupDifficulty": "low",
+      "freePlanReality": "Free recording is often available with limits; verify AI and workspace rules.",
+      "privacyRisk": "medium",
+      "bestForTeams": [
+        "consultants",
+        "sales teams",
+        "client-facing teams"
+      ],
+      "categories": [
+        "ai-video",
+        "ai-meeting-notes"
+      ],
+      "pricingModel": "freemium/paid",
+      "startingPrice": null,
+      "currency": "USD",
+      "freePlanAvailable": true,
+      "trialAvailable": true,
+      "bestFor": [
+        "async video",
+        "client updates",
+        "screen recording"
+      ],
+      "notBestFor": [
+        "teams needing advanced video editing"
+      ],
+      "pros": [
+        "fast recording workflow",
+        "useful for client communication"
+      ],
+      "cons": [
+        "privacy and sharing settings need attention"
+      ],
+      "professions": [
+        "consultants",
+        "sales-teams",
+        "marketing-agencies",
+        "real-estate-agents"
+      ],
+      "countries": [
+        "us",
+        "uk",
+        "au",
+        "ca",
+        "ie",
+        "sg"
+      ],
+      "useCases": [
+        "video messaging",
+        "client updates",
+        "sales follow-up"
+      ],
+      "affiliateAvailable": false,
+      "lastCheckedAt": "2026-05-17",
+      "lastVerifiedAt": "2026-05-17"
+    },
+    {
+      "name": "Otter",
+      "slug": "otter",
+      "summary": "AI meeting transcription and notes tool for calls, interviews, and team conversations.",
+      "description": "Otter records and transcribes meetings, interviews, and conversations. It fits teams that need searchable notes and summaries from live discussions.",
+      "websiteUrl": "https://otter.ai/",
+      "pricingPageUrl": "https://otter.ai/pricing",
+      "sourceUrls": [
+        "https://otter.ai/",
+        "https://otter.ai/pricing"
+      ],
+      "verificationStatus": "source-linked",
+      "setupDifficulty": "low",
+      "freePlanReality": "Free transcription may be available with minute limits; verify current plan packaging.",
+      "privacyRisk": "high",
+      "bestForTeams": [
+        "consultants",
+        "sales teams",
+        "research teams"
+      ],
+      "categories": [
+        "ai-meeting-notes"
+      ],
+      "pricingModel": "freemium/paid",
+      "startingPrice": null,
+      "currency": "USD",
+      "freePlanAvailable": true,
+      "trialAvailable": true,
+      "bestFor": [
+        "meeting transcription",
+        "interview notes",
+        "call summaries"
+      ],
+      "notBestFor": [
+        "teams that cannot record meetings"
+      ],
+      "pros": [
+        "strong transcription workflow",
+        "useful for interviews and calls"
+      ],
+      "cons": [
+        "recording consent and retention rules matter"
+      ],
+      "professions": [
+        "consultants",
+        "sales-teams",
+        "marketing-agencies",
+        "real-estate-agents"
+      ],
+      "countries": [
+        "us",
+        "uk",
+        "au",
+        "ca",
+        "ie",
+        "sg"
+      ],
+      "useCases": [
+        "meeting notes",
+        "transcription",
+        "interviews"
+      ],
+      "affiliateAvailable": false,
+      "lastCheckedAt": "2026-05-17",
+      "lastVerifiedAt": "2026-05-17"
+    },
+    {
+      "name": "Granola",
+      "slug": "granola",
+      "summary": "AI notepad for meetings that turns notes and transcripts into summaries and follow-up actions.",
+      "description": "Granola is an AI meeting notes tool designed around personal and team meeting notes. It fits consultants and sales teams that want lightweight notes without heavy CRM setup.",
+      "websiteUrl": "https://www.granola.ai/",
+      "pricingPageUrl": "https://www.granola.ai/pricing",
+      "sourceUrls": [
+        "https://www.granola.ai/",
+        "https://www.granola.ai/pricing"
+      ],
+      "verificationStatus": "source-linked",
+      "setupDifficulty": "low",
+      "freePlanReality": "Free access and team pricing should be verified before publishing.",
+      "privacyRisk": "high",
+      "bestForTeams": [
+        "consultants",
+        "founders",
+        "sales reps"
+      ],
+      "categories": [
+        "ai-meeting-notes"
+      ],
+      "pricingModel": "freemium/paid",
+      "startingPrice": null,
+      "currency": "USD",
+      "freePlanAvailable": true,
+      "trialAvailable": true,
+      "bestFor": [
+        "meeting notes",
+        "personal call summaries",
+        "follow-up drafts"
+      ],
+      "notBestFor": [
+        "teams needing full contact-centre analytics"
+      ],
+      "pros": [
+        "lightweight note workflow",
+        "good for follow-up drafting"
+      ],
+      "cons": [
+        "privacy and recording expectations must be checked"
+      ],
+      "professions": [
+        "consultants",
+        "sales-teams",
+        "marketing-agencies"
+      ],
+      "countries": [
+        "us",
+        "uk",
+        "au",
+        "ca",
+        "ie",
+        "sg"
+      ],
+      "useCases": [
+        "meeting notes",
+        "follow-up",
+        "client calls"
+      ],
+      "affiliateAvailable": false,
+      "lastCheckedAt": "2026-05-17",
+      "lastVerifiedAt": "2026-05-17"
+    },
+    {
+      "name": "Pipedrive",
+      "slug": "pipedrive",
+      "summary": "Sales CRM for pipeline tracking, activities, automation, and small sales teams.",
+      "description": "Pipedrive is a sales CRM focused on pipelines, deals, activities, and follow-up. It fits WorkWise sales workflows where teams need practical tracking without a heavier CRM suite.",
+      "websiteUrl": "https://www.pipedrive.com/",
+      "pricingPageUrl": "https://www.pipedrive.com/en/pricing",
+      "sourceUrls": [
+        "https://www.pipedrive.com/",
+        "https://www.pipedrive.com/en/pricing"
+      ],
+      "verificationStatus": "source-linked",
+      "setupDifficulty": "medium",
+      "freePlanReality": "Trial may be available, but core CRM use is paid; verify current features by plan.",
+      "privacyRisk": "high",
+      "bestForTeams": [
+        "sales teams",
+        "consultants",
+        "property teams"
+      ],
+      "categories": [
+        "ai-crm",
+        "ai-sales-automation"
+      ],
+      "pricingModel": "paid platform",
+      "startingPrice": null,
+      "currency": "USD",
+      "freePlanAvailable": false,
+      "trialAvailable": true,
+      "bestFor": [
+        "sales pipeline",
+        "deal tracking",
+        "follow-up tasks"
+      ],
+      "notBestFor": [
+        "teams needing a full marketing suite"
+      ],
+      "pros": [
+        "clear sales pipeline workflow",
+        "good fit for small sales teams"
+      ],
+      "cons": [
+        "AI and automation features vary by plan"
+      ],
+      "professions": [
+        "sales-teams",
+        "real-estate-agents",
+        "consultants"
+      ],
+      "countries": [
+        "us",
+        "uk",
+        "au",
+        "ca",
+        "ie",
+        "sg"
+      ],
+      "useCases": [
+        "CRM",
+        "pipeline management",
+        "sales follow-up"
+      ],
+      "affiliateAvailable": false,
+      "lastCheckedAt": "2026-05-17",
+      "lastVerifiedAt": "2026-05-17"
+    },
+    {
+      "name": "Apollo",
+      "slug": "apollo",
+      "summary": "Sales intelligence and engagement platform for prospecting, enrichment, and outbound workflows.",
+      "description": "Apollo supports prospecting, contact data, enrichment, sequences, and sales engagement. It fits sales teams building outbound workflows where data quality and compliance checks are important.",
+      "websiteUrl": "https://www.apollo.io/",
+      "pricingPageUrl": "https://www.apollo.io/pricing",
+      "sourceUrls": [
+        "https://www.apollo.io/",
+        "https://www.apollo.io/pricing"
+      ],
+      "verificationStatus": "source-linked",
+      "setupDifficulty": "high",
+      "freePlanReality": "Free access may be available with credits or limits; verify current pricing and compliance controls.",
+      "privacyRisk": "high",
+      "bestForTeams": [
+        "sales teams",
+        "BDR teams",
+        "go-to-market teams"
+      ],
+      "categories": [
+        "ai-sales-automation",
+        "ai-crm"
+      ],
+      "pricingModel": "freemium/paid",
+      "startingPrice": null,
+      "currency": "USD",
+      "freePlanAvailable": true,
+      "trialAvailable": true,
+      "bestFor": [
+        "prospecting",
+        "sales engagement",
+        "contact enrichment"
+      ],
+      "notBestFor": [
+        "teams without a compliant outbound process"
+      ],
+      "pros": [
+        "strong outbound workflow coverage",
+        "combines data and engagement"
+      ],
+      "cons": [
+        "data compliance and outreach quality need review"
+      ],
+      "professions": [
+        "sales-teams",
+        "marketing-agencies",
+        "consultants"
+      ],
+      "countries": [
+        "us",
+        "uk",
+        "au",
+        "ca",
+        "ie",
+        "sg"
+      ],
+      "useCases": [
+        "prospecting",
+        "cold email",
+        "lead enrichment"
+      ],
+      "affiliateAvailable": false,
+      "lastCheckedAt": "2026-05-17",
+      "lastVerifiedAt": "2026-05-17"
+    },
+    {
+      "name": "Clay",
+      "slug": "clay",
+      "summary": "Go-to-market automation platform for enrichment, prospecting, and personalised outbound workflows.",
+      "description": "Clay helps teams enrich leads, combine data sources, and build personalised outbound workflows. It fits advanced sales teams that need more flexible workflow design than a basic CRM.",
+      "websiteUrl": "https://www.clay.com/",
+      "pricingPageUrl": "https://www.clay.com/pricing",
+      "sourceUrls": [
+        "https://www.clay.com/",
+        "https://www.clay.com/pricing"
+      ],
+      "verificationStatus": "source-linked",
+      "setupDifficulty": "high",
+      "freePlanReality": "Free credits or trial access may exist; verify current limits and data-source costs.",
+      "privacyRisk": "high",
+      "bestForTeams": [
+        "growth teams",
+        "sales teams",
+        "agencies running outbound"
+      ],
+      "categories": [
+        "ai-sales-automation",
+        "ai-crm"
+      ],
+      "pricingModel": "freemium/paid",
+      "startingPrice": null,
+      "currency": "USD",
+      "freePlanAvailable": true,
+      "trialAvailable": true,
+      "bestFor": [
+        "lead enrichment",
+        "personalised outbound",
+        "GTM automation"
+      ],
+      "notBestFor": [
+        "teams wanting a simple CRM only"
+      ],
+      "pros": [
+        "flexible enrichment workflows",
+        "strong for personalised outbound"
+      ],
+      "cons": [
+        "can become complex quickly",
+        "data compliance needs careful management"
+      ],
+      "professions": [
+        "sales-teams",
+        "marketing-agencies",
+        "consultants"
+      ],
+      "countries": [
+        "us",
+        "uk",
+        "au",
+        "ca",
+        "ie",
+        "sg"
+      ],
+      "useCases": [
+        "lead enrichment",
+        "sales automation",
+        "personalisation"
+      ],
+      "affiliateAvailable": false,
+      "lastCheckedAt": "2026-05-17",
+      "lastVerifiedAt": "2026-05-17"
+    },
+    {
+      "name": "Calendly",
+      "slug": "calendly",
+      "summary": "Scheduling automation tool for meetings, bookings, routing, and sales handoff workflows.",
+      "description": "Calendly helps teams automate scheduling, meeting routing, reminders, and booking pages. It supports sales, consulting, and real-estate workflows where follow-up depends on getting a meeting booked.",
+      "websiteUrl": "https://calendly.com/",
+      "pricingPageUrl": "https://calendly.com/pricing",
+      "sourceUrls": [
+        "https://calendly.com/",
+        "https://calendly.com/pricing"
+      ],
+      "verificationStatus": "source-linked",
+      "setupDifficulty": "low",
+      "freePlanReality": "Free scheduling is commonly available with limits; verify team features and integrations.",
+      "privacyRisk": "medium",
+      "bestForTeams": [
+        "sales reps",
+        "consultants",
+        "property teams"
+      ],
+      "categories": [
+        "ai-project-management",
+        "ai-sales-automation"
+      ],
+      "pricingModel": "freemium/paid",
+      "startingPrice": null,
+      "currency": "USD",
+      "freePlanAvailable": true,
+      "trialAvailable": true,
+      "bestFor": [
+        "meeting scheduling",
+        "booking pages",
+        "routing"
+      ],
+      "notBestFor": [
+        "teams that only need internal task management"
+      ],
+      "pros": [
+        "easy scheduling workflow",
+        "reduces back-and-forth emails"
+      ],
+      "cons": [
+        "team routing and integrations vary by plan"
+      ],
+      "professions": [
+        "sales-teams",
+        "consultants",
+        "real-estate-agents"
+      ],
+      "countries": [
+        "us",
+        "uk",
+        "au",
+        "ca",
+        "ie",
+        "sg"
+      ],
+      "useCases": [
+        "scheduling",
+        "lead routing",
+        "client booking"
+      ],
+      "affiliateAvailable": false,
+      "lastCheckedAt": "2026-05-17",
+      "lastVerifiedAt": "2026-05-17"
+    },
+    {
+      "name": "Typeform",
+      "slug": "typeform",
+      "summary": "Form and survey platform for intake, lead capture, feedback, and workflow triggers.",
+      "description": "Typeform helps teams collect structured intake, lead data, customer feedback, and survey responses. It fits WorkWise workflows where AI output quality depends on better input capture.",
+      "websiteUrl": "https://www.typeform.com/",
+      "pricingPageUrl": "https://www.typeform.com/pricing/",
+      "sourceUrls": [
+        "https://www.typeform.com/",
+        "https://www.typeform.com/pricing/"
+      ],
+      "verificationStatus": "source-linked",
+      "setupDifficulty": "low",
+      "freePlanReality": "Free form usage may exist with response limits; verify current plan terms.",
+      "privacyRisk": "medium",
+      "bestForTeams": [
+        "consultants",
+        "agencies",
+        "sales teams"
+      ],
+      "categories": [
+        "ai-document-automation",
+        "ai-sales-automation"
+      ],
+      "pricingModel": "freemium/paid",
+      "startingPrice": null,
+      "currency": "USD",
+      "freePlanAvailable": true,
+      "trialAvailable": true,
+      "bestFor": [
+        "intake forms",
+        "lead capture",
+        "surveys"
+      ],
+      "notBestFor": [
+        "teams only needing a spreadsheet"
+      ],
+      "pros": [
+        "polished form experience",
+        "good for structured inputs"
+      ],
+      "cons": [
+        "response and feature limits need checking"
+      ],
+      "professions": [
+        "consultants",
+        "marketing-agencies",
+        "sales-teams",
+        "real-estate-agents"
+      ],
+      "countries": [
+        "us",
+        "uk",
+        "au",
+        "ca",
+        "ie",
+        "sg"
+      ],
+      "useCases": [
+        "forms",
+        "intake",
+        "lead capture"
+      ],
+      "affiliateAvailable": false,
+      "lastCheckedAt": "2026-05-17",
+      "lastVerifiedAt": "2026-05-17"
+    },
+    {
+      "name": "Zapier",
+      "slug": "zapier",
+      "summary": "Automation platform for connecting apps, triggers, actions, and AI-assisted workflows.",
+      "description": "Zapier connects apps through triggers and actions, helping teams automate handoffs between forms, CRMs, docs, support tools, and spreadsheets. It is a core workflow glue tool for SMB automation.",
+      "websiteUrl": "https://zapier.com/",
+      "pricingPageUrl": "https://zapier.com/pricing",
+      "sourceUrls": [
+        "https://zapier.com/",
+        "https://zapier.com/pricing"
+      ],
+      "verificationStatus": "source-linked",
+      "setupDifficulty": "medium",
+      "freePlanReality": "Free automation may exist with task and feature limits; verify current plans.",
+      "privacyRisk": "medium",
+      "bestForTeams": [
+        "SMBs",
+        "agencies",
+        "operations teams"
+      ],
+      "categories": [
+        "ai-project-management",
+        "ai-document-automation"
+      ],
+      "pricingModel": "freemium/paid",
+      "startingPrice": null,
+      "currency": "USD",
+      "freePlanAvailable": true,
+      "trialAvailable": true,
+      "bestFor": [
+        "app automation",
+        "workflow handoffs",
+        "AI automations"
+      ],
+      "notBestFor": [
+        "teams needing custom enterprise integration engineering only"
+      ],
+      "pros": [
+        "broad app ecosystem",
+        "fast automation prototyping"
+      ],
+      "cons": [
+        "task limits and app rules need checking"
+      ],
+      "professions": [
+        "marketing-agencies",
+        "sales-teams",
+        "consultants",
+        "ecommerce-sellers"
+      ],
+      "countries": [
+        "us",
+        "uk",
+        "au",
+        "ca",
+        "ie",
+        "sg"
+      ],
+      "useCases": [
+        "automation",
+        "integrations",
+        "workflow handoff"
+      ],
+      "affiliateAvailable": false,
+      "lastCheckedAt": "2026-05-17",
+      "lastVerifiedAt": "2026-05-17"
+    },
+    {
+      "name": "Make",
+      "slug": "make",
+      "summary": "Visual automation platform for building multi-step workflows across business apps.",
+      "description": "Make is a visual automation platform for connecting apps, moving data, and building multi-step scenarios. It fits teams that want more control over workflow logic than simple one-step automations.",
+      "websiteUrl": "https://www.make.com/",
+      "pricingPageUrl": "https://www.make.com/en/pricing",
+      "sourceUrls": [
+        "https://www.make.com/",
+        "https://www.make.com/en/pricing"
+      ],
+      "verificationStatus": "source-linked",
+      "setupDifficulty": "high",
+      "freePlanReality": "Free operations may exist with usage limits; verify pricing and operation caps.",
+      "privacyRisk": "medium",
+      "bestForTeams": [
+        "operations teams",
+        "consultants",
+        "automation-minded SMBs"
+      ],
+      "categories": [
+        "ai-project-management",
+        "ai-document-automation"
+      ],
+      "pricingModel": "freemium/paid",
+      "startingPrice": null,
+      "currency": "USD",
+      "freePlanAvailable": true,
+      "trialAvailable": true,
+      "bestFor": [
+        "visual automation",
+        "multi-step workflows",
+        "operations automation"
+      ],
+      "notBestFor": [
+        "teams that want only no-setup templates"
+      ],
+      "pros": [
+        "flexible workflow builder",
+        "strong for multi-step automation"
+      ],
+      "cons": [
+        "requires process thinking",
+        "operations limits need checking"
+      ],
+      "professions": [
+        "marketing-agencies",
+        "consultants",
+        "ecommerce-sellers",
+        "sales-teams"
+      ],
+      "countries": [
+        "us",
+        "uk",
+        "au",
+        "ca",
+        "ie",
+        "sg"
+      ],
+      "useCases": [
+        "automation",
+        "workflow scenarios",
+        "data handoff"
+      ],
+      "affiliateAvailable": false,
+      "lastCheckedAt": "2026-05-17",
+      "lastVerifiedAt": "2026-05-17"
+    },
+    {
+      "name": "ClickUp",
+      "slug": "clickup",
+      "summary": "Project management platform with AI features for tasks, docs, goals, and team workflows.",
+      "description": "ClickUp helps teams manage tasks, docs, projects, goals, and workflows. AI features support summarisation, writing, task generation, and operational planning.",
+      "websiteUrl": "https://clickup.com/",
+      "pricingPageUrl": "https://clickup.com/pricing",
+      "sourceUrls": [
+        "https://clickup.com/",
+        "https://clickup.com/pricing"
+      ],
+      "verificationStatus": "source-linked",
+      "setupDifficulty": "medium",
+      "freePlanReality": "Free workspace access may exist, but AI and team features should be verified.",
+      "privacyRisk": "medium",
+      "bestForTeams": [
+        "agencies",
+        "consultants",
+        "operations teams"
+      ],
+      "categories": [
+        "ai-project-management"
+      ],
+      "pricingModel": "freemium/paid",
+      "startingPrice": null,
+      "currency": "USD",
+      "freePlanAvailable": true,
+      "trialAvailable": true,
+      "bestFor": [
+        "project management",
+        "task workflows",
+        "team docs"
+      ],
+      "notBestFor": [
+        "teams wanting only a lightweight note tool"
+      ],
+      "pros": [
+        "broad project management surface",
+        "useful for agencies and operations"
+      ],
+      "cons": [
+        "can become complex without workspace governance"
+      ],
+      "professions": [
+        "marketing-agencies",
+        "consultants",
+        "sales-teams",
+        "ecommerce-sellers"
+      ],
+      "countries": [
+        "us",
+        "uk",
+        "au",
+        "ca",
+        "ie",
+        "sg"
+      ],
+      "useCases": [
+        "project management",
+        "task tracking",
+        "docs"
+      ],
+      "affiliateAvailable": false,
+      "lastCheckedAt": "2026-05-17",
+      "lastVerifiedAt": "2026-05-17"
+    },
+    {
+      "name": "Asana",
+      "slug": "asana",
+      "summary": "Work management platform for projects, tasks, goals, and team coordination with AI features.",
+      "description": "Asana supports project planning, task ownership, timelines, goals, and workflow coordination. It fits teams that need structured project delivery and accountability.",
+      "websiteUrl": "https://asana.com/",
+      "pricingPageUrl": "https://asana.com/pricing",
+      "sourceUrls": [
+        "https://asana.com/",
+        "https://asana.com/pricing"
+      ],
+      "verificationStatus": "source-linked",
+      "setupDifficulty": "medium",
+      "freePlanReality": "Free access may exist for small teams; verify AI and advanced feature access.",
+      "privacyRisk": "medium",
+      "bestForTeams": [
+        "agencies",
+        "consulting teams",
+        "SMB operations"
+      ],
+      "categories": [
+        "ai-project-management"
+      ],
+      "pricingModel": "freemium/paid",
+      "startingPrice": null,
+      "currency": "USD",
+      "freePlanAvailable": true,
+      "trialAvailable": true,
+      "bestFor": [
+        "project management",
+        "task ownership",
+        "team coordination"
+      ],
+      "notBestFor": [
+        "solo users wanting only a personal notes app"
+      ],
+      "pros": [
+        "clear project ownership workflow",
+        "good for cross-functional teams"
+      ],
+      "cons": [
+        "advanced reporting and AI depend on plan"
+      ],
+      "professions": [
+        "marketing-agencies",
+        "consultants",
+        "sales-teams"
+      ],
+      "countries": [
+        "us",
+        "uk",
+        "au",
+        "ca",
+        "ie",
+        "sg"
+      ],
+      "useCases": [
+        "project management",
+        "team workflows",
+        "delivery tracking"
+      ],
+      "affiliateAvailable": false,
+      "lastCheckedAt": "2026-05-17",
+      "lastVerifiedAt": "2026-05-17"
+    },
+    {
+      "name": "Trello",
+      "slug": "trello",
+      "summary": "Kanban-style project management tool for lightweight boards, tasks, and workflow tracking.",
+      "description": "Trello gives teams simple boards, cards, checklists, and automations. It fits lightweight workflow tracking for solo operators and small teams that do not need a heavy project suite.",
+      "websiteUrl": "https://trello.com/",
+      "pricingPageUrl": "https://trello.com/pricing",
+      "sourceUrls": [
+        "https://trello.com/",
+        "https://trello.com/pricing"
+      ],
+      "verificationStatus": "source-linked",
+      "setupDifficulty": "low",
+      "freePlanReality": "Free boards may be available with limits; verify automation and workspace constraints.",
+      "privacyRisk": "medium",
+      "bestForTeams": [
+        "solo operators",
+        "small teams",
+        "simple workflow users"
+      ],
+      "categories": [
+        "ai-project-management"
+      ],
+      "pricingModel": "freemium/paid",
+      "startingPrice": null,
+      "currency": "USD",
+      "freePlanAvailable": true,
+      "trialAvailable": true,
+      "bestFor": [
+        "kanban boards",
+        "simple task tracking",
+        "lightweight workflows"
+      ],
+      "notBestFor": [
+        "teams needing advanced portfolio management"
+      ],
+      "pros": [
+        "easy to understand",
+        "fast for simple workflows"
+      ],
+      "cons": [
+        "can become messy at scale",
+        "AI features and power-ups vary"
+      ],
+      "professions": [
+        "consultants",
+        "marketing-agencies",
+        "ecommerce-sellers",
+        "real-estate-agents"
+      ],
+      "countries": [
+        "us",
+        "uk",
+        "au",
+        "ca",
+        "ie",
+        "sg"
+      ],
+      "useCases": [
+        "task boards",
+        "workflow tracking",
+        "checklists"
+      ],
+      "affiliateAvailable": false,
+      "lastCheckedAt": "2026-05-17",
+      "lastVerifiedAt": "2026-05-17"
+    },
+    {
+      "name": "Matterport",
+      "slug": "matterport",
+      "summary": "3D capture and digital twin platform for property tours, spaces, and real estate marketing.",
+      "description": "Matterport supports 3D property tours, digital twins, and visual property experiences. It fits real-estate workflows where richer property presentation can support listings and client communication.",
+      "websiteUrl": "https://matterport.com/",
+      "pricingPageUrl": "https://matterport.com/pricing",
+      "sourceUrls": [
+        "https://matterport.com/",
+        "https://matterport.com/pricing"
+      ],
+      "verificationStatus": "source-linked",
+      "setupDifficulty": "high",
+      "freePlanReality": "Free or starter access may vary; verify capture, hosting, and plan limits.",
+      "privacyRisk": "medium",
+      "bestForTeams": [
+        "real estate teams",
+        "property marketers",
+        "estate agents"
+      ],
+      "categories": [
+        "ai-design",
+        "ai-video"
+      ],
+      "pricingModel": "paid/freemium by plan",
+      "startingPrice": null,
+      "currency": "USD",
+      "freePlanAvailable": true,
+      "trialAvailable": true,
+      "bestFor": [
+        "3D property tours",
+        "real estate marketing",
+        "digital twins"
+      ],
+      "notBestFor": [
+        "teams that only need text listing copy"
+      ],
+      "pros": [
+        "strong property visual experience",
+        "useful for remote viewing"
+      ],
+      "cons": [
+        "requires capture workflow and equipment decisions"
+      ],
+      "professions": [
+        "real-estate-agents",
+        "marketing-agencies"
+      ],
+      "countries": [
+        "us",
+        "uk",
+        "au",
+        "ca",
+        "ie",
+        "sg"
+      ],
+      "useCases": [
+        "property tours",
+        "real estate visuals",
+        "listing assets"
+      ],
+      "affiliateAvailable": false,
+      "lastCheckedAt": "2026-05-17",
+      "lastVerifiedAt": "2026-05-17"
+    },
+    {
+      "name": "Follow Up Boss",
+      "slug": "follow-up-boss",
+      "summary": "Real estate CRM for lead routing, follow-up, and agent team workflows.",
+      "description": "Follow Up Boss is a real estate CRM focused on lead routing, follow-up, communication, and team accountability. It fits agents and teams that need property lead workflows rather than a generic CRM.",
+      "websiteUrl": "https://www.followupboss.com/",
+      "pricingPageUrl": "https://www.followupboss.com/pricing",
+      "sourceUrls": [
+        "https://www.followupboss.com/",
+        "https://www.followupboss.com/pricing"
+      ],
+      "verificationStatus": "source-linked",
+      "setupDifficulty": "medium",
+      "freePlanReality": "Trial may be available, but core use is paid; verify pricing and feature packaging.",
+      "privacyRisk": "high",
+      "bestForTeams": [
+        "real estate agents",
+        "property teams",
+        "brokerages"
+      ],
+      "categories": [
+        "ai-crm",
+        "ai-sales-automation"
+      ],
+      "pricingModel": "paid platform",
+      "startingPrice": null,
+      "currency": "USD",
+      "freePlanAvailable": false,
+      "trialAvailable": true,
+      "bestFor": [
+        "real estate CRM",
+        "lead follow-up",
+        "agent team workflow"
+      ],
+      "notBestFor": [
+        "non-real-estate sales teams"
+      ],
+      "pros": [
+        "built around real estate lead management",
+        "supports team follow-up accountability"
+      ],
+      "cons": [
+        "pricing and integrations need verification",
+        "best value depends on lead volume"
+      ],
+      "professions": [
+        "real-estate-agents",
+        "sales-teams"
+      ],
+      "countries": [
+        "us",
+        "uk",
+        "au",
+        "ca"
+      ],
+      "useCases": [
+        "real estate CRM",
+        "lead routing",
+        "follow-up"
+      ],
+      "affiliateAvailable": false,
+      "lastCheckedAt": "2026-05-17",
+      "lastVerifiedAt": "2026-05-17"
+    },
+    {
+      "name": "Intercom",
+      "slug": "intercom",
+      "summary": "Customer service platform with AI agents, support inbox, chat, and customer messaging workflows.",
+      "description": "Intercom provides customer messaging, support inbox, AI agents, help centre, and customer-service automation. It fits teams that want modern support workflows with AI-assisted resolutions.",
+      "websiteUrl": "https://www.intercom.com/",
+      "pricingPageUrl": "https://www.intercom.com/pricing",
+      "sourceUrls": [
+        "https://www.intercom.com/",
+        "https://www.intercom.com/pricing"
+      ],
+      "verificationStatus": "source-linked",
+      "setupDifficulty": "high",
+      "freePlanReality": "Trial and AI agent pricing should be checked directly before publishing claims.",
+      "privacyRisk": "high",
+      "bestForTeams": [
+        "support teams",
+        "SaaS companies",
+        "ecommerce support teams"
+      ],
+      "categories": [
+        "ai-customer-support",
+        "ai-crm"
+      ],
+      "pricingModel": "paid platform",
+      "startingPrice": null,
+      "currency": "USD",
+      "freePlanAvailable": false,
+      "trialAvailable": true,
+      "bestFor": [
+        "AI customer service",
+        "chat support",
+        "support automation"
+      ],
+      "notBestFor": [
+        "teams needing only a simple contact form"
+      ],
+      "pros": [
+        "strong AI support positioning",
+        "modern chat and help centre workflow"
+      ],
+      "cons": [
+        "pricing can be complex with AI usage",
+        "support automation needs human oversight"
+      ],
+      "professions": [
+        "ecommerce-sellers",
+        "sales-teams",
+        "marketing-agencies"
+      ],
+      "countries": [
+        "us",
+        "uk",
+        "au",
+        "ca",
+        "ie",
+        "sg"
+      ],
+      "useCases": [
+        "customer support",
+        "AI agents",
+        "live chat"
+      ],
+      "affiliateAvailable": false,
+      "lastCheckedAt": "2026-05-17",
+      "lastVerifiedAt": "2026-05-17"
     }
   ],
   "comparisons": [
@@ -1437,6 +3335,118 @@
       },
       "pricingNotes": "Verify current pricing, add-ons, trials, and AI content limits before publishing.",
       "lastCheckedAt": "2026-05-17"
+    },
+    {
+      "slug": "gorgias-vs-zendesk-ai",
+      "toolA": "gorgias",
+      "toolB": "zendesk-ai",
+      "summaryVerdict": "Gorgias is usually the better first fit for ecommerce support tied to store data; Zendesk AI is stronger for larger customer-service operations that need mature helpdesk controls.",
+      "primaryUseCase": "ecommerce customer support",
+      "winnerByUseCase": {
+        "Shopify support": "Gorgias",
+        "larger support operations": "Zendesk AI",
+        "AI ticket triage": "Depends on support volume and governance"
+      },
+      "pricingNotes": "Verify ticket volume, AI add-ons, automated resolution rules, and helpdesk seat pricing before publishing.",
+      "lastCheckedAt": "2026-05-17"
+    },
+    {
+      "slug": "mailchimp-vs-omnisend",
+      "toolA": "mailchimp",
+      "toolB": "omnisend",
+      "summaryVerdict": "Mailchimp is a broader small-business email platform, while Omnisend is more ecommerce-specific for email, SMS, and lifecycle campaigns.",
+      "primaryUseCase": "small business and ecommerce email marketing",
+      "winnerByUseCase": {
+        "general newsletters": "Mailchimp",
+        "ecommerce lifecycle flows": "Omnisend",
+        "SMS marketing": "Omnisend"
+      },
+      "pricingNotes": "Verify contact counts, send limits, SMS credits, and automation features before publishing.",
+      "lastCheckedAt": "2026-05-17"
+    },
+    {
+      "slug": "surfer-vs-ahrefs",
+      "toolA": "surfer",
+      "toolB": "ahrefs",
+      "summaryVerdict": "Ahrefs is stronger for SEO research and competitor analysis; Surfer is stronger for turning research into optimised content briefs and drafts.",
+      "primaryUseCase": "SEO content workflow",
+      "winnerByUseCase": {
+        "keyword and competitor research": "Ahrefs",
+        "content optimisation": "Surfer",
+        "agency content planning": "Use together if budget allows"
+      },
+      "pricingNotes": "Verify plan limits, content credits, keyword data access, and AI features before publishing.",
+      "lastCheckedAt": "2026-05-17"
+    },
+    {
+      "slug": "zapier-vs-make",
+      "toolA": "zapier",
+      "toolB": "make",
+      "summaryVerdict": "Zapier is usually easier for fast app automation, while Make is stronger when teams need visual multi-step workflow control.",
+      "primaryUseCase": "SMB workflow automation",
+      "winnerByUseCase": {
+        "quick app handoff": "Zapier",
+        "visual multi-step automation": "Make",
+        "non-technical setup": "Zapier"
+      },
+      "pricingNotes": "Verify task or operation limits, app access, AI features, and team controls before publishing.",
+      "lastCheckedAt": "2026-05-17"
+    },
+    {
+      "slug": "pipedrive-vs-hubspot",
+      "toolA": "pipedrive",
+      "toolB": "hubspot",
+      "summaryVerdict": "Pipedrive is a focused sales CRM for pipeline tracking; HubSpot is broader when sales, marketing, service, and content need to live in one customer platform.",
+      "primaryUseCase": "small business CRM",
+      "winnerByUseCase": {
+        "simple sales pipeline": "Pipedrive",
+        "all-in-one customer platform": "HubSpot",
+        "marketing automation": "HubSpot"
+      },
+      "pricingNotes": "Verify seats, automation limits, AI features, and CRM hub packaging before publishing.",
+      "lastCheckedAt": "2026-05-17"
+    },
+    {
+      "slug": "loom-vs-descript",
+      "toolA": "loom",
+      "toolB": "descript",
+      "summaryVerdict": "Loom is better for fast async video messages and walkthroughs; Descript is better for editing and repurposing recorded audio or video into polished content.",
+      "primaryUseCase": "video communication and repurposing",
+      "winnerByUseCase": {
+        "client walkthroughs": "Loom",
+        "podcast or clip editing": "Descript",
+        "quick team updates": "Loom"
+      },
+      "pricingNotes": "Verify recording limits, AI summaries, export settings, and team features before publishing.",
+      "lastCheckedAt": "2026-05-17"
+    },
+    {
+      "slug": "calendly-vs-typeform",
+      "toolA": "calendly",
+      "toolB": "typeform",
+      "summaryVerdict": "Calendly is the better scheduling layer; Typeform is the better intake and data-capture layer. Many service workflows need both.",
+      "primaryUseCase": "lead capture and booking workflow",
+      "winnerByUseCase": {
+        "meeting booking": "Calendly",
+        "intake forms": "Typeform",
+        "qualified consultation flow": "Use together"
+      },
+      "pricingNotes": "Verify routing, integrations, response limits, and team features before publishing.",
+      "lastCheckedAt": "2026-05-17"
+    },
+    {
+      "slug": "matterport-vs-canva",
+      "toolA": "matterport",
+      "toolB": "canva",
+      "summaryVerdict": "Matterport is for immersive property tours and digital twins; Canva is for everyday listing graphics, brochures, and social content.",
+      "primaryUseCase": "real estate marketing assets",
+      "winnerByUseCase": {
+        "3D property tours": "Matterport",
+        "listing brochures": "Canva",
+        "social posts": "Canva"
+      },
+      "pricingNotes": "Verify capture, hosting, export, and design plan limits before publishing.",
+      "lastCheckedAt": "2026-05-17"
     }
   ],
   "alternativeSets": [
@@ -1534,6 +3544,86 @@
       "bestFreeOption": "ChatGPT",
       "bestBusinessOption": "Jasper",
       "finalVerdict": "Choose Semrush for research-heavy SEO workflows; choose writing or workflow tools when the bottleneck is drafting, approvals, or content operations.",
+      "lastCheckedAt": "2026-05-17"
+    },
+    {
+      "slug": "zendesk-ai-alternatives",
+      "baseToolSlug": "zendesk-ai",
+      "baseToolName": "Zendesk AI",
+      "reason": "Support teams may want ecommerce-specific support, simpler chat, lower complexity, or different AI pricing models.",
+      "candidateSlugs": [
+        "gorgias",
+        "intercom",
+        "tidio",
+        "hubspot"
+      ],
+      "bestFreeOption": "Tidio",
+      "bestBusinessOption": "Intercom",
+      "finalVerdict": "Keep Zendesk AI for mature support operations; compare ecommerce or chat-first tools when the workflow is narrower.",
+      "lastCheckedAt": "2026-05-17"
+    },
+    {
+      "slug": "mailchimp-alternatives",
+      "baseToolSlug": "mailchimp",
+      "baseToolName": "Mailchimp",
+      "reason": "Teams may want stronger ecommerce lifecycle automation, SMS workflows, or a more specialised campaign stack.",
+      "candidateSlugs": [
+        "omnisend",
+        "klaviyo-ai",
+        "hubspot",
+        "copy-ai"
+      ],
+      "bestFreeOption": "Omnisend",
+      "bestBusinessOption": "Klaviyo AI",
+      "finalVerdict": "Use Mailchimp for broad small-business email; consider ecommerce-first platforms when store behaviour and lifecycle messaging matter.",
+      "lastCheckedAt": "2026-05-17"
+    },
+    {
+      "slug": "ahrefs-alternatives",
+      "baseToolSlug": "ahrefs",
+      "baseToolName": "Ahrefs",
+      "reason": "Agencies may want content optimisation, lighter SEO workflows, or AI-assisted drafting rather than deep SEO research alone.",
+      "candidateSlugs": [
+        "semrush",
+        "surfer",
+        "chatgpt",
+        "jasper"
+      ],
+      "bestFreeOption": "ChatGPT",
+      "bestBusinessOption": "Semrush",
+      "finalVerdict": "Use Ahrefs for deep SEO research; use content and workflow tools when production, approvals, or drafting are the bottleneck.",
+      "lastCheckedAt": "2026-05-17"
+    },
+    {
+      "slug": "zapier-alternatives",
+      "baseToolSlug": "zapier",
+      "baseToolName": "Zapier",
+      "reason": "Teams may want more visual automation, project-native workflows, or lower-cost ways to connect forms, CRM, and task tools.",
+      "candidateSlugs": [
+        "make",
+        "airtable-ai",
+        "clickup",
+        "typeform"
+      ],
+      "bestFreeOption": "Make",
+      "bestBusinessOption": "Airtable AI",
+      "finalVerdict": "Use Zapier for quick app connections; compare Make or Airtable AI when workflow logic and structured records matter more.",
+      "lastCheckedAt": "2026-05-17"
+    },
+    {
+      "slug": "pipedrive-alternatives",
+      "baseToolSlug": "pipedrive",
+      "baseToolName": "Pipedrive",
+      "reason": "Sales teams may want broader marketing automation, real-estate-specific CRM, or more outbound data enrichment.",
+      "candidateSlugs": [
+        "hubspot",
+        "follow-up-boss",
+        "apollo",
+        "clay"
+      ],
+      "bestFreeOption": "HubSpot",
+      "bestBusinessOption": "Apollo",
+      "finalVerdict": "Use Pipedrive for simple sales pipelines; compare HubSpot, Follow Up Boss, or Apollo when the workflow needs marketing, property leads, or outbound data.",
       "lastCheckedAt": "2026-05-17"
     }
   ],
@@ -1894,6 +3984,71 @@
       "mistakesToAvoid": [
         "Do not invent delivery dates, refund promises, product claims, or legal advice.",
         "Do not automate replies for sensitive issues without human review."
+      ],
+      "lastUpdatedAt": "2026-05-17"
+    },
+    {
+      "title": "ChatGPT Prompts for Agency SEO Briefs",
+      "slug": "chatgpt-prompts-for-agency-seo-briefs",
+      "profession": "marketing-agencies",
+      "task": "SEO brief creation and content planning",
+      "prompt": "Act as an agency SEO strategist. Using this keyword research, competitor notes, client positioning, and target audience, create a content brief with search intent, outline, talking points, internal links, proof needed, and review risks: [context].",
+      "refinementPrompt": "Turn the brief into a production handoff with writer notes, editor checks, fact-checking requirements, and client approval questions.",
+      "mistakesToAvoid": [
+        "Do not invent search volume, rankings, backlinks, or competitor claims.",
+        "Do not recommend content angles that conflict with the client positioning."
+      ],
+      "lastUpdatedAt": "2026-05-17"
+    },
+    {
+      "title": "ChatGPT Prompts for Ecommerce Support Replies",
+      "slug": "chatgpt-prompts-for-ecommerce-support-replies",
+      "profession": "ecommerce-sellers",
+      "task": "support replies and escalation rules",
+      "prompt": "Act as an ecommerce support lead. Using only these approved policies, draft safe support replies, escalation labels, and FAQ updates for these customer messages: [messages and policies].",
+      "refinementPrompt": "Rewrite replies in a warmer brand voice and flag any message that needs human review before sending.",
+      "mistakesToAvoid": [
+        "Do not invent refunds, shipping dates, warranty terms, or product claims.",
+        "Do not automate legal complaints, safety issues, chargebacks, or sensitive customer problems."
+      ],
+      "lastUpdatedAt": "2026-05-17"
+    },
+    {
+      "title": "ChatGPT Prompts for Sales CRM Hygiene",
+      "slug": "chatgpt-prompts-for-sales-crm-hygiene",
+      "profession": "sales-teams",
+      "task": "CRM notes, next steps, and follow-up planning",
+      "prompt": "Act as a sales operations assistant. Turn these call notes into CRM fields, next steps, objections, buying signals, follow-up email, and deal-risk notes: [call notes].",
+      "refinementPrompt": "Rewrite the CRM notes to be concise, factual, and useful for another rep taking over the account.",
+      "mistakesToAvoid": [
+        "Do not invent budget, authority, need, or timeline details.",
+        "Do not put sensitive personal data into CRM notes unless required and approved."
+      ],
+      "lastUpdatedAt": "2026-05-17"
+    },
+    {
+      "title": "ChatGPT Prompts for Consultant Implementation Plans",
+      "slug": "chatgpt-prompts-for-consultant-implementation-plans",
+      "profession": "consultants",
+      "task": "turn recommendations into implementation plans",
+      "prompt": "Act as a consulting delivery lead. Turn these recommendations into an implementation plan with phases, owners, risks, dependencies, decisions needed, and first-week actions: [recommendations].",
+      "refinementPrompt": "Convert the plan into a client-facing summary and a separate internal delivery checklist.",
+      "mistakesToAvoid": [
+        "Do not turn uncertain assumptions into commitments.",
+        "Do not remove risks or dependencies because they make the plan look less tidy."
+      ],
+      "lastUpdatedAt": "2026-05-17"
+    },
+    {
+      "title": "ChatGPT Prompts for Estate Agent Viewing Follow-Up",
+      "slug": "chatgpt-prompts-for-estate-agent-viewing-follow-up",
+      "profession": "real-estate-agents",
+      "task": "viewing notes and buyer follow-up",
+      "prompt": "Act as an estate agent assistant. Using these viewing notes and verified property details, draft a follow-up email, buyer questions, objections, and next-step task list: [notes].",
+      "refinementPrompt": "Rewrite the follow-up for a warmer tone and flag any claims about schools, safety, returns, or local area that must be verified.",
+      "mistakesToAvoid": [
+        "Do not invent property facts, area claims, or investment statements.",
+        "Do not use discriminatory or exclusionary language."
       ],
       "lastUpdatedAt": "2026-05-17"
     }

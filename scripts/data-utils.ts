@@ -1,4 +1,7 @@
 import { getSeedData } from "../src/lib/data";
+import { freeTools } from "../src/lib/free-tools";
+import { priorityCountryProfessionPairs } from "../src/lib/route-registry";
+import { workflowKits } from "../src/lib/workflow-kits";
 
 export const data = getSeedData();
 
@@ -34,6 +37,7 @@ export function routeInventory() {
     "/comparisons/",
     "/alternatives/",
     "/workflows/",
+    "/workflow-kits/",
     "/prompts/",
     "/templates/",
     "/free-tools/",
@@ -43,19 +47,20 @@ export function routeInventory() {
     "/affiliate-disclosure/",
     "/contact/",
     "/media-kit/",
+    "/privacy/",
+    "/cookies/",
+    "/terms/",
     ...data.tools.map((tool) => `/ai-tools/${tool.slug}/`),
     ...data.professions.map((profession) => `/professions/${profession.slug}/`),
     ...data.countries.map((country) => `/countries/${country.slug}/`),
+    ...priorityCountryProfessionPairs.map((pair) => `/countries/${pair.country}/${pair.profession}/`),
     ...data.comparisons.map((comparison) => `/comparisons/${comparison.slug}/`),
     ...data.alternativeSets.map((set) => `/alternatives/${set.slug}/`),
     ...data.workflows.map((workflow) => `/workflows/${workflow.slug}/`),
+    ...workflowKits.map((kit) => `/workflow-kits/${kit.slug}/`),
     ...data.promptTemplates.map((prompt) => `/prompts/${prompt.slug}/`),
     ...data.promptTemplates.map((template) => `/templates/${template.slug}/`),
-    "/free-tools/ai-tool-recommender/",
-    "/free-tools/ai-proposal-generator/",
-    "/free-tools/ai-cold-email-generator/",
-    "/free-tools/prompt-generator/",
-    "/free-tools/saas-cost-calculator/"
+    ...freeTools.map((tool) => `/free-tools/${tool.slug}/`)
   ]);
 }
 

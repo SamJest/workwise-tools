@@ -37,6 +37,13 @@ export type Tool = {
   description?: string;
   websiteUrl?: string;
   affiliateUrl?: string;
+  pricingPageUrl?: string;
+  sourceUrls: string[];
+  verificationStatus: "starter" | "source-linked" | "verified";
+  setupDifficulty?: "low" | "medium" | "high";
+  freePlanReality?: string;
+  privacyRisk?: "low" | "medium" | "high";
+  bestForTeams: string[];
   logoUrl?: string;
   categories: string[];
   pricingModel?: string;
@@ -54,6 +61,7 @@ export type Tool = {
   affiliateAvailable: boolean;
   isSponsored?: boolean;
   lastCheckedAt: string | null;
+  lastVerifiedAt: string | null;
 };
 
 export type Comparison = {

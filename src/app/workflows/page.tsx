@@ -22,6 +22,7 @@ export default async function WorkflowsPage() {
           eyebrow="Workflow kits"
           title="Complete topic clusters"
           description="These are the first priority clusters for building topical authority without publishing thin directory pages."
+          action={{ href: "/workflow-kits/", label: "Open kit index" }}
         />
         <div className="grid gap-5 xl:grid-cols-2">
           {workflowKits.map((kit) => (

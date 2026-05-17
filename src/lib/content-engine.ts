@@ -110,9 +110,13 @@ export function matchingPromptLinks(profession: Profession, prompts: PromptTempl
 }
 
 export function countryProfessionLinks(country: Country, professions: Profession[]): SiteLink[] {
+  const hasCountryProfessionRoute = (professionSlug: string) =>
+    ["us", "uk"].includes(country.slug) &&
+    ["ecommerce-sellers", "marketing-agencies", "real-estate-agents", "consultants", "sales-teams"].includes(professionSlug);
+
   return professions.slice(0, 6).map((profession) => ({
     title: `${profession.name} AI tools in ${country.name}`,
-    href: `/professions/${profession.slug}/`,
+    href: hasCountryProfessionRoute(profession.slug) ? `/countries/${country.slug}/${profession.slug}/` : `/professions/${profession.slug}/`,
     description: `${country.currency} context, local terminology, and ${profession.commonTasks[0] || "workflow"} fit.`
   }));
 }
@@ -126,7 +130,10 @@ export function buildToolProfile(tool: Tool, related: SiteLink[]): PageContentPr
   const dataWarnings = [
     ...freshnessWarnings(tool.lastCheckedAt),
     ...(tool.startingPrice === null ? ["Starting price is unverified."] : []),
-    ...(tool.websiteUrl ? [] : ["Vendor website URL is missing."])
+    ...(tool.websiteUrl ? [] : ["Vendor website URL is missing."]),
+    ...(tool.pricingPageUrl ? [] : ["Pricing source URL is missing."]),
+    ...(tool.sourceUrls.length ? [] : ["Source URLs are missing."]),
+    ...(tool.verificationStatus === "verified" ? [] : [`Verification status is ${tool.verificationStatus}.`])
   ];
 
   return {
@@ -135,7 +142,8 @@ export function buildToolProfile(tool: Tool, related: SiteLink[]): PageContentPr
     uniqueAngles: [
       `${tool.name} is mapped to ${tool.professions.length} professions.`,
       `${tool.name} is mapped to ${tool.countries.length} countries.`,
-      `${tool.name} has ${tool.bestFor.length} best-fit use cases.`
+      `${tool.name} has ${tool.bestFor.length} best-fit use cases.`,
+      `${tool.name} verification status: ${tool.verificationStatus}.`
     ],
     dataWarnings,
     quality: getPageQualityScore({

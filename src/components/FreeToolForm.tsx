@@ -50,6 +50,15 @@ export function FreeToolForm({ tool }: { tool: FreeToolDefinition }) {
         outputSections: result.sections.length
       }
     });
+    trackEvent({
+      event: "free_tool_submit",
+      label: tool.title,
+      toolSlug: tool.slug,
+      placement: "free-tool-form",
+      metadata: {
+        outputSections: result.sections.length
+      }
+    });
   }
 
   return (

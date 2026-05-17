@@ -55,7 +55,7 @@ export default async function HomePage() {
             eyebrow="Workflow kits"
             title="Start with a complete workflow, not a giant tool dump"
             description="Each kit connects the profession hub, workflow guide, comparisons, alternatives, prompt/template page, and a free planner so the site builds topical authority around real work."
-            action={{ href: "/workflows/", label: "View workflows" }}
+            action={{ href: "/workflow-kits/", label: "View workflow kits" }}
           />
           <div className="grid gap-5 xl:grid-cols-2">
             {workflowKits.slice(0, 4).map((kit) => (

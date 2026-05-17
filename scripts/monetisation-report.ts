@@ -4,6 +4,8 @@ const affiliateTools = data.tools.filter((tool) => tool.affiliateAvailable);
 const sponsoredTools = data.tools.filter((tool) => tool.isSponsored);
 const missingAffiliateUrl = affiliateTools.filter((tool) => !tool.affiliateUrl);
 const missingWebsiteUrl = data.tools.filter((tool) => !tool.websiteUrl);
+const missingPricingUrl = data.tools.filter((tool) => !tool.pricingPageUrl);
+const unverifiedTools = data.tools.filter((tool) => tool.verificationStatus !== "verified");
 const missingPrice = data.tools.filter((tool) => tool.startingPrice === null);
 const professionPotential = data.professions
   .map((profession) => {
@@ -24,6 +26,8 @@ console.log(`- Affiliate-ready tools: ${affiliateTools.length}`);
 console.log(`- Sponsored tools: ${sponsoredTools.length}`);
 console.log(`- Affiliate-ready tools missing affiliateUrl: ${missingAffiliateUrl.length}`);
 console.log(`- Tools missing websiteUrl: ${missingWebsiteUrl.length}`);
+console.log(`- Tools missing pricingPageUrl: ${missingPricingUrl.length}`);
+console.log(`- Tools not hands-on verified: ${unverifiedTools.length}`);
 console.log(`- Tools missing startingPrice: ${missingPrice.length}`);
 
 if (missingAffiliateUrl.length) {

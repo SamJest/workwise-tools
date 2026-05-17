@@ -9,6 +9,7 @@ const navItems = [
   { href: "/countries/", label: "Countries" },
   { href: "/comparisons/", label: "Comparisons" },
   { href: "/workflows/", label: "Workflows" },
+  { href: "/workflow-kits/", label: "Kits" },
   { href: "/free-tools/", label: "Free tools" }
 ];
 
@@ -55,6 +56,7 @@ export function Footer() {
             { href: "/ai-tools/", label: "Tool directory" },
             { href: "/comparisons/", label: "Comparisons" },
             { href: "/alternatives/", label: "Alternatives" },
+            { href: "/workflow-kits/", label: "Workflow kits" },
             { href: "/prompts/", label: "Prompts" }
           ]}
         />
