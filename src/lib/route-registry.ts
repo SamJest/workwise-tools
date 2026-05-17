@@ -139,8 +139,8 @@ export const staticSeoRoutes: SeoRoute[] = [
   {
     path: "/affiliate-disclosure/",
     group: "static",
-    title: "Affiliate Disclosure",
-    description: "How affiliate links and sponsored placements should be disclosed.",
+    title: "Advertising and Affiliate Disclosure",
+    description: "How display ads, affiliate links, and sponsored placements should be disclosed.",
     quality: strongStaticQuality
   },
   {

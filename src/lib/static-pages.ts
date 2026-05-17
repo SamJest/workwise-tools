@@ -25,11 +25,11 @@ export const staticPages = {
     ]
   },
   "affiliate-disclosure": {
-    title: "Affiliate Disclosure",
-    description: "How affiliate links and sponsored placements should be disclosed on the platform.",
+    title: "Advertising and Affiliate Disclosure",
+    description: "How display ads, affiliate links, and sponsored placements should be disclosed on WorkWise Tools.",
     body: [
-      "Some links may become affiliate links. If a reader clicks and buys, the site may receive compensation at no additional cost to the reader.",
-      "Affiliate relationships must not determine editorial conclusions. Sponsored placements should be visibly marked."
+      "WorkWise Tools is being built as an ad-supported publisher. Pages may later include display ads, sponsorships, or clearly marked affiliate links.",
+      "Commercial relationships must not determine editorial conclusions. Sponsored placements should be visibly marked and tool recommendations should remain based on practical workflow fit."
     ]
   },
   contact: {

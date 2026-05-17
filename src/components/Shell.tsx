@@ -63,7 +63,7 @@ export function Footer() {
           links={[
             { href: "/editorial-policy/", label: "Editorial policy" },
             { href: "/how-we-review-ai-tools/", label: "How we review" },
-            { href: "/affiliate-disclosure/", label: "Affiliate disclosure" },
+            { href: "/affiliate-disclosure/", label: "Advertising disclosure" },
             { href: "/contact/", label: "Contact" }
           ]}
         />

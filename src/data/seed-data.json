@@ -492,6 +492,8 @@
       "name": "ChatGPT",
       "slug": "chatgpt",
       "summary": "General-purpose AI assistant for writing, analysis, brainstorming, coding, and business workflows.",
+      "description": "ChatGPT is a general-purpose AI assistant from OpenAI. For workflow use, it is strongest as a flexible drafting, analysis, ideation, coding-help, and research-support layer rather than a fully automated business system on its own.",
+      "websiteUrl": "https://chatgpt.com/",
       "categories": [
         "ai-chatbots",
         "ai-writing",
@@ -550,12 +552,14 @@
         "prompting"
       ],
       "affiliateAvailable": false,
-      "lastCheckedAt": null
+      "lastCheckedAt": "2026-05-17"
     },
     {
       "name": "Claude",
       "slug": "claude",
       "summary": "AI assistant often used for long-form writing, document analysis, and business reasoning.",
+      "description": "Claude is an AI assistant from Anthropic. It is a useful fit for long-form writing, document-heavy workflows, structured reasoning, and careful drafting where users want to review and refine the output before publishing.",
+      "websiteUrl": "https://claude.ai/",
       "categories": [
         "ai-chatbots",
         "ai-writing",
@@ -595,7 +599,8 @@
         "ca",
         "nz",
         "ie",
-        "sg"
+        "sg",
+        "za"
       ],
       "useCases": [
         "writing",
@@ -603,12 +608,14 @@
         "research"
       ],
       "affiliateAvailable": false,
-      "lastCheckedAt": null
+      "lastCheckedAt": "2026-05-17"
     },
     {
       "name": "Jasper",
       "slug": "jasper",
       "summary": "AI writing and marketing content platform for teams and agencies.",
+      "description": "Jasper is an AI content platform aimed at marketing teams that need campaign copy, brand-aware content workflows, and repeatable production processes for blogs, landing pages, ads, and other go-to-market assets.",
+      "websiteUrl": "https://www.jasper.ai/",
       "categories": [
         "ai-writing"
       ],
@@ -648,13 +655,15 @@
         "blog drafts",
         "ad copy"
       ],
-      "affiliateAvailable": true,
-      "lastCheckedAt": null
+      "affiliateAvailable": false,
+      "lastCheckedAt": "2026-05-17"
     },
     {
       "name": "Copy.ai",
       "slug": "copy-ai",
       "summary": "AI writing and go-to-market content tool for sales and marketing teams.",
+      "description": "Copy.ai focuses on go-to-market writing and sales or marketing content workflows. It is best treated as a structured drafting and ideation tool for teams that still plan to review messaging, positioning, and claims before use.",
+      "websiteUrl": "https://www.copy.ai/",
       "categories": [
         "ai-writing",
         "ai-sales-automation"
@@ -697,13 +706,15 @@
         "ad copy",
         "content ideas"
       ],
-      "affiliateAvailable": true,
-      "lastCheckedAt": null
+      "affiliateAvailable": false,
+      "lastCheckedAt": "2026-05-17"
     },
     {
       "name": "Grammarly",
       "slug": "grammarly",
       "summary": "Writing assistant for grammar, clarity, tone, and business communication.",
+      "description": "Grammarly is a writing assistant used to improve grammar, spelling, clarity, tone, and professional communication. It works best as an editing layer for everyday writing rather than a complete content strategy platform.",
+      "websiteUrl": "https://www.grammarly.com/",
       "categories": [
         "ai-writing"
       ],
@@ -741,20 +752,23 @@
         "ca",
         "nz",
         "ie",
-        "sg"
+        "sg",
+        "za"
       ],
       "useCases": [
         "editing",
         "email writing",
         "proofreading"
       ],
-      "affiliateAvailable": true,
-      "lastCheckedAt": null
+      "affiliateAvailable": false,
+      "lastCheckedAt": "2026-05-17"
     },
     {
       "name": "Canva",
       "slug": "canva",
       "summary": "Design platform with AI-assisted visual content, presentations, and marketing assets.",
+      "description": "Canva is a visual design platform for creating presentations, social graphics, simple brand assets, and marketing materials. Its AI-assisted features make it especially useful for non-designers who need practical visual output quickly.",
+      "websiteUrl": "https://www.canva.com/",
       "categories": [
         "ai-design"
       ],
@@ -802,13 +816,15 @@
         "presentations",
         "social media"
       ],
-      "affiliateAvailable": true,
-      "lastCheckedAt": null
+      "affiliateAvailable": false,
+      "lastCheckedAt": "2026-05-17"
     },
     {
       "name": "Notion AI",
       "slug": "notion-ai",
       "summary": "AI features inside Notion for notes, docs, wikis, and team knowledge management.",
+      "description": "Notion AI adds writing, summarisation, question-answering, and workspace assistance inside Notion. It is most useful for teams that already keep notes, project documentation, wikis, and planning workflows in Notion.",
+      "websiteUrl": "https://www.notion.com/product/ai",
       "categories": [
         "ai-writing",
         "ai-project-management"
@@ -852,12 +868,14 @@
         "project documentation"
       ],
       "affiliateAvailable": false,
-      "lastCheckedAt": null
+      "lastCheckedAt": "2026-05-17"
     },
     {
       "name": "Fireflies.ai",
       "slug": "fireflies-ai",
       "summary": "AI meeting assistant for transcription, notes, summaries, and conversation intelligence.",
+      "description": "Fireflies.ai is an AI meeting assistant for recording, transcribing, summarising, and searching meeting conversations. It is a strong fit for teams that need consistent follow-up notes, action items, and call records.",
+      "websiteUrl": "https://fireflies.ai/",
       "categories": [
         "ai-meeting-notes"
       ],
@@ -892,6 +910,7 @@
         "uk",
         "au",
         "ca",
+        "za",
         "in",
         "ph"
       ],
@@ -899,13 +918,15 @@
         "meeting notes",
         "call summaries"
       ],
-      "affiliateAvailable": true,
-      "lastCheckedAt": null
+      "affiliateAvailable": false,
+      "lastCheckedAt": "2026-05-17"
     },
     {
       "name": "HubSpot",
       "slug": "hubspot",
       "summary": "CRM and marketing platform with AI features for sales, marketing, and customer operations.",
+      "description": "HubSpot is a customer platform covering CRM, marketing, sales, service, content, and operations workflows. For AI and automation use cases, it is most relevant where teams want CRM data connected to outreach and customer journeys.",
+      "websiteUrl": "https://www.hubspot.com/",
       "categories": [
         "ai-crm",
         "ai-sales-automation"
@@ -942,20 +963,23 @@
         "au",
         "ca",
         "sg",
-        "ie"
+        "ie",
+        "za"
       ],
       "useCases": [
         "CRM",
         "lead management",
         "marketing automation"
       ],
-      "affiliateAvailable": true,
-      "lastCheckedAt": null
+      "affiliateAvailable": false,
+      "lastCheckedAt": "2026-05-17"
     },
     {
       "name": "GitHub Copilot",
       "slug": "github-copilot",
       "summary": "AI coding assistant for code completion, chat, debugging, and developer productivity.",
+      "description": "GitHub Copilot is an AI coding assistant for developers and software teams. It supports code completion, chat, debugging help, documentation support, and developer workflow acceleration inside supported coding environments.",
+      "websiteUrl": "https://github.com/features/copilot",
       "categories": [
         "ai-coding"
       ],
@@ -998,7 +1022,118 @@
         "documentation"
       ],
       "affiliateAvailable": false,
-      "lastCheckedAt": null
+      "lastCheckedAt": "2026-05-17"
+    },
+    {
+      "name": "Klaviyo AI",
+      "slug": "klaviyo-ai",
+      "summary": "AI features inside Klaviyo for ecommerce marketing, customer segmentation, and lifecycle messaging.",
+      "description": "Klaviyo AI supports ecommerce and B2C marketing workflows such as customer segmentation, product-aware messaging, campaign optimisation, and lifecycle communication. It is most relevant for sellers already using Klaviyo or evaluating a CRM-style marketing platform.",
+      "websiteUrl": "https://ai.klaviyo.com/",
+      "categories": [
+        "ai-crm",
+        "ai-sales-automation"
+      ],
+      "pricingModel": "paid platform",
+      "startingPrice": null,
+      "currency": "USD",
+      "freePlanAvailable": false,
+      "trialAvailable": false,
+      "bestFor": [
+        "ecommerce marketing",
+        "customer segmentation",
+        "email and SMS workflows"
+      ],
+      "notBestFor": [
+        "teams that do not sell products online"
+      ],
+      "pros": [
+        "built around ecommerce customer data",
+        "useful for lifecycle campaigns"
+      ],
+      "cons": [
+        "best value depends on store size and existing ecommerce stack"
+      ],
+      "professions": [
+        "ecommerce-sellers",
+        "marketing-agencies",
+        "sales-teams"
+      ],
+      "countries": [
+        "us",
+        "uk",
+        "au",
+        "ca",
+        "nz",
+        "ie",
+        "sg",
+        "za",
+        "in",
+        "ph"
+      ],
+      "useCases": [
+        "email marketing",
+        "customer segmentation",
+        "ecommerce automation"
+      ],
+      "affiliateAvailable": false,
+      "lastCheckedAt": "2026-05-17"
+    },
+    {
+      "name": "Shopify Magic",
+      "slug": "shopify-magic",
+      "summary": "AI-powered Shopify features for product descriptions, store content, images, and ecommerce workflows.",
+      "description": "Shopify Magic is a suite of AI-powered features built into Shopify. It is most useful for merchants who want help writing product descriptions, editing store content, improving images, and speeding up ecommerce admin tasks inside Shopify.",
+      "websiteUrl": "https://www.shopify.com/magic/",
+      "categories": [
+        "ai-writing",
+        "ai-design",
+        "ai-customer-support"
+      ],
+      "pricingModel": "included with Shopify features",
+      "startingPrice": null,
+      "currency": "USD",
+      "freePlanAvailable": false,
+      "trialAvailable": true,
+      "bestFor": [
+        "Shopify merchants",
+        "product descriptions",
+        "store content"
+      ],
+      "notBestFor": [
+        "sellers not using Shopify"
+      ],
+      "pros": [
+        "built into Shopify workflows",
+        "useful for product and store content"
+      ],
+      "cons": [
+        "limited to Shopify users and supported features"
+      ],
+      "professions": [
+        "ecommerce-sellers",
+        "marketing-agencies",
+        "freelancers"
+      ],
+      "countries": [
+        "us",
+        "uk",
+        "au",
+        "ca",
+        "nz",
+        "ie",
+        "sg",
+        "za",
+        "in",
+        "ph"
+      ],
+      "useCases": [
+        "product descriptions",
+        "store content",
+        "ecommerce design"
+      ],
+      "affiliateAvailable": false,
+      "lastCheckedAt": "2026-05-17"
     }
   ],
   "comparisons": [
@@ -1013,7 +1148,8 @@
         "long document analysis": "Claude",
         "coding help": "Depends on workflow"
       },
-      "pricingNotes": "Pricing changes frequently; verify before publishing."
+      "pricingNotes": "Pricing changes frequently; verify before publishing.",
+      "lastCheckedAt": "2026-05-17"
     },
     {
       "slug": "jasper-vs-copy-ai",
@@ -1025,7 +1161,22 @@
         "brand campaigns": "Jasper",
         "sales outreach": "Copy.ai"
       },
-      "pricingNotes": "Verify pricing before publishing."
+      "pricingNotes": "Verify pricing before publishing.",
+      "lastCheckedAt": "2026-05-17"
+    },
+    {
+      "slug": "klaviyo-ai-vs-shopify-magic",
+      "toolA": "klaviyo-ai",
+      "toolB": "shopify-magic",
+      "summaryVerdict": "Klaviyo AI is a better fit for customer lifecycle marketing and segmentation, while Shopify Magic is better for merchants who want AI help directly inside Shopify store-management and content workflows.",
+      "primaryUseCase": "ecommerce AI workflow",
+      "winnerByUseCase": {
+        "email and SMS lifecycle marketing": "Klaviyo AI",
+        "product descriptions and store content": "Shopify Magic",
+        "Shopify-native workflow support": "Shopify Magic"
+      },
+      "pricingNotes": "Verify plan requirements and feature availability before publishing.",
+      "lastCheckedAt": "2026-05-17"
     }
   ],
   "alternativeSets": [
@@ -1042,7 +1193,8 @@
       ],
       "bestFreeOption": "ChatGPT",
       "bestBusinessOption": "Jasper",
-      "finalVerdict": "Choose based on whether you need proofreading, generation, brand workflows, or document analysis."
+      "finalVerdict": "Choose based on whether you need proofreading, generation, brand workflows, or document analysis.",
+      "lastCheckedAt": "2026-05-17"
     },
     {
       "slug": "jasper-alternatives",
@@ -1057,7 +1209,24 @@
       ],
       "bestFreeOption": "ChatGPT",
       "bestBusinessOption": "Copy.ai",
-      "finalVerdict": "Choose based on whether your workflow is marketing copy, sales copy, or broad content support."
+      "finalVerdict": "Choose based on whether your workflow is marketing copy, sales copy, or broad content support.",
+      "lastCheckedAt": "2026-05-17"
+    },
+    {
+      "slug": "shopify-magic-alternatives",
+      "baseToolSlug": "shopify-magic",
+      "baseToolName": "Shopify Magic",
+      "reason": "Shopify merchants may want broader ecommerce marketing automation, more flexible AI writing, or tools that work outside Shopify.",
+      "candidateSlugs": [
+        "klaviyo-ai",
+        "chatgpt",
+        "canva",
+        "copy-ai"
+      ],
+      "bestFreeOption": "ChatGPT",
+      "bestBusinessOption": "Klaviyo AI",
+      "finalVerdict": "Use Shopify Magic for built-in Shopify content help, Klaviyo AI for lifecycle marketing, and general AI assistants when you need flexible drafting outside the store admin.",
+      "lastCheckedAt": "2026-05-17"
     }
   ],
   "workflows": [
@@ -1096,7 +1265,8 @@
       "templates": [
         "Client onboarding checklist",
         "Kickoff call summary template"
-      ]
+      ],
+      "lastUpdatedAt": "2026-05-17"
     },
     {
       "title": "AI Cold Email Follow-Up Workflow",
@@ -1131,7 +1301,46 @@
       ],
       "templates": [
         "Cold email sequence template"
-      ]
+      ],
+      "lastUpdatedAt": "2026-05-17"
+    },
+    {
+      "title": "AI Ecommerce Product Launch Workflow",
+      "slug": "ai-ecommerce-product-launch-workflow",
+      "problem": "Ecommerce product launches stall when product descriptions, visuals, email campaigns, and follow-up tasks are handled in separate tools without a repeatable checklist.",
+      "toolsNeeded": [
+        "Shopify Magic",
+        "Klaviyo AI",
+        "Canva",
+        "ChatGPT"
+      ],
+      "relatedProfession": "ecommerce-sellers",
+      "steps": [
+        {
+          "title": "Draft product positioning",
+          "description": "Use a general AI assistant to turn product notes into benefits, objections, and key selling points."
+        },
+        {
+          "title": "Create product page content",
+          "description": "Use Shopify Magic or another writing assistant to draft product descriptions, FAQs, and short store copy."
+        },
+        {
+          "title": "Prepare launch visuals",
+          "description": "Create simple product graphics, sale banners, and social assets in Canva."
+        },
+        {
+          "title": "Build lifecycle messages",
+          "description": "Use ecommerce marketing automation to draft launch email, SMS, and follow-up segments."
+        }
+      ],
+      "prompts": [
+        "Turn these product notes into a launch brief with target customer, product benefits, objections, product-page sections, and email campaign angles."
+      ],
+      "templates": [
+        "Ecommerce product launch checklist",
+        "Product page copy outline"
+      ],
+      "lastUpdatedAt": "2026-05-17"
     }
   ],
   "promptTemplates": [
@@ -1145,7 +1354,8 @@
       "mistakesToAvoid": [
         "Do not invent candidate experience.",
         "Do not make salary or visa claims unless provided."
-      ]
+      ],
+      "lastUpdatedAt": "2026-05-17"
     },
     {
       "title": "ChatGPT Prompts for Real Estate Agents",
@@ -1157,7 +1367,21 @@
       "mistakesToAvoid": [
         "Do not make unverified claims about schools, safety, or investment returns.",
         "Do not use discriminatory language."
-      ]
+      ],
+      "lastUpdatedAt": "2026-05-17"
+    },
+    {
+      "title": "ChatGPT Prompts for Ecommerce Sellers",
+      "slug": "chatgpt-prompts-for-ecommerce-sellers",
+      "profession": "ecommerce-sellers",
+      "task": "product launch planning and product copy",
+      "prompt": "Act as an ecommerce launch strategist. Turn these product notes into a product-page outline, benefit-led bullet points, three email angles, and five objections we should address: [product notes].",
+      "refinementPrompt": "Rewrite the product-page copy for a more premium brand voice, then create a shorter version for a marketplace listing.",
+      "mistakesToAvoid": [
+        "Do not invent product claims, certifications, reviews, or delivery promises.",
+        "Do not make health, financial, or performance claims unless supplied and verified."
+      ],
+      "lastUpdatedAt": "2026-05-17"
     }
   ]
 }

@@ -63,8 +63,8 @@ export function VerdictBox({ title = "Quick verdict", children }: { title?: stri
 export function AffiliateDisclosure() {
   return (
     <div className="rounded-md border border-amber-200 bg-amber-50 p-4 text-sm leading-6 text-amber-950">
-      <strong>Affiliate disclosure:</strong> Some outbound links may become affiliate links. Seed data is demo data and pricing,
-      feature availability, and partner status must be verified before publication.
+      <strong>Advertising disclosure:</strong> WorkWise Tools is being built as an ad-supported publisher. Some pages may later include
+      display ads, sponsorships, or marked affiliate links, but editorial recommendations should remain based on practical workflow fit.
     </div>
   );
 }

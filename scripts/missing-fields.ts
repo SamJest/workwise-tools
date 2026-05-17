@@ -20,12 +20,15 @@ function check(entity: string, slug: string, record: Record<string, unknown>, re
 }
 
 for (const tool of data.tools) {
+  const recommended = ["websiteUrl", "startingPrice", "lastCheckedAt", "description"];
+  if (tool.affiliateAvailable) recommended.push("affiliateUrl");
+
   check(
     "tool",
     tool.slug,
     tool as unknown as Record<string, unknown>,
     ["name", "slug", "summary", "categories", "professions", "countries", "bestFor", "pros", "cons"],
-    ["websiteUrl", "affiliateUrl", "startingPrice", "lastCheckedAt", "description"]
+    recommended
   );
 }
 
