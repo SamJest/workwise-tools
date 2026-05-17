@@ -1,7 +1,7 @@
 import Script from "next/script";
 
 export function AnalyticsScripts() {
-  const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+  const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || "G-JVPG3CGC5C";
   const plausibleDomain = process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN;
 
   return (
