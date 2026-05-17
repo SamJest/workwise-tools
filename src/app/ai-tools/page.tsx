@@ -1,4 +1,4 @@
-import { DemoDataNotice, PageHero, ToolGrid } from "@/components/Blocks";
+import { Badge, DemoDataNotice, PageHero, ToolGrid, VerdictBox } from "@/components/Blocks";
 import { JsonLd } from "@/components/JsonLd";
 import { collectionPageJsonLd, itemListJsonLd } from "@/lib/jsonld";
 import { listCategories, listTools } from "@/lib/repository";
@@ -12,6 +12,13 @@ export const metadata = pageMetadata({
 
 export default async function AiToolsPage() {
   const [tools, categories] = await Promise.all([listTools(), listCategories()]);
+  const categoryRows = categories
+    .map((category) => ({
+      category,
+      tools: tools.filter((tool) => tool.categories.includes(category.slug))
+    }))
+    .filter((row) => row.tools.length > 0)
+    .sort((a, b) => b.tools.length - a.tools.length);
 
   return (
     <>
@@ -19,16 +26,35 @@ export default async function AiToolsPage() {
       <JsonLd data={itemListJsonLd(tools.map((tool) => ({ name: tool.name, href: `/ai-tools/${tool.slug}/`, description: tool.summary })), "AI tools directory")} />
       <PageHero
         eyebrow="Tool directory"
-        title="AI tools directory"
-        description="Browse starter tool records that can be expanded into verified review, comparison, alternative, and workflow pages."
+        title="Workflow-first AI tools directory"
+        description="Browse tools by the workflows they support, then move into profession guides, comparisons, alternatives, prompts, and free planners."
       />
       <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
         <DemoDataNotice />
-        <div className="mt-6 flex flex-wrap gap-2">
-          {categories.map((category) => (
-            <span key={category.slug} className="rounded-md border border-line bg-panel px-3 py-2 text-sm text-muted">
-              {category.name}
-            </span>
+        <div className="mt-6">
+          <VerdictBox title="Directory strategy">
+            WorkWise intentionally prioritises practical workflow coverage over a giant undifferentiated tool database. Use categories
+            to find candidates, then validate fit through the linked workflow and comparison pages.
+          </VerdictBox>
+        </div>
+        <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+          {categoryRows.map(({ category, tools: matchingTools }) => (
+            <section key={category.slug} className="rounded-md border border-line bg-white p-5">
+              <div className="flex items-start justify-between gap-3">
+                <div>
+                  <h2 className="text-lg font-bold text-ink">{category.name}</h2>
+                  <p className="mt-2 text-sm leading-6 text-muted">{category.description || "Tools mapped to this workflow category."}</p>
+                </div>
+                <Badge>{matchingTools.length} tools</Badge>
+              </div>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {matchingTools.slice(0, 5).map((tool) => (
+                  <a key={tool.slug} href={`#${tool.slug}`} className="rounded-md bg-panel px-2 py-1 text-xs font-medium text-muted hover:text-ink">
+                    {tool.name}
+                  </a>
+                ))}
+              </div>
+            </section>
           ))}
         </div>
         <div className="mt-8">

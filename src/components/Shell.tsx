@@ -64,6 +64,9 @@ export function Footer() {
             { href: "/editorial-policy/", label: "Editorial policy" },
             { href: "/how-we-review-ai-tools/", label: "How we review" },
             { href: "/affiliate-disclosure/", label: "Advertising disclosure" },
+            { href: "/privacy/", label: "Privacy policy" },
+            { href: "/cookies/", label: "Cookie policy" },
+            { href: "/terms/", label: "Terms of use" },
             { href: "/contact/", label: "Contact" }
           ]}
         />

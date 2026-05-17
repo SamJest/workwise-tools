@@ -182,7 +182,7 @@ export function ToolCard({ tool, rank }: { tool: Tool; rank?: number }) {
   const outbound = getToolOutboundAction(tool, "tool-card");
 
   return (
-    <article className="rounded-md border border-line bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-soft">
+    <article id={tool.slug} className="scroll-mt-24 rounded-md border border-line bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-soft">
       <div className="flex items-start justify-between gap-4">
         <div>
           <p className="text-sm font-semibold text-brand">{rank ? `#${rank}` : tool.pricingModel || "AI tool"}</p>

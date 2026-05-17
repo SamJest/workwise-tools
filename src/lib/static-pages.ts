@@ -32,6 +32,36 @@ export const staticPages = {
       "Commercial relationships must not determine editorial conclusions. Sponsored placements should be visibly marked and tool recommendations should remain based on practical workflow fit."
     ]
   },
+  privacy: {
+    title: "Privacy Policy",
+    description: "How WorkWise Tools handles analytics, contact messages, cookies, and future advertising data.",
+    body: [
+      "WorkWise Tools collects only the information needed to operate and improve the site. This may include basic analytics events, pages visited, outbound clicks, free-tool usage events, and information submitted through contact or newsletter forms.",
+      "Analytics tools such as Google Analytics may use cookies or similar technologies to understand aggregate traffic patterns. These reports help identify which workflow guides, comparisons, and free tools should be improved.",
+      "If display advertising is added later, ad partners may use cookies or identifiers to measure ad performance and serve relevant ads. WorkWise Tools will keep advertising disclosures visible and update this policy when a specific ad network is enabled.",
+      "Do not submit sensitive personal, financial, medical, legal, or confidential client data through free tools or contact forms. Free-tool outputs are generated for drafting and planning purposes only.",
+      "To request a correction, data update, or removal of a submitted message, use the contact page."
+    ]
+  },
+  cookies: {
+    title: "Cookie Policy",
+    description: "How cookies and similar technologies may be used for analytics, site performance, and future display ads.",
+    body: [
+      "WorkWise Tools may use cookies and similar technologies for analytics, site performance, abuse prevention, and future advertising measurement.",
+      "Google Analytics is currently used to understand aggregate site usage. Browser controls can usually block or delete cookies, though some analytics and form features may work less reliably.",
+      "Advertising cookies should only be introduced after an ad network is configured. When that happens, the site should also add the network's required privacy wording and ads.txt publisher record."
+    ]
+  },
+  terms: {
+    title: "Terms of Use",
+    description: "The rules for using WorkWise Tools content, free tools, comparisons, and workflow templates.",
+    body: [
+      "WorkWise Tools provides editorial software information, workflow ideas, prompts, templates, and rule-based free tools for general planning purposes.",
+      "Content is not legal, financial, tax, medical, or professional advice. Always verify pricing, availability, data handling, and suitability with the vendor before buying or deploying software.",
+      "Free-tool outputs are drafts. Review all claims, facts, compliance requirements, privacy implications, and customer-facing messages before using them.",
+      "Vendor names, product names, and trademarks belong to their respective owners. Inclusion in a guide does not imply endorsement unless clearly stated by the vendor."
+    ]
+  },
   contact: {
     title: "Contact",
     description: "Contact page placeholder for editorial corrections, vendor inquiries, and partnership requests.",

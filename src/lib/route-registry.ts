@@ -144,6 +144,27 @@ export const staticSeoRoutes: SeoRoute[] = [
     quality: strongStaticQuality
   },
   {
+    path: "/privacy/",
+    group: "static",
+    title: "Privacy Policy",
+    description: "How analytics, contact messages, cookies, and future advertising data are handled.",
+    quality: strongStaticQuality
+  },
+  {
+    path: "/cookies/",
+    group: "static",
+    title: "Cookie Policy",
+    description: "How cookies may be used for analytics, site performance, and future display ads.",
+    quality: strongStaticQuality
+  },
+  {
+    path: "/terms/",
+    group: "static",
+    title: "Terms of Use",
+    description: "Rules for using WorkWise Tools content, free tools, comparisons, and workflow templates.",
+    quality: strongStaticQuality
+  },
+  {
     path: "/contact/",
     group: "static",
     title: "Contact",
