@@ -1,6 +1,7 @@
 import { getSeedData } from "../src/lib/data";
 import { freeTools } from "../src/lib/free-tools";
 import { priorityCountryProfessionPairs } from "../src/lib/route-registry";
+import { getUseCasePages } from "../src/lib/use-cases";
 import { workflowKits } from "../src/lib/workflow-kits";
 
 export const data = getSeedData();
@@ -32,6 +33,8 @@ export function routeInventory() {
   return new Set([
     "/",
     "/ai-tools/",
+    "/categories/",
+    "/use-cases/",
     "/professions/",
     "/countries/",
     "/comparisons/",
@@ -51,6 +54,8 @@ export function routeInventory() {
     "/cookies/",
     "/terms/",
     ...data.tools.map((tool) => `/ai-tools/${tool.slug}/`),
+    ...data.categories.map((category) => `/categories/${category.slug}/`),
+    ...getUseCasePages(data.tools).map((useCase) => `/use-cases/${useCase.slug}/`),
     ...data.professions.map((profession) => `/professions/${profession.slug}/`),
     ...data.countries.map((country) => `/countries/${country.slug}/`),
     ...priorityCountryProfessionPairs.map((pair) => `/countries/${pair.country}/${pair.profession}/`),

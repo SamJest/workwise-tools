@@ -5,6 +5,8 @@ import { siteConfig } from "@/lib/seo";
 
 const navItems = [
   { href: "/ai-tools/", label: "AI tools" },
+  { href: "/categories/", label: "Categories" },
+  { href: "/use-cases/", label: "Use cases" },
   { href: "/professions/", label: "Professions" },
   { href: "/countries/", label: "Countries" },
   { href: "/comparisons/", label: "Comparisons" },
@@ -54,6 +56,8 @@ export function Footer() {
           title="Research"
           links={[
             { href: "/ai-tools/", label: "Tool directory" },
+            { href: "/categories/", label: "Categories" },
+            { href: "/use-cases/", label: "Use cases" },
             { href: "/comparisons/", label: "Comparisons" },
             { href: "/alternatives/", label: "Alternatives" },
             { href: "/workflow-kits/", label: "Workflow kits" },

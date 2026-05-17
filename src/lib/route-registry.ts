@@ -8,16 +8,20 @@ import type {
   SeedData,
   SiteLink,
   Tool,
+  ToolCategory,
   Workflow
 } from "@/types/content";
 import { freeTools } from "./free-tools";
 import { getPageQualityScore } from "./quality";
 import { currentYear, truncateDescription } from "./seo";
+import { getUseCasePages, slugifyUseCase, type UseCasePage } from "./use-cases";
 import { workflowKits } from "./workflow-kits";
 
 export type RouteGroup =
   | "static"
   | "tools"
+  | "categories"
+  | "use-cases"
   | "professions"
   | "countries"
   | "comparisons"
@@ -60,6 +64,20 @@ export const staticSeoRoutes: SeoRoute[] = [
     group: "tools",
     title: "AI Tools Directory",
     description: "Browse AI and SaaS tools by category, pricing model, profession fit, and use case.",
+    quality: strongStaticQuality
+  },
+  {
+    path: "/categories/",
+    group: "categories",
+    title: "AI Tool Categories",
+    description: "Browse AI and SaaS tools by practical workflow category, then compare implementation fit.",
+    quality: strongStaticQuality
+  },
+  {
+    path: "/use-cases/",
+    group: "use-cases",
+    title: "AI Tool Use Cases",
+    description: "Compare AI and SaaS tools by recurring small-business use case, setup effort, privacy risk, and workflow fit.",
     quality: strongStaticQuality
   },
   {
@@ -195,6 +213,8 @@ export function buildSeoRoutes(data: SeedData): SeoRoute[] {
   return [
     ...staticSeoRoutes,
     ...data.tools.map((tool) => toolRoute(tool, context)),
+    ...data.categories.map((category) => categoryRoute(category, context)),
+    ...context.useCasePages.map((useCase) => useCaseRoute(useCase, context)),
     ...data.professions.map((profession) => professionRoute(profession, context)),
     ...data.countries.map((country) => countryRoute(country, context)),
     ...countryProfessionRoutes(context),
@@ -225,6 +245,8 @@ export const priorityCountryProfessionPairs = workflowKits.flatMap((kit) =>
 function createRouteContext(data: SeedData) {
   return {
     tools: data.tools,
+    categories: data.categories,
+    useCasePages: getUseCasePages(data.tools),
     professions: data.professions,
     countries: data.countries,
     comparisons: data.comparisons,
@@ -232,8 +254,50 @@ function createRouteContext(data: SeedData) {
     workflows: data.workflows,
     prompts: data.promptTemplates,
     toolBySlug: new Map(data.tools.map((tool) => [tool.slug, tool])),
+    categoryBySlug: new Map(data.categories.map((category) => [category.slug, category])),
     professionBySlug: new Map(data.professions.map((profession) => [profession.slug, profession])),
     countryBySlug: new Map(data.countries.map((country) => [country.slug, country]))
+  };
+}
+
+function categoryRoute(category: ToolCategory, context: ReturnType<typeof createRouteContext>): SeoRoute {
+  const tools = context.tools.filter((tool) => tool.categories.includes(category.slug));
+  const intro = `${category.name} tools are grouped here because they support repeatable small-business workflows. Compare ${tools.length} options by setup effort, privacy risk, free-plan reality, team fit, and source-linked verification before choosing a vendor.`;
+  return {
+    path: `/categories/${category.slug}/`,
+    group: "categories",
+    title: `${category.name} AI Tools`,
+    description: truncateDescription(category.description || `Compare AI and SaaS tools for ${category.name.toLowerCase()} workflows.`, 155),
+    parent: "/categories/",
+    quality: getPageQualityScore({
+      matchingTools: tools,
+      valueBlocks: ["category-context", "ranked-tools", "comparison-table", "decision-guide", "faqs", "source-links"],
+      intro,
+      internalLinks: tools.flatMap((tool) => toolInternalLinks(tool, context)),
+      lastUpdated: new Date().toISOString(),
+      hasAuthor: true
+    })
+  };
+}
+
+function useCaseRoute(useCase: UseCasePage, context: ReturnType<typeof createRouteContext>): SeoRoute {
+  return {
+    path: `/use-cases/${useCase.slug}/`,
+    group: "use-cases",
+    title: `${useCase.label} AI Tools`,
+    description: truncateDescription(
+      `Compare AI and SaaS tools for ${useCase.label.toLowerCase()} by setup effort, privacy risk, free-plan limits, and workflow fit.`,
+      155
+    ),
+    parent: "/use-cases/",
+    quality: getPageQualityScore({
+      matchingTools: useCase.tools,
+      valueBlocks: ["use-case-context", "comparison-table", "decision-guide", "ranked-tools", "faqs", "free-tool-links"],
+      intro: `${useCase.label} tools compared by workflow fit, implementation effort, privacy risk, and small-business usefulness.`,
+      internalLinks: useCase.tools.flatMap((tool) => toolInternalLinks(tool, context)),
+      lastUpdated: new Date().toISOString(),
+      hasAuthor: true
+    })
   };
 }
 
@@ -466,8 +530,16 @@ function toolInternalLinks(tool: Tool, context: ReturnType<typeof createRouteCon
   const alternativeLinks = context.alternativeSets
     .filter((set) => set.baseToolSlug === tool.slug || set.candidateSlugs.includes(tool.slug))
     .map((set) => ({ title: `${set.baseToolName} alternatives`, href: `/alternatives/${set.slug}/` }));
+  const categoryLinks = tool.categories.map((slug) => ({
+    title: context.categoryBySlug.get(slug)?.name ?? slug.replaceAll("-", " "),
+    href: `/categories/${slug}/`
+  }));
+  const useCaseLinks = context.useCasePages
+    .filter((page) => tool.useCases.some((useCase) => page.slug === slugifyUseCase(useCase)))
+    .slice(0, 4)
+    .map((page) => ({ title: page.label, href: `/use-cases/${page.slug}/` }));
 
-  return dedupeLinks([...professionLinks, ...countryLinks, ...comparisonLinks, ...alternativeLinks]);
+  return dedupeLinks([...professionLinks, ...categoryLinks, ...useCaseLinks, ...countryLinks, ...comparisonLinks, ...alternativeLinks]);
 }
 
 function professionInternalLinks(profession: Profession, context: ReturnType<typeof createRouteContext>): SiteLink[] {

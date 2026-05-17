@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Badge, DemoDataNotice, PageHero, ToolGrid, VerdictBox } from "@/components/Blocks";
 import { JsonLd } from "@/components/JsonLd";
 import { collectionPageJsonLd, itemListJsonLd } from "@/lib/jsonld";
@@ -39,7 +40,7 @@ export default async function AiToolsPage() {
         </div>
         <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {categoryRows.map(({ category, tools: matchingTools }) => (
-            <section key={category.slug} className="rounded-md border border-line bg-white p-5">
+            <Link key={category.slug} href={`/categories/${category.slug}/`} className="rounded-md border border-line bg-white p-5 hover:border-brand">
               <div className="flex items-start justify-between gap-3">
                 <div>
                   <h2 className="text-lg font-bold text-ink">{category.name}</h2>
@@ -49,12 +50,10 @@ export default async function AiToolsPage() {
               </div>
               <div className="mt-4 flex flex-wrap gap-2">
                 {matchingTools.slice(0, 5).map((tool) => (
-                  <a key={tool.slug} href={`#${tool.slug}`} className="rounded-md bg-panel px-2 py-1 text-xs font-medium text-muted hover:text-ink">
-                    {tool.name}
-                  </a>
+                  <Badge key={tool.slug}>{tool.name}</Badge>
                 ))}
               </div>
-            </section>
+            </Link>
           ))}
         </div>
         <div className="mt-8">

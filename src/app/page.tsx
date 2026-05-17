@@ -1,9 +1,11 @@
 import Link from "next/link";
-import { ArrowRight, Database, FileSearch, GitCompare, Workflow } from "lucide-react";
+import { ArrowRight, Database, FileSearch, GitCompare, ListChecks, Tags, Workflow } from "lucide-react";
 import { AffiliateDisclosure, DemoDataNotice, DisplayAdSlot, NewsletterCTA, PageHero, ToolGrid, VerdictBox, WorkflowKitCard } from "@/components/Blocks";
 import { SectionHeader } from "@/components/Shell";
-import { listAlternativeSets, listComparisons, listCountries, listProfessions, listTools, listWorkflows } from "@/lib/repository";
+import { freeTools } from "@/lib/free-tools";
+import { listAlternativeSets, listCategories, listComparisons, listCountries, listProfessions, listTools, listWorkflows } from "@/lib/repository";
 import { pageMetadata } from "@/lib/seo";
+import { getUseCasePages } from "@/lib/use-cases";
 import { workflowKits } from "@/lib/workflow-kits";
 
 export const metadata = pageMetadata({
@@ -13,14 +15,16 @@ export const metadata = pageMetadata({
 });
 
 export default async function HomePage() {
-  const [tools, professions, countries, comparisons, alternatives, workflows] = await Promise.all([
+  const [tools, categories, professions, countries, comparisons, alternatives, workflows] = await Promise.all([
     listTools(),
+    listCategories(),
     listProfessions(),
     listCountries(),
     listComparisons(),
     listAlternativeSets(),
     listWorkflows()
   ]);
+  const useCases = getUseCasePages(tools);
 
   return (
     <>
@@ -41,8 +45,10 @@ export default async function HomePage() {
       </PageHero>
 
       <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-        <div className="grid gap-4 md:grid-cols-4">
-          <Stat icon={<Database />} label="Seed tools" value={tools.length} />
+        <div className="grid gap-4 md:grid-cols-3 lg:grid-cols-6">
+          <Stat icon={<Database />} label="Tools" value={tools.length} />
+          <Stat icon={<Tags />} label="Categories" value={categories.length} />
+          <Stat icon={<ListChecks />} label="Use cases" value={useCases.length} />
           <Stat icon={<FileSearch />} label="Professions" value={professions.length} />
           <Stat icon={<GitCompare />} label="Comparisons" value={comparisons.length} />
           <Stat icon={<Workflow />} label="Workflows" value={workflows.length} />
@@ -84,11 +90,13 @@ export default async function HomePage() {
           />
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             <ClusterCard title="Profession pages" href="/professions/" count={professions.length} />
+            <ClusterCard title="Category hubs" href="/categories/" count={categories.length} />
+            <ClusterCard title="Use-case hubs" href="/use-cases/" count={useCases.length} />
             <ClusterCard title="Country guides" href="/countries/" count={countries.length} />
             <ClusterCard title="Alternatives" href="/alternatives/" count={alternatives.length} />
             <ClusterCard title="Comparisons" href="/comparisons/" count={comparisons.length} />
             <ClusterCard title="Workflow pages" href="/workflows/" count={workflows.length} />
-            <ClusterCard title="Free tools" href="/free-tools/" count={5} />
+            <ClusterCard title="Free tools" href="/free-tools/" count={freeTools.length} />
           </div>
         </div>
       </section>

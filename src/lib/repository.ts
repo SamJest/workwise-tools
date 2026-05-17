@@ -15,6 +15,7 @@ import {
   getPromptTemplates,
   getRelatedLinks,
   getSeedData,
+  getToolsForCategory,
   getTool,
   getTools,
   getToolsBySlugs,
@@ -24,6 +25,7 @@ import {
   getWorkflows
 } from "./data";
 import { hasDatabaseUrl, prisma } from "./prisma";
+import { getUseCasePages, slugifyUseCase } from "./use-cases";
 
 async function fromDb<T>(query: () => Promise<T>, fallback: () => T): Promise<T> {
   if (!hasDatabaseUrl()) return fallback();
@@ -171,6 +173,17 @@ export async function toolsForCountry(slug: string): Promise<Tool[]> {
   }, () => getToolsForCountry(slug));
 }
 
+export async function toolsForCategory(slug: string): Promise<Tool[]> {
+  return fromDb(async () => {
+    const tools = await prisma.tool.findMany({
+      where: { categories: { some: { slug } } },
+      include: { categories: true, professions: true, countries: true },
+      orderBy: [{ affiliateAvailable: "desc" }, { name: "asc" }]
+    });
+    return tools.map(mapTool);
+  }, () => getToolsForCategory(slug));
+}
+
 export async function toolsBySlugs(slugs: string[]): Promise<Tool[]> {
   return fromDb(async () => {
     const tools = await prisma.tool.findMany({
@@ -197,14 +210,17 @@ export async function relatedLinks(params: {
   const links: Array<{ title: string; href: string; description?: string; score: number }> = [];
 
   if (params.tool) {
-    const [professions, countries, comparisons, alternativeSets, workflows, prompts] = await Promise.all([
+    const [professions, countries, comparisons, alternativeSets, workflows, prompts, categories, allTools] = await Promise.all([
       listProfessions(),
       listCountries(),
       listComparisons(),
       listAlternativeSets(),
       listWorkflows(),
-      listPromptTemplates()
+      listPromptTemplates(),
+      listCategories(),
+      listTools()
     ]);
+    const useCasePageSlugs = new Set(getUseCasePages(allTools).map((page) => page.slug));
 
     links.push(
       ...professions
@@ -214,6 +230,28 @@ export async function relatedLinks(params: {
           href: `/professions/${profession.slug}/`,
           description: profession.commonTasks.slice(0, 2).join(", "),
           score: 80 + profession.monetisationScore
+        }))
+    );
+    links.push(
+      ...categories
+        .filter((category) => params.tool?.categories.includes(category.slug))
+        .map((category) => ({
+          title: `${category.name} tools`,
+          href: `/categories/${category.slug}/`,
+          description: category.description,
+          score: 78
+        }))
+    );
+    links.push(
+      ...(params.tool.useCases || [])
+        .map((useCase) => ({ useCase, slug: slugifyUseCase(useCase) }))
+        .filter((item) => useCasePageSlugs.has(item.slug))
+        .slice(0, 4)
+        .map((item) => ({
+          title: `${item.useCase} tools`,
+          href: `/use-cases/${item.slug}/`,
+          description: `Compare tools that support ${item.useCase.toLowerCase()}.`,
+          score: 76
         }))
     );
     links.push(
