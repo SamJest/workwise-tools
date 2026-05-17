@@ -1,13 +1,14 @@
 import Link from "next/link";
 import { ArrowRight, Database, FileSearch, GitCompare, Workflow } from "lucide-react";
-import { AffiliateDisclosure, DemoDataNotice, NewsletterCTA, PageHero, ToolGrid, VerdictBox } from "@/components/Blocks";
+import { AffiliateDisclosure, DemoDataNotice, DisplayAdSlot, NewsletterCTA, PageHero, ToolGrid, VerdictBox, WorkflowKitCard } from "@/components/Blocks";
 import { SectionHeader } from "@/components/Shell";
 import { listAlternativeSets, listComparisons, listCountries, listProfessions, listTools, listWorkflows } from "@/lib/repository";
 import { pageMetadata } from "@/lib/seo";
+import { workflowKits } from "@/lib/workflow-kits";
 
 export const metadata = pageMetadata({
-  title: "WorkWise Tools: AI and SaaS Guides for Better Workflows",
-  description: "Compare AI and SaaS tools by workflow, profession, country, use case, and budget.",
+  title: "WorkWise Tools: Workflow-First AI Tool Guides",
+  description: "Compare AI tools by workflow, profession, country, and use case with prompts, templates, alternatives, and free planners.",
   path: "/"
 });
 
@@ -25,8 +26,8 @@ export default async function HomePage() {
     <>
       <PageHero
         eyebrow="WorkWise Tools"
-        title="Find better AI and SaaS tools for the way you work."
-        description="Practical workflow guides, tool comparisons, alternatives, prompt templates, and free calculators for choosing software with more confidence."
+        title="Find the right AI tools for the workflow you actually need."
+        description="Workflow-first AI tool guides for US and UK small businesses: compare tools, build repeatable processes, use prompts, and avoid buying software before the workflow is clear."
       >
         <div className="flex flex-wrap gap-3">
           <Link href="/ai-tools/" className="inline-flex items-center gap-2 rounded-md bg-ink px-5 py-3 text-sm font-semibold text-white">
@@ -45,6 +46,22 @@ export default async function HomePage() {
           <Stat icon={<FileSearch />} label="Professions" value={professions.length} />
           <Stat icon={<GitCompare />} label="Comparisons" value={comparisons.length} />
           <Stat icon={<Workflow />} label="Workflows" value={workflows.length} />
+        </div>
+      </section>
+
+      <section className="bg-panel">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+          <SectionHeader
+            eyebrow="Workflow kits"
+            title="Start with a complete workflow, not a giant tool dump"
+            description="Each kit connects the profession hub, workflow guide, comparisons, alternatives, prompt/template page, and a free planner so the site builds topical authority around real work."
+            action={{ href: "/workflows/", label: "View workflows" }}
+          />
+          <div className="grid gap-5 xl:grid-cols-2">
+            {workflowKits.slice(0, 4).map((kit) => (
+              <WorkflowKitCard key={kit.slug} kit={kit} />
+            ))}
+          </div>
         </div>
       </section>
 
@@ -82,6 +99,7 @@ export default async function HomePage() {
           entry, validation, freshness reporting, and admin workflows.
         </VerdictBox>
         <div className="space-y-4">
+          <DisplayAdSlot label="Homepage display ad slot" />
           <DemoDataNotice />
           <AffiliateDisclosure />
         </div>

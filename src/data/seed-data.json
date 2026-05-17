@@ -1134,6 +1134,210 @@
       ],
       "affiliateAvailable": false,
       "lastCheckedAt": "2026-05-17"
+    },
+    {
+      "name": "Semrush",
+      "slug": "semrush",
+      "summary": "SEO and digital marketing platform with AI-assisted content, competitive research, and visibility workflows.",
+      "description": "Semrush is a search and marketing platform used for keyword research, competitive analysis, content planning, site audits, and visibility tracking. For WorkWise workflow pages, it is most useful when agencies need a research layer before creating briefs, content calendars, and reporting packs.",
+      "websiteUrl": "https://www.semrush.com/",
+      "categories": [
+        "ai-seo",
+        "ai-writing"
+      ],
+      "pricingModel": "paid platform",
+      "startingPrice": null,
+      "currency": "USD",
+      "freePlanAvailable": false,
+      "trialAvailable": true,
+      "bestFor": [
+        "SEO research",
+        "content briefs",
+        "competitor analysis"
+      ],
+      "notBestFor": [
+        "teams that only need a simple writing assistant"
+      ],
+      "pros": [
+        "strong SEO and competitor data",
+        "useful for agency reporting workflows"
+      ],
+      "cons": [
+        "can be too complex or costly for very light use"
+      ],
+      "professions": [
+        "marketing-agencies",
+        "ecommerce-sellers",
+        "consultants"
+      ],
+      "countries": [
+        "us",
+        "uk",
+        "au",
+        "ca",
+        "ie",
+        "sg"
+      ],
+      "useCases": [
+        "SEO research",
+        "content planning",
+        "competitor analysis"
+      ],
+      "affiliateAvailable": false,
+      "lastCheckedAt": "2026-05-17"
+    },
+    {
+      "name": "Fathom",
+      "slug": "fathom",
+      "summary": "AI meeting assistant for recording, transcribing, summarising, and sharing meeting notes.",
+      "description": "Fathom is an AI meeting assistant used to capture calls, generate summaries, and create follow-up notes. It is a useful candidate for consultants, agencies, and sales teams that need meeting context turned into next actions without manually writing every note.",
+      "websiteUrl": "https://fathom.video/",
+      "categories": [
+        "ai-meeting-notes"
+      ],
+      "pricingModel": "freemium",
+      "startingPrice": null,
+      "currency": "USD",
+      "freePlanAvailable": true,
+      "trialAvailable": true,
+      "bestFor": [
+        "meeting notes",
+        "call summaries",
+        "follow-up actions"
+      ],
+      "notBestFor": [
+        "teams that cannot record meetings or need offline-only notes"
+      ],
+      "pros": [
+        "fast meeting summaries",
+        "useful for follow-up workflows"
+      ],
+      "cons": [
+        "recording consent and privacy rules must be managed"
+      ],
+      "professions": [
+        "consultants",
+        "sales-teams",
+        "marketing-agencies",
+        "real-estate-agents"
+      ],
+      "countries": [
+        "us",
+        "uk",
+        "au",
+        "ca",
+        "ie",
+        "sg"
+      ],
+      "useCases": [
+        "meeting notes",
+        "sales calls",
+        "client updates"
+      ],
+      "affiliateAvailable": false,
+      "lastCheckedAt": "2026-05-17"
+    },
+    {
+      "name": "Airtable AI",
+      "slug": "airtable-ai",
+      "summary": "AI features inside Airtable for structured operations, records, project tracking, and workflow databases.",
+      "description": "Airtable AI adds AI assistance to structured Airtable workflows. It is most useful when teams need lightweight databases for content calendars, campaign operations, intake queues, CRM-style tracking, or repeatable client delivery systems.",
+      "websiteUrl": "https://www.airtable.com/platform/ai",
+      "categories": [
+        "ai-project-management",
+        "ai-document-automation"
+      ],
+      "pricingModel": "paid platform feature",
+      "startingPrice": null,
+      "currency": "USD",
+      "freePlanAvailable": false,
+      "trialAvailable": true,
+      "bestFor": [
+        "workflow databases",
+        "content operations",
+        "structured project tracking"
+      ],
+      "notBestFor": [
+        "teams that only need a simple document editor"
+      ],
+      "pros": [
+        "strong for structured operational data",
+        "flexible for repeatable workflows"
+      ],
+      "cons": [
+        "requires thoughtful base design to avoid clutter"
+      ],
+      "professions": [
+        "marketing-agencies",
+        "consultants",
+        "ecommerce-sellers",
+        "sales-teams"
+      ],
+      "countries": [
+        "us",
+        "uk",
+        "au",
+        "ca",
+        "ie",
+        "sg"
+      ],
+      "useCases": [
+        "content calendars",
+        "client delivery",
+        "workflow tracking"
+      ],
+      "affiliateAvailable": false,
+      "lastCheckedAt": "2026-05-17"
+    },
+    {
+      "name": "Tidio",
+      "slug": "tidio",
+      "summary": "Customer support and chatbot platform for ecommerce and small business support workflows.",
+      "description": "Tidio is a customer support platform with chat, chatbot, and automation features. It is relevant for ecommerce sellers and small businesses that want to triage support questions, answer common queries, and reduce repetitive customer-service work.",
+      "websiteUrl": "https://www.tidio.com/",
+      "categories": [
+        "ai-customer-support"
+      ],
+      "pricingModel": "freemium/paid",
+      "startingPrice": null,
+      "currency": "USD",
+      "freePlanAvailable": true,
+      "trialAvailable": true,
+      "bestFor": [
+        "customer support chat",
+        "ecommerce support",
+        "FAQ automation"
+      ],
+      "notBestFor": [
+        "teams that need only internal project management"
+      ],
+      "pros": [
+        "useful for repetitive support questions",
+        "fits ecommerce and SMB workflows"
+      ],
+      "cons": [
+        "support automations need careful review before going live"
+      ],
+      "professions": [
+        "ecommerce-sellers",
+        "sales-teams",
+        "marketing-agencies"
+      ],
+      "countries": [
+        "us",
+        "uk",
+        "au",
+        "ca",
+        "ie",
+        "sg"
+      ],
+      "useCases": [
+        "customer support",
+        "chat automation",
+        "FAQ triage"
+      ],
+      "affiliateAvailable": false,
+      "lastCheckedAt": "2026-05-17"
     }
   ],
   "comparisons": [
@@ -1176,6 +1380,62 @@
         "Shopify-native workflow support": "Shopify Magic"
       },
       "pricingNotes": "Verify plan requirements and feature availability before publishing.",
+      "lastCheckedAt": "2026-05-17"
+    },
+    {
+      "slug": "hubspot-vs-copy-ai",
+      "toolA": "hubspot",
+      "toolB": "copy-ai",
+      "summaryVerdict": "HubSpot is the stronger fit when sales and marketing work needs CRM records, pipelines, and follow-up tracking; Copy.ai is a lighter fit when the immediate task is drafting outreach and go-to-market copy.",
+      "primaryUseCase": "sales and marketing workflow",
+      "winnerByUseCase": {
+        "CRM and pipeline tracking": "HubSpot",
+        "cold email drafting": "Copy.ai",
+        "team follow-up workflow": "HubSpot"
+      },
+      "pricingNotes": "Verify current plan limits, AI feature access, and seat requirements before publishing.",
+      "lastCheckedAt": "2026-05-17"
+    },
+    {
+      "slug": "fireflies-ai-vs-fathom",
+      "toolA": "fireflies-ai",
+      "toolB": "fathom",
+      "summaryVerdict": "Fireflies.ai and Fathom both support meeting notes and follow-up workflows. Compare them by meeting platform support, sharing needs, CRM handoff, team controls, and privacy requirements.",
+      "primaryUseCase": "AI meeting notes",
+      "winnerByUseCase": {
+        "simple meeting summaries": "Fathom",
+        "searchable team call records": "Fireflies.ai",
+        "privacy-sensitive calls": "Depends on consent and admin needs"
+      },
+      "pricingNotes": "Verify current free-plan limits, meeting-platform support, retention settings, and team features before publishing.",
+      "lastCheckedAt": "2026-05-17"
+    },
+    {
+      "slug": "chatgpt-vs-notion-ai",
+      "toolA": "chatgpt",
+      "toolB": "notion-ai",
+      "summaryVerdict": "ChatGPT is usually the broader standalone assistant; Notion AI is better when the work already lives inside Notion pages, wikis, and project notes.",
+      "primaryUseCase": "consultant and freelancer documentation",
+      "winnerByUseCase": {
+        "flexible drafting and analysis": "ChatGPT",
+        "workspace notes and summaries": "Notion AI",
+        "project documentation workflow": "Notion AI"
+      },
+      "pricingNotes": "Verify current plan requirements and workspace AI limits before publishing.",
+      "lastCheckedAt": "2026-05-17"
+    },
+    {
+      "slug": "semrush-vs-jasper",
+      "toolA": "semrush",
+      "toolB": "jasper",
+      "summaryVerdict": "Semrush is the stronger research and SEO planning layer, while Jasper is better for brand-aware content drafting. Agencies may use both, but the buying decision depends on whether the bottleneck is research or production.",
+      "primaryUseCase": "agency content workflow",
+      "winnerByUseCase": {
+        "SEO research": "Semrush",
+        "brand campaign copy": "Jasper",
+        "content brief creation": "Semrush"
+      },
+      "pricingNotes": "Verify current pricing, add-ons, trials, and AI content limits before publishing.",
       "lastCheckedAt": "2026-05-17"
     }
   ],
@@ -1226,6 +1486,54 @@
       "bestFreeOption": "ChatGPT",
       "bestBusinessOption": "Klaviyo AI",
       "finalVerdict": "Use Shopify Magic for built-in Shopify content help, Klaviyo AI for lifecycle marketing, and general AI assistants when you need flexible drafting outside the store admin.",
+      "lastCheckedAt": "2026-05-17"
+    },
+    {
+      "slug": "hubspot-alternatives",
+      "baseToolSlug": "hubspot",
+      "baseToolName": "HubSpot",
+      "reason": "Small teams may want a lighter stack than HubSpot when they only need copy drafting, meeting notes, simple workflow tracking, or a narrower sales process.",
+      "candidateSlugs": [
+        "copy-ai",
+        "airtable-ai",
+        "fireflies-ai",
+        "chatgpt"
+      ],
+      "bestFreeOption": "ChatGPT",
+      "bestBusinessOption": "Airtable AI",
+      "finalVerdict": "Keep HubSpot when CRM is central. Consider narrower tools when the real need is drafting, call summaries, or lightweight workflow tracking.",
+      "lastCheckedAt": "2026-05-17"
+    },
+    {
+      "slug": "fireflies-ai-alternatives",
+      "baseToolSlug": "fireflies-ai",
+      "baseToolName": "Fireflies.ai",
+      "reason": "Teams may compare meeting assistants by call-platform support, note quality, CRM handoff, pricing, privacy settings, and how easily summaries turn into tasks.",
+      "candidateSlugs": [
+        "fathom",
+        "notion-ai",
+        "chatgpt",
+        "hubspot"
+      ],
+      "bestFreeOption": "Fathom",
+      "bestBusinessOption": "HubSpot",
+      "finalVerdict": "Use a dedicated meeting assistant for call capture, then route summaries into a workspace or CRM if follow-up ownership matters.",
+      "lastCheckedAt": "2026-05-17"
+    },
+    {
+      "slug": "semrush-alternatives",
+      "baseToolSlug": "semrush",
+      "baseToolName": "Semrush",
+      "reason": "Agencies and small businesses may want lighter or more writing-focused alternatives when full SEO research and competitive intelligence are more than the workflow needs.",
+      "candidateSlugs": [
+        "chatgpt",
+        "jasper",
+        "copy-ai",
+        "airtable-ai"
+      ],
+      "bestFreeOption": "ChatGPT",
+      "bestBusinessOption": "Jasper",
+      "finalVerdict": "Choose Semrush for research-heavy SEO workflows; choose writing or workflow tools when the bottleneck is drafting, approvals, or content operations.",
       "lastCheckedAt": "2026-05-17"
     }
   ],
@@ -1341,6 +1649,160 @@
         "Product page copy outline"
       ],
       "lastUpdatedAt": "2026-05-17"
+    },
+    {
+      "title": "AI Real Estate Listing and Lead Follow-Up Workflow",
+      "slug": "ai-real-estate-listing-lead-follow-up-workflow",
+      "problem": "Real estate agents lose time when listing copy, social assets, viewing notes, and buyer follow-up happen in separate tools without a clear handoff.",
+      "toolsNeeded": [
+        "ChatGPT",
+        "Canva",
+        "HubSpot",
+        "Fathom"
+      ],
+      "relatedProfession": "real-estate-agents",
+      "steps": [
+        {
+          "title": "Turn property facts into safe listing copy",
+          "description": "Use a writing assistant to draft a factual listing description from verified property details only."
+        },
+        {
+          "title": "Create viewing and social assets",
+          "description": "Use a design tool to create a brochure, social post, and short viewing reminder using approved images and claims."
+        },
+        {
+          "title": "Capture viewing notes",
+          "description": "Record or summarise viewing feedback where consent and local rules allow, then extract buyer questions and objections."
+        },
+        {
+          "title": "Route follow-up into CRM",
+          "description": "Create lead records, follow-up tasks, and personalised emails so hot prospects are not lost."
+        }
+      ],
+      "prompts": [
+        "Act as a real estate assistant. Using only these verified property details, draft a listing description, five social captions, and a viewing follow-up email. Flag any missing facts instead of inventing them."
+      ],
+      "templates": [
+        "Property listing copy checklist",
+        "Viewing follow-up email template"
+      ],
+      "lastUpdatedAt": "2026-05-17"
+    },
+    {
+      "title": "AI Agency Campaign Brief Workflow",
+      "slug": "ai-agency-campaign-brief-workflow",
+      "problem": "Marketing agencies waste billable time when research, client notes, SEO inputs, creative direction, and task handoff are not turned into one usable campaign brief.",
+      "toolsNeeded": [
+        "Semrush",
+        "ChatGPT",
+        "Jasper",
+        "Airtable AI",
+        "Canva"
+      ],
+      "relatedProfession": "marketing-agencies",
+      "steps": [
+        {
+          "title": "Collect client and market context",
+          "description": "Gather goals, audience, competitors, existing assets, and SEO opportunities before generating any copy."
+        },
+        {
+          "title": "Draft the campaign brief",
+          "description": "Use AI to structure positioning, channels, message angles, deliverables, risks, and approval steps."
+        },
+        {
+          "title": "Create first content and visual directions",
+          "description": "Draft copy angles and simple visual directions, then review against brand voice and factual claims."
+        },
+        {
+          "title": "Turn the brief into production tasks",
+          "description": "Move deliverables, owners, deadlines, and approvals into a content operations base or project board."
+        }
+      ],
+      "prompts": [
+        "Turn this client intake, competitor research, and SEO context into a campaign brief with objective, target audience, key message, content angles, required assets, approval risks, and production tasks."
+      ],
+      "templates": [
+        "Agency campaign brief template",
+        "Content production handoff checklist"
+      ],
+      "lastUpdatedAt": "2026-05-17"
+    },
+    {
+      "title": "AI Consultant Research-to-Report Workflow",
+      "slug": "ai-consultant-research-to-report-workflow",
+      "problem": "Consultants need a reliable path from messy research and meeting notes to a client-ready report without losing assumptions, evidence, or next actions.",
+      "toolsNeeded": [
+        "Claude",
+        "ChatGPT",
+        "Notion AI",
+        "Fireflies.ai",
+        "Airtable AI"
+      ],
+      "relatedProfession": "consultants",
+      "steps": [
+        {
+          "title": "Centralise source material",
+          "description": "Collect call notes, documents, links, interview findings, and assumptions before asking AI to draft conclusions."
+        },
+        {
+          "title": "Summarise and tag evidence",
+          "description": "Use AI to group findings by theme, confidence, source, and client impact."
+        },
+        {
+          "title": "Draft the report structure",
+          "description": "Generate an outline with executive summary, findings, recommendations, risks, and implementation steps."
+        },
+        {
+          "title": "Review claims and hand off actions",
+          "description": "Check every claim against source material, then turn recommendations into owners, deadlines, and next steps."
+        }
+      ],
+      "prompts": [
+        "Act as a consulting analyst. Summarise these notes into findings, evidence, assumptions, risks, recommendations, and open questions. Do not invent facts or cite sources that are not provided."
+      ],
+      "templates": [
+        "Consulting report outline",
+        "Evidence and assumption log"
+      ],
+      "lastUpdatedAt": "2026-05-17"
+    },
+    {
+      "title": "AI Ecommerce Support Triage Workflow",
+      "slug": "ai-ecommerce-support-triage-workflow",
+      "problem": "Ecommerce sellers can damage trust when support replies are slow, inconsistent, or automated without enough human review.",
+      "toolsNeeded": [
+        "Tidio",
+        "Shopify Magic",
+        "ChatGPT",
+        "Klaviyo AI"
+      ],
+      "relatedProfession": "ecommerce-sellers",
+      "steps": [
+        {
+          "title": "Map repeat questions",
+          "description": "List the support questions that are safe to answer from approved policies, product details, and shipping information."
+        },
+        {
+          "title": "Draft reusable answers",
+          "description": "Use AI to create concise support replies, then verify every policy, timeline, and product claim."
+        },
+        {
+          "title": "Set triage rules",
+          "description": "Route common questions to draft replies and send sensitive issues to a human before response."
+        },
+        {
+          "title": "Feed customer insight into marketing",
+          "description": "Tag objections and common questions so product pages, email flows, and FAQs improve over time."
+        }
+      ],
+      "prompts": [
+        "Turn these ecommerce support questions and approved policies into safe draft replies. Add an escalation note for refunds, legal complaints, damaged goods, medical claims, and anything not covered by the policy."
+      ],
+      "templates": [
+        "Ecommerce support reply bank",
+        "Support escalation checklist"
+      ],
+      "lastUpdatedAt": "2026-05-17"
     }
   ],
   "promptTemplates": [
@@ -1380,6 +1842,58 @@
       "mistakesToAvoid": [
         "Do not invent product claims, certifications, reviews, or delivery promises.",
         "Do not make health, financial, or performance claims unless supplied and verified."
+      ],
+      "lastUpdatedAt": "2026-05-17"
+    },
+    {
+      "title": "ChatGPT Prompts for Marketing Agencies",
+      "slug": "chatgpt-prompts-for-marketing-agencies",
+      "profession": "marketing-agencies",
+      "task": "campaign briefs and client content planning",
+      "prompt": "Act as a senior agency strategist. Turn this client intake, audience context, competitor notes, and campaign goal into a campaign brief with positioning, content angles, deliverables, approval risks, and production tasks: [context].",
+      "refinementPrompt": "Rewrite the brief for a smaller client with a limited budget, then add a table of must-check claims before anything is sent to the client.",
+      "mistakesToAvoid": [
+        "Do not invent audience research, performance data, or competitor claims.",
+        "Do not create campaign promises that the agency cannot measure or deliver."
+      ],
+      "lastUpdatedAt": "2026-05-17"
+    },
+    {
+      "title": "ChatGPT Prompts for Consultants",
+      "slug": "chatgpt-prompts-for-consultants",
+      "profession": "consultants",
+      "task": "research synthesis and client reporting",
+      "prompt": "Act as a consulting analyst. Summarise these notes into findings, evidence, assumptions, risks, recommendations, and open questions. Use only the supplied material and flag any missing evidence: [notes].",
+      "refinementPrompt": "Turn the findings into an executive-summary draft, then create a separate implementation checklist with owners, decisions needed, and next actions.",
+      "mistakesToAvoid": [
+        "Do not turn weak evidence into firm recommendations.",
+        "Do not cite sources, numbers, or client facts that were not provided."
+      ],
+      "lastUpdatedAt": "2026-05-17"
+    },
+    {
+      "title": "ChatGPT Prompts for Sales Teams",
+      "slug": "chatgpt-prompts-for-sales-teams",
+      "profession": "sales-teams",
+      "task": "prospect research and follow-up emails",
+      "prompt": "Act as a sales development assistant. Using only this prospect context, draft a concise outreach email, a follow-up, likely objections, and CRM notes for the next action: [prospect context].",
+      "refinementPrompt": "Rewrite the outreach to be more specific and less promotional, then add a checklist of facts the rep should verify before sending.",
+      "mistakesToAvoid": [
+        "Do not invent personalisation details or imply a relationship that does not exist.",
+        "Do not make ROI, pricing, or availability claims unless supplied."
+      ],
+      "lastUpdatedAt": "2026-05-17"
+    },
+    {
+      "title": "ChatGPT Prompts for Ecommerce Support",
+      "slug": "chatgpt-prompts-for-ecommerce-support",
+      "profession": "ecommerce-sellers",
+      "task": "customer support triage and reply drafting",
+      "prompt": "Act as an ecommerce support assistant. Using only these approved policies and customer messages, draft safe replies, escalation tags, and FAQ improvements. Do not answer anything not covered by the policy: [policies and messages].",
+      "refinementPrompt": "Rewrite the replies in a warmer brand voice and add an escalation checklist for refunds, damaged goods, legal complaints, and sensitive claims.",
+      "mistakesToAvoid": [
+        "Do not invent delivery dates, refund promises, product claims, or legal advice.",
+        "Do not automate replies for sensitive issues without human review."
       ],
       "lastUpdatedAt": "2026-05-17"
     }

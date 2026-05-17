@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: RouteProps) {
   const set = await findAlternativeSet(slug);
   if (!set) return {};
   return pageMetadata({
-    title: `Best ${set.baseToolName} Alternatives in ${currentYear()}: Compare Pricing, Features & Use Cases`,
+    title: `${set.baseToolName} Alternatives (${currentYear()})`,
     description: set.reason || `Compare ${set.baseToolName} alternatives by pricing, features, and practical use case.`,
     path: `/alternatives/${set.slug}/`
   });
@@ -68,7 +68,7 @@ export default async function AlternativesPage({ params }: RouteProps) {
     <>
       <JsonLd data={breadcrumbJsonLd(breadcrumbs)} />
       <JsonLd data={faqJsonLd(faqs)} />
-      <PageHero eyebrow="Alternatives" title={`Best ${set.baseToolName} Alternatives in ${currentYear()}`} description={set.reason || "Compare practical alternatives and replacement options."}>
+      <PageHero eyebrow="Alternatives" title={`${set.baseToolName} Alternatives (${currentYear()})`} description={set.reason || "Compare practical alternatives and replacement options."}>
         <Breadcrumbs items={breadcrumbs} />
       </PageHero>
       <section className="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:px-6 lg:grid-cols-[1fr_320px] lg:px-8">

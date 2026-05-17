@@ -12,7 +12,7 @@ import type {
 } from "@/types/content";
 import { freeTools } from "./free-tools";
 import { getPageQualityScore } from "./quality";
-import { currentYear } from "./seo";
+import { currentYear, truncateDescription } from "./seo";
 
 export type RouteGroup =
   | "static"
@@ -222,7 +222,7 @@ function professionRoute(profession: Profession, context: ReturnType<typeof crea
   return {
     path: `/professions/${profession.slug}/`,
     group: "professions",
-    title: `Best AI Tools for ${profession.name} in ${currentYear()}: Compare Features, Pricing & Use Cases`,
+    title: `AI Tools for ${profession.name} (${currentYear()})`,
     description: `Compare AI tools for ${profession.name.toLowerCase()} by use case, pricing model, pros, cons, workflows, and prompts.`,
     parent: "/professions/",
     quality: getPageQualityScore({
@@ -267,8 +267,8 @@ function comparisonRoute(comparison: Comparison, context: ReturnType<typeof crea
   return {
     path: `/comparisons/${comparison.slug}/`,
     group: "comparisons",
-    title: `${toolA?.name ?? comparison.toolA} vs ${toolB?.name ?? comparison.toolB}: Which Is Better for ${comparison.primaryUseCase || "AI Workflows"}?`,
-    description: comparison.summaryVerdict,
+    title: `${toolA?.name ?? comparison.toolA} vs ${toolB?.name ?? comparison.toolB} for ${comparison.primaryUseCase || "AI Workflows"}`,
+    description: truncateDescription(comparison.summaryVerdict, 155),
     parent: "/comparisons/",
     quality: getPageQualityScore({
       matchingTools: [toolA, toolB].filter(Boolean) as Tool[],
@@ -286,8 +286,8 @@ function alternativeRoute(set: AlternativeSet, context: ReturnType<typeof create
   return {
     path: `/alternatives/${set.slug}/`,
     group: "alternatives",
-    title: `Best ${set.baseToolName} Alternatives in ${currentYear()}: Compare Pricing, Features & Use Cases`,
-    description: set.reason || `Compare ${set.baseToolName} alternatives by pricing, features, and practical use case.`,
+    title: `${set.baseToolName} Alternatives (${currentYear()})`,
+    description: truncateDescription(set.reason || `Compare ${set.baseToolName} alternatives by pricing, features, and practical use case.`, 155),
     parent: "/alternatives/",
     quality: getPageQualityScore({
       matchingTools: tools,
@@ -307,8 +307,8 @@ function workflowRoute(workflow: Workflow, context: ReturnType<typeof createRout
   return {
     path: `/workflows/${workflow.slug}/`,
     group: "workflows",
-    title: `${workflow.title}: Tools, Prompts & Step-by-Step Setup`,
-    description: workflow.problem,
+    title: workflow.title,
+    description: truncateDescription(workflow.problem, 155),
     parent: "/workflows/",
     quality: getPageQualityScore({
       valueBlocks: ["problem", "tools-needed", "steps", "prompts", "templates"],

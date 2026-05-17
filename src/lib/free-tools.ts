@@ -35,6 +35,43 @@ const commonToneOptions = ["clear and practical", "friendly", "direct", "premium
 
 export const freeTools: FreeToolDefinition[] = [
   {
+    title: "Workflow Kit Planner",
+    slug: "workflow-kit-planner",
+    description: "Build a first-pass AI workflow kit with tasks, tools, prompts, checks, and related page ideas.",
+    inputSummary: "Audience, workflow goal, current tools, country, risk level, and output type.",
+    outputSummary: "Workflow steps, tool categories, prompt ideas, verification checks, and internal-link targets.",
+    fields: [
+      { name: "audience", label: "Audience", type: "select", defaultValue: "ecommerce sellers", options: ["ecommerce sellers", "marketing agencies", "real estate agents", "consultants", "sales teams"], required: true },
+      { name: "goal", label: "Workflow goal", type: "text", defaultValue: "launch a new product campaign", placeholder: "e.g. turn calls into proposals", required: true },
+      { name: "currentTools", label: "Current tools", type: "textarea", defaultValue: "ChatGPT, Canva, CRM", required: true },
+      { name: "country", label: "Primary country", type: "select", defaultValue: "United Kingdom", options: ["United States", "United Kingdom", "Australia", "Canada", "New Zealand", "Ireland", "Singapore"], required: true },
+      { name: "riskLevel", label: "Risk level", type: "select", defaultValue: "moderate", options: ["low", "moderate", "high"], required: true },
+      { name: "outputType", label: "Output type", type: "select", defaultValue: "step-by-step workflow", options: ["step-by-step workflow", "content brief", "support process", "sales follow-up plan"], required: true }
+    ],
+    related: [
+      { title: "Workflow guides", href: "/workflows/", description: "Browse the complete workflow-kit clusters." },
+      { title: "Prompt library", href: "/prompts/", description: "Turn workflow steps into reusable prompts." }
+    ]
+  },
+  {
+    title: "Display Ad Readiness Checklist",
+    slug: "display-ad-readiness-checklist",
+    description: "Check whether a content site is ready to apply for display ads without hurting quality or trust.",
+    inputSummary: "Indexed pages, organic sessions, policy pages, ad density, and content quality status.",
+    outputSummary: "Readiness score, blockers, next actions, and ad-slot cautions.",
+    fields: [
+      { name: "indexedPages", label: "Indexed useful pages", type: "number", defaultValue: "25", min: 0, max: 100000, required: true },
+      { name: "monthlySessions", label: "Monthly organic sessions", type: "number", defaultValue: "500", min: 0, max: 10000000, required: true },
+      { name: "policyPages", label: "Policy/trust pages live?", type: "select", defaultValue: "yes", options: ["yes", "partly", "no"], required: true },
+      { name: "thinPages", label: "Thin indexable pages", type: "number", defaultValue: "0", min: 0, max: 100000, required: true },
+      { name: "adSlots", label: "Planned ad slots per article", type: "number", defaultValue: "2", min: 0, max: 20, required: true }
+    ],
+    related: [
+      { title: "Editorial policy", href: "/editorial-policy/", description: "Keep monetisation separated from recommendations." },
+      { title: "Advertising disclosure", href: "/affiliate-disclosure/", description: "Explain ad and sponsorship rules clearly." }
+    ]
+  },
+  {
     title: "AI Tool Recommender",
     slug: "ai-tool-recommender",
     description: "Get a rule-based shortlist based on profession, task, budget, country, team size, and complexity.",
@@ -162,6 +199,10 @@ export function validateFreeToolInput(tool: FreeToolDefinition, values: Record<s
 
 export function generateFreeToolResult(slug: string, values: Record<string, string>): FreeToolResult {
   switch (slug) {
+    case "workflow-kit-planner":
+      return generateWorkflowKit(values);
+    case "display-ad-readiness-checklist":
+      return generateDisplayAdReadiness(values);
     case "ai-tool-recommender":
       return generateToolRecommendations(values);
     case "ai-proposal-generator":
@@ -210,6 +251,94 @@ export function calculateSaasCost(input: {
     annualBeforeDiscount,
     annual: annualBeforeDiscount - annualSavings,
     annualSavings
+  };
+}
+
+function generateWorkflowKit(values: Record<string, string>): FreeToolResult {
+  const audience = values.audience || "small business team";
+  const goal = values.goal || "complete the workflow";
+  const country = values.country || "your market";
+  const riskLevel = values.riskLevel || "moderate";
+  const outputType = values.outputType || "step-by-step workflow";
+  const currentTools = values.currentTools || "existing tools";
+
+  return {
+    title: `Workflow kit for ${audience}`,
+    summary: `A first-pass ${outputType} for teams in ${country} trying to ${goal}.`,
+    sections: [
+      {
+        heading: "Workflow steps",
+        body: [
+          `Define the exact trigger: when does the ${goal} workflow start?`,
+          `Collect source material in one place: customer notes, existing docs, product details, calls, and constraints.`,
+          `Use AI to draft the first output, then route it through a human review step before anything customer-facing is used.`,
+          `Capture the final output, decisions, and next action in ${currentTools}.`
+        ]
+      },
+      {
+        heading: "Tool categories to compare",
+        body: [
+          "General AI assistant for drafting and analysis.",
+          "Workflow database or CRM for ownership and handoff.",
+          "Specialist tool for the main task: SEO, support, meetings, design, or sales.",
+          "Analytics or reporting layer once the workflow is live."
+        ]
+      },
+      {
+        heading: "Verification checks",
+        body: [
+          `Risk level: ${riskLevel}. Add stricter review for client, customer, legal, financial, medical, or regulated claims.`,
+          "Check privacy, recording consent, customer-data handling, and country-specific terminology before rollout.",
+          "Do not buy annual plans until the workflow has been tested by the actual users."
+        ]
+      }
+    ],
+    ctas: [
+      { title: "Workflow guides", href: "/workflows/", description: "Match this plan to an existing WorkWise workflow kit." },
+      { title: "AI tool recommender", href: "/free-tools/ai-tool-recommender/", description: "Shortlist tools for the workflow." }
+    ]
+  };
+}
+
+function generateDisplayAdReadiness(values: Record<string, string>): FreeToolResult {
+  const indexedPages = Number(values.indexedPages) || 0;
+  const sessions = Number(values.monthlySessions) || 0;
+  const thinPages = Number(values.thinPages) || 0;
+  const adSlots = Number(values.adSlots) || 0;
+  const hasPolicies = values.policyPages === "yes";
+  const score =
+    Math.min(35, Math.floor(indexedPages / 2)) +
+    Math.min(30, Math.floor(sessions / 100)) +
+    (hasPolicies ? 20 : values.policyPages === "partly" ? 10 : 0) +
+    (thinPages === 0 ? 10 : 0) +
+    (adSlots <= 3 ? 5 : 0);
+
+  const blockers = [
+    indexedPages < 30 ? "Publish more useful, indexable pages before expecting meaningful ad performance." : "Indexed page count is moving in the right direction.",
+    sessions < 1000 ? "Organic traffic is still early; focus on Search Console-led improvements before heavy ads." : "Traffic is enough to begin testing basic display placements.",
+    hasPolicies ? "Trust pages are present." : "Add or finish editorial, contact, privacy, and disclosure pages.",
+    thinPages > 0 ? "Fix thin indexable pages before applying to ad networks." : "No thin-page blocker reported.",
+    adSlots > 3 ? "Reduce ad density so the site still feels useful and readable." : "Ad density looks conservative."
+  ];
+
+  return {
+    title: `Display ad readiness score: ${Math.min(score, 100)}/100`,
+    summary: "Use this as an operational checklist, not a guarantee of network approval.",
+    sections: [
+      { heading: "Readiness signals", body: blockers },
+      {
+        heading: "Next actions",
+        body: [
+          "Submit the sitemap in Search Console and wait for early query data.",
+          "Keep ad slots as placeholders until a network supplies publisher IDs and ads.txt instructions.",
+          "Prioritise page quality, internal linking, and clean UX before increasing ad density."
+        ]
+      }
+    ],
+    ctas: [
+      { title: "Editorial policy", href: "/editorial-policy/", description: "Review the trust foundation." },
+      { title: "Workflow guides", href: "/workflows/", description: "Publish stronger workflow clusters first." }
+    ]
   };
 }
 

@@ -5,6 +5,7 @@ import {
   Breadcrumbs,
   ContentQualityPanel,
   DataFreshnessNotice,
+  DisplayAdSlot,
   LastUpdated,
   MethodologyBox,
   PageHero,
@@ -34,7 +35,7 @@ export async function generateMetadata({ params }: RouteProps) {
   const workflow = await findWorkflow(slug);
   if (!workflow) return {};
   return pageMetadata({
-    title: `${workflow.title}: Tools, Prompts & Step-by-Step Setup`,
+    title: workflow.title,
     description: workflow.problem,
     path: `/workflows/${workflow.slug}/`
   });
@@ -83,6 +84,7 @@ export default async function WorkflowPage({ params }: RouteProps) {
           <AffiliateDisclosure />
         </div>
         <aside className="space-y-5">
+          <DisplayAdSlot label="Workflow guide ad slot" />
           <AuthorBox />
           <LastUpdated date={workflow.lastUpdatedAt} />
         </aside>

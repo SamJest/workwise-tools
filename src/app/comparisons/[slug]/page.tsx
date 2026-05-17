@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: RouteProps) {
   if (!comparison) return {};
   const [toolA, toolB] = await comparisonTools(comparison);
   return pageMetadata({
-    title: `${toolA?.name} vs ${toolB?.name}: Which Is Better for ${comparison.primaryUseCase || "AI Workflows"}?`,
+    title: `${toolA?.name} vs ${toolB?.name} for ${comparison.primaryUseCase || "AI Workflows"}`,
     description: comparison.summaryVerdict,
     path: `/comparisons/${comparison.slug}/`
   });
@@ -71,7 +71,7 @@ export default async function ComparisonPage({ params }: RouteProps) {
     <>
       <JsonLd data={breadcrumbJsonLd(breadcrumbs)} />
       <JsonLd data={faqJsonLd(faqs)} />
-      <PageHero eyebrow="Comparison" title={`${toolA.name} vs ${toolB.name}: Which Is Better in ${currentYear()}?`} description={comparison.summaryVerdict}>
+      <PageHero eyebrow="Comparison" title={`${toolA.name} vs ${toolB.name} (${currentYear()})`} description={comparison.summaryVerdict}>
         <Breadcrumbs items={breadcrumbs} />
       </PageHero>
       <section className="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:px-6 lg:grid-cols-[1fr_320px] lg:px-8">

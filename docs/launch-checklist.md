@@ -25,6 +25,8 @@
 - [ ] How-we-review page is published.
 - [ ] At least 3 unique value blocks per indexable PSEO page.
 - [ ] FAQs are useful and not keyword-stuffed.
+- [ ] Workflow kits connect profession, workflow, comparison, alternatives, prompt/template, and free-tool pages.
+- [ ] New tools are added only when they support a priority workflow cluster.
 
 ## SEO
 
@@ -45,6 +47,8 @@
 - [ ] Affiliate links are centralised.
 - [ ] Monetisation report has no unresolved launch-blocking gaps.
 - [ ] Sponsored placements are disclosed.
+- [ ] Display ad placeholders do not interrupt the main reading flow.
+- [ ] `ads.txt` is only added after the ad network supplies a publisher record.
 - [ ] Newsletter capture works or is clearly staged.
 - [ ] Vendor inquiry CTA exists if needed.
 - [ ] No monetisation claims are fabricated.

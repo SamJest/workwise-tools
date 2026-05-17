@@ -7,6 +7,7 @@ import {
   ContentQualityPanel,
   DataFreshnessNotice,
   DemoDataNotice,
+  DisplayAdSlot,
   FAQBlock,
   LastUpdated,
   MethodologyBox,
@@ -103,6 +104,7 @@ export default async function ToolDetailPage({ params }: RouteProps) {
         </div>
         <aside className="space-y-5">
           <VendorCtaCard tool={tool} />
+          <DisplayAdSlot label="Tool guide ad slot" />
           <AuthorBox />
           <LastUpdated date={tool.lastCheckedAt} />
         </aside>

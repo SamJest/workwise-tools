@@ -3,6 +3,8 @@ import { AlertCircle, ArrowUpRight, CheckCircle2, Clock, ExternalLink, Info, Shi
 import type { PageContentProfile, PageQuality, SiteLink, Tool, Workflow } from "@/types/content";
 import { getToolOutboundAction, monetisationLabel } from "@/lib/affiliate";
 import { hasDemoDataWarning } from "@/lib/quality";
+import type { WorkflowKit } from "@/lib/workflow-kits";
+import { kitLinks } from "@/lib/workflow-kits";
 import { NewsletterSignupForm } from "./NewsletterSignupForm";
 import { TrackedOutboundLink } from "./TrackedOutboundLink";
 
@@ -66,6 +68,17 @@ export function AffiliateDisclosure() {
       <strong>Advertising disclosure:</strong> WorkWise Tools is being built as an ad-supported publisher. Some pages may later include
       display ads, sponsorships, or marked affiliate links, but editorial recommendations should remain based on practical workflow fit.
     </div>
+  );
+}
+
+export function DisplayAdSlot({ label = "Display ad placeholder" }: { label?: string }) {
+  return (
+    <aside className="rounded-md border border-dashed border-line bg-white p-5 text-center text-sm text-muted" aria-label={label}>
+      <p className="font-semibold text-ink">{label}</p>
+      <p className="mt-2 leading-6">
+        Reserved for AdSense, Ezoic, or another display network after approval. Keep editorial content readable around this slot.
+      </p>
+    </aside>
   );
 }
 
@@ -216,6 +229,33 @@ export function ToolGrid({ tools }: { tools: Tool[] }) {
         <ToolCard key={tool.slug} tool={tool} rank={index + 1} />
       ))}
     </div>
+  );
+}
+
+export function WorkflowKitCard({ kit }: { kit: WorkflowKit }) {
+  const links = kitLinks(kit);
+
+  return (
+    <article className="rounded-md border border-line bg-white p-5 shadow-sm">
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+        <div>
+          <p className="text-sm font-semibold text-brand">{kit.audience}</p>
+          <h3 className="mt-2 text-xl font-bold text-ink">
+            <Link href={`/workflows/${kit.workflowSlug}/`}>{kit.title}</Link>
+          </h3>
+          <p className="mt-3 text-sm leading-6 text-muted">{kit.summary}</p>
+        </div>
+        <Badge>{links.length} linked pages</Badge>
+      </div>
+      <div className="mt-5 grid gap-3 md:grid-cols-2">
+        {links.map((link) => (
+          <Link key={link.href} href={link.href} className="rounded-md border border-line bg-panel p-3 text-sm hover:border-brand">
+            <span className="font-semibold capitalize text-ink">{link.title}</span>
+            {link.description ? <span className="mt-1 block leading-5 text-muted">{link.description}</span> : null}
+          </Link>
+        ))}
+      </div>
+    </article>
   );
 }
 

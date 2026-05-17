@@ -6,6 +6,7 @@ import {
   ComparisonTable,
   ContentQualityPanel,
   DataFreshnessNotice,
+  DisplayAdSlot,
   FAQBlock,
   LastUpdated,
   MethodologyBox,
@@ -55,7 +56,7 @@ export async function generateMetadata({ params }: RouteProps) {
     requiresThreeTools: true
   });
   return pageMetadata({
-    title: `Best AI Tools for ${profession.name} in ${currentYear()}: Compare Features, Pricing & Use Cases`,
+    title: `AI Tools for ${profession.name} (${currentYear()})`,
     description: `Compare AI tools for ${profession.name.toLowerCase()} by use case, pricing model, pros, cons, workflows, and prompts.`,
     path: `/professions/${profession.slug}/`,
     quality
@@ -121,6 +122,7 @@ export default async function ProfessionPage({ params }: RouteProps) {
           <AffiliateDisclosure />
         </div>
         <aside className="space-y-5">
+          <DisplayAdSlot label="Profession guide ad slot" />
           <AuthorBox />
           <LastUpdated date={new Date().toISOString()} />
         </aside>
