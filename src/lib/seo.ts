@@ -3,12 +3,12 @@ import type { PageQuality } from "@/types/content";
 
 export const siteConfig = {
   name: process.env.NEXT_PUBLIC_SITE_NAME || "WorkWise Tools",
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://workwisetools.com",
-  domain: "workwisetools.com",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://www.workwise.tools",
+  domain: "workwise.tools",
   logo: "/logo.svg",
   ogImage: "/og-image.svg",
   description:
-    "Practical AI and SaaS software guides for better workflows, tool comparisons, prompts, templates, and free calculators."
+    "Practical workflow guides for UK tradespeople, small businesses, software choices, prompts, templates, and free calculators."
 };
 
 export function absoluteUrl(path = "/"): string {

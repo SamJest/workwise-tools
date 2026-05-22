@@ -1,6 +1,7 @@
 import { getSeedData } from "../src/lib/data";
 import { freeTools } from "../src/lib/free-tools";
 import { priorityCountryProfessionPairs } from "../src/lib/route-registry";
+import { getTradeCityPairs, tradePages } from "../src/lib/trade-pages";
 import { getUseCasePages } from "../src/lib/use-cases";
 import { workflowKits } from "../src/lib/workflow-kits";
 
@@ -45,6 +46,7 @@ export function routeInventory() {
     "/prompts/",
     "/templates/",
     "/free-tools/",
+    "/trades/",
     "/about/",
     "/editorial-policy/",
     "/how-we-review-ai-tools/",
@@ -66,7 +68,9 @@ export function routeInventory() {
     ...workflowKits.map((kit) => `/workflow-kits/${kit.slug}/`),
     ...data.promptTemplates.map((prompt) => `/prompts/${prompt.slug}/`),
     ...data.promptTemplates.map((template) => `/templates/${template.slug}/`),
-    ...freeTools.map((tool) => `/free-tools/${tool.slug}/`)
+    ...freeTools.map((tool) => `/free-tools/${tool.slug}/`),
+    ...tradePages.map((trade) => `/trades/${trade.slug}/`),
+    ...getTradeCityPairs().map((pair) => `/trades/${pair.trade}/${pair.city}/`)
   ]);
 }
 

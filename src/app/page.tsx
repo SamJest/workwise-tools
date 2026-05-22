@@ -1,16 +1,17 @@
 import Link from "next/link";
-import { ArrowRight, Database, FileSearch, GitCompare, ListChecks, Tags, Workflow } from "lucide-react";
+import { ArrowRight, Database, FileSearch, GitCompare, ListChecks, Tags } from "lucide-react";
 import { AffiliateDisclosure, DemoDataNotice, DisplayAdSlot, NewsletterCTA, PageHero, PublisherTrustPanel, ToolGrid, VerdictBox, WorkflowKitCard } from "@/components/Blocks";
 import { SectionHeader } from "@/components/Shell";
 import { freeTools } from "@/lib/free-tools";
 import { listAlternativeSets, listCategories, listComparisons, listCountries, listProfessions, listTools, listWorkflows } from "@/lib/repository";
 import { pageMetadata } from "@/lib/seo";
+import { tradeCities, tradePages } from "@/lib/trade-pages";
 import { getUseCasePages } from "@/lib/use-cases";
 import { workflowKits } from "@/lib/workflow-kits";
 
 export const metadata = pageMetadata({
-  title: "WorkWise Tools: Workflow-First AI Tool Guides",
-  description: "Compare AI tools by workflow, profession, country, and use case with prompts, templates, alternatives, and free planners.",
+  title: "WorkWise Tools: Workflow Guides for Trades and Small Businesses",
+  description: "Explore Workwise guides for UK tradespeople, job management, estimates, invoices, AI tools, workflows, prompts, templates, and free planners.",
   path: "/"
 });
 
@@ -30,10 +31,14 @@ export default async function HomePage() {
     <>
       <PageHero
         eyebrow="WorkWise Tools"
-        title="Find the right AI tools for the workflow you actually need."
-        description="Workflow-first AI tool guides for US and UK small businesses: compare tools, build repeatable processes, use prompts, and avoid buying software before the workflow is clear."
+        title="Build cleaner workflows for the jobs you actually run."
+        description="Trade-first Workwise guides for estimates, job tracking, customer records, photos, invoices, and practical software choices for small teams."
       >
         <div className="flex flex-wrap gap-3">
+          <Link href="/trades/" className="inline-flex items-center gap-2 rounded-md bg-ink px-5 py-3 text-sm font-semibold text-white">
+            Explore trade guides
+            <ArrowRight className="h-4 w-4" aria-hidden="true" />
+          </Link>
           <Link href="/ai-tools/" className="inline-flex items-center gap-2 rounded-md bg-ink px-5 py-3 text-sm font-semibold text-white">
             Browse tools
             <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -49,12 +54,34 @@ export default async function HomePage() {
 
       <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
         <div className="grid gap-4 md:grid-cols-3 lg:grid-cols-6">
+          <Stat icon={<ListChecks />} label="Trade pages" value={tradePages.length + tradePages.length * tradeCities.length} />
           <Stat icon={<Database />} label="Tools" value={tools.length} />
           <Stat icon={<Tags />} label="Categories" value={categories.length} />
           <Stat icon={<ListChecks />} label="Use cases" value={useCases.length} />
           <Stat icon={<FileSearch />} label="Professions" value={professions.length} />
           <Stat icon={<GitCompare />} label="Comparisons" value={comparisons.length} />
-          <Stat icon={<Workflow />} label="Workflows" value={workflows.length} />
+        </div>
+      </section>
+
+      <section className="bg-panel">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+          <SectionHeader
+            eyebrow="Trade search"
+            title="Long-tail pages for tradespeople who are ready to solve admin"
+            description="The new trade hub targets practical queries around estimates, job management, customer records, site photos, invoices, and local UK trade workflows."
+            action={{ href: "/trades/", label: "View trade guides" }}
+          />
+          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+            {tradePages.slice(0, 8).map((trade) => (
+              <Link key={trade.slug} href={`/trades/${trade.slug}/`} className="rounded-md border border-line bg-white p-5 hover:border-brand">
+                <p className="text-sm font-semibold text-brand">{trade.audience}</p>
+                <h3 className="mt-2 text-xl font-bold text-ink">{trade.name} job management</h3>
+                <p className="mt-3 text-sm leading-6 text-muted">
+                  Guides for {trade.primaryJobs.slice(0, 3).join(", ")}, estimates, job notes, customer records, and invoice handoff.
+                </p>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 

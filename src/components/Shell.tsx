@@ -4,6 +4,7 @@ import { WorkWiseLogo } from "@/components/Logo";
 import { siteConfig } from "@/lib/seo";
 
 const navItems = [
+  { href: "/trades/", label: "Trades" },
   { href: "/best-ai-tools/", label: "Best tools" },
   { href: "/ai-tools/", label: "AI tools" },
   { href: "/categories/", label: "Categories" },
@@ -50,12 +51,13 @@ export function Footer() {
         <div className="md:col-span-2">
           <p className="text-lg font-bold text-ink">{siteConfig.name}</p>
           <p className="mt-3 max-w-xl text-sm leading-6 text-muted">
-            Practical AI and SaaS guides for better workflows, smarter tool choices, and useful software comparisons.
+            Practical workflow guides for tradespeople, small businesses, tool choices, and useful software comparisons.
           </p>
         </div>
         <FooterColumn
-          title="Research"
+          title="Growth"
           links={[
+            { href: "/trades/", label: "Trade guides" },
             { href: "/ai-tools/", label: "Tool directory" },
             { href: "/best-ai-tools/", label: "Best AI tools" },
             { href: "/categories/", label: "Categories" },

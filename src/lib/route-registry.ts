@@ -15,6 +15,7 @@ import { freeTools } from "./free-tools";
 import { getPageQualityScore } from "./quality";
 import { currentYear, truncateDescription } from "./seo";
 import { getUseCasePages, slugifyUseCase, type UseCasePage } from "./use-cases";
+import { getTradeCityPairs, getTradeCity, getTrade, tradeDescription, tradePageTitle, tradePages } from "./trade-pages";
 import { workflowKits } from "./workflow-kits";
 
 export type RouteGroup =
@@ -31,7 +32,8 @@ export type RouteGroup =
   | "prompts"
   | "templates"
   | "free-tools"
-  | "country-professions";
+  | "country-professions"
+  | "trades";
 
 export type SeoRoute = {
   path: string;
@@ -151,6 +153,13 @@ export const staticSeoRoutes: SeoRoute[] = [
     quality: strongStaticQuality
   },
   {
+    path: "/trades/",
+    group: "trades",
+    title: "Job Management Software for UK Tradespeople",
+    description: "Explore Workwise job management guides for plumbers, electricians, builders, gas engineers, carpenters, decorators, roofers, and landscapers.",
+    quality: strongStaticQuality
+  },
+  {
     path: "/about/",
     group: "static",
     title: "About",
@@ -219,6 +228,26 @@ export function buildSeoRoutes(data: SeedData): SeoRoute[] {
   const context = createRouteContext(data);
   return [
     ...staticSeoRoutes,
+    ...tradePages.map((trade) => ({
+      path: `/trades/${trade.slug}/`,
+      group: "trades" as const,
+      title: tradePageTitle(trade),
+      description: tradeDescription(trade),
+      parent: "/trades/",
+      quality: strongStaticQuality
+    })),
+    ...getTradeCityPairs().map((pair) => {
+      const trade = getTrade(pair.trade);
+      const city = getTradeCity(pair.city);
+      return {
+        path: `/trades/${pair.trade}/${pair.city}/`,
+        group: "trades" as const,
+        title: trade && city ? tradePageTitle(trade, city) : `Job Management Software for ${pair.trade} in ${pair.city}`,
+        description: trade && city ? tradeDescription(trade, city) : "Local Workwise job management guide for UK tradespeople.",
+        parent: `/trades/${pair.trade}/`,
+        quality: strongStaticQuality
+      };
+    }),
     ...data.tools.map((tool) => toolRoute(tool, context)),
     ...data.categories.map((category) => categoryRoute(category, context)),
     ...context.useCasePages.map((useCase) => useCaseRoute(useCase, context)),
