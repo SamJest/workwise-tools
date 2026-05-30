@@ -4,17 +4,16 @@ import { WorkWiseLogo } from "@/components/Logo";
 import { siteConfig } from "@/lib/seo";
 
 const navItems = [
-  { href: "/trades/", label: "Trades" },
-  { href: "/best-ai-tools/", label: "Best tools" },
-  { href: "/ai-tools/", label: "AI tools" },
-  { href: "/categories/", label: "Categories" },
-  { href: "/use-cases/", label: "Use cases" },
-  { href: "/professions/", label: "Professions" },
-  { href: "/countries/", label: "Countries" },
-  { href: "/comparisons/", label: "Comparisons" },
-  { href: "/workflows/", label: "Workflows" },
-  { href: "/workflow-kits/", label: "Kits" },
-  { href: "/free-tools/", label: "Free tools" }
+  { href: "/ai-tools/", label: "Find a tool" },
+  { href: "/automation-os/", label: "Automation OS" },
+  { href: "/workflow-library/", label: "Workflow Library" },
+  { href: "/stack-blueprints/", label: "Stack Blueprints" },
+  { href: "/agent-playbooks/", label: "Agent Playbooks" },
+  { href: "/workflow-kits/", label: "Build workflow" },
+  { href: "/comparisons/", label: "Compare" },
+  { href: "/topics/", label: "Topics" },
+  { href: "/free-tools/", label: "Free tools" },
+  { href: "/updates/", label: "Latest updates" }
 ];
 
 export function Header() {
@@ -37,7 +36,7 @@ export function Header() {
           className="inline-flex items-center gap-2 rounded-md bg-ink px-3 py-2 text-sm font-semibold text-white hover:bg-brand sm:px-4"
         >
           <Search className="h-4 w-4" aria-hidden="true" />
-          <span className="hidden sm:inline">Recommend tools</span>
+          <span className="hidden sm:inline">Use a free tool</span>
         </Link>
       </div>
     </header>
@@ -51,20 +50,25 @@ export function Footer() {
         <div className="md:col-span-2">
           <p className="text-lg font-bold text-ink">{siteConfig.name}</p>
           <p className="mt-3 max-w-xl text-sm leading-6 text-muted">
-            Practical workflow guides for tradespeople, small businesses, tool choices, and useful software comparisons.
+            Workflow-first AI and SaaS guides for small businesses, with practical tools, comparisons, prompts, and update notes.
           </p>
         </div>
         <FooterColumn
           title="Growth"
           links={[
-            { href: "/trades/", label: "Trade guides" },
-            { href: "/ai-tools/", label: "Tool directory" },
+            { href: "/ai-tools/", label: "Find a tool" },
+            { href: "/automation-os/", label: "Automation OS" },
+            { href: "/workflow-library/", label: "Workflow Library" },
+            { href: "/stack-blueprints/", label: "Stack Blueprints" },
+            { href: "/agent-playbooks/", label: "Agent Playbooks" },
             { href: "/best-ai-tools/", label: "Best AI tools" },
-            { href: "/categories/", label: "Categories" },
-            { href: "/use-cases/", label: "Use cases" },
+            { href: "/workflow-kits/", label: "Build a workflow" },
+            { href: "/topics/", label: "Topic clusters" },
+            { href: "/updates/", label: "Latest updates" },
+            { href: "/daily-ai-workflow-brief/", label: "Daily AI brief" },
             { href: "/comparisons/", label: "Comparisons" },
             { href: "/alternatives/", label: "Alternatives" },
-            { href: "/workflow-kits/", label: "Workflow kits" },
+            { href: "/trades/", label: "Trade guides" },
             { href: "/prompts/", label: "Prompts" }
           ]}
         />

@@ -59,7 +59,19 @@ export const toolSchema = z.object({
   affiliateAvailable: z.boolean(),
   isSponsored: z.boolean().optional(),
   lastCheckedAt: z.string().nullable(),
-  lastVerifiedAt: z.string().nullable().optional()
+  lastVerifiedAt: z.string().nullable().optional(),
+  testedAt: z.string().nullable().optional(),
+  testedBy: z.string().optional(),
+  testingSummary: z.string().optional(),
+  evidenceUrls: z.array(z.string().url()).default([]).optional(),
+  pricingLastCheckedAt: z.string().nullable().optional(),
+  featureLastCheckedAt: z.string().nullable().optional(),
+  changeLog: stringArray.default([]).optional(),
+  workflowFitScore: z.number().int().min(1).max(10).optional(),
+  setupEffortScore: z.number().int().min(1).max(10).optional(),
+  privacyRiskNotes: z.string().optional(),
+  bestForUseCases: stringArray.default([]).optional(),
+  dailyUseCases: stringArray.default([]).optional()
 });
 
 export const seedDataSchema = z.object({

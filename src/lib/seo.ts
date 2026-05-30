@@ -3,8 +3,8 @@ import type { PageQuality } from "@/types/content";
 
 export const siteConfig = {
   name: process.env.NEXT_PUBLIC_SITE_NAME || "WorkWise Tools",
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://www.workwise.tools",
-  domain: "workwise.tools",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://www.workwisetools.com",
+  domain: "workwisetools.com",
   logo: "/logo.svg",
   ogImage: "/og-image.svg",
   description:

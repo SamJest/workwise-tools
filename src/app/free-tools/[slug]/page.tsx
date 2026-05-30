@@ -53,6 +53,10 @@ export default async function FreeToolPage({ params }: RouteProps) {
       <section className="mx-auto max-w-7xl space-y-8 px-4 py-10 sm:px-6 lg:px-8">
         <VerdictBox>Outputs are generated locally with simple rules. They are useful drafts, not legal, financial, or vendor advice.</VerdictBox>
         <FreeToolForm tool={tool} />
+        <VerdictBox title="Use it again">
+          Copy the share link after changing inputs to return to the same setup later. This gives readers a lightweight saved-output
+          loop without accounts or a database.
+        </VerdictBox>
         <RelatedPages links={tool.related} />
         <MethodologyBox>
           <p>

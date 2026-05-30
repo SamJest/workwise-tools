@@ -1,3 +1,7 @@
+import { agentPlaybooks } from "./agent-playbooks";
+import { stackBlueprints } from "./stack-blueprints";
+import { findWorkflowRecipes } from "./workflow-library";
+
 export type FreeToolField = {
   name: string;
   label: string;
@@ -71,6 +75,150 @@ export const freeTools: FreeToolDefinition[] = [
     related: [
       { title: "Display ad readiness checklist", href: "/free-tools/display-ad-readiness-checklist/", description: "Check monetisation timing after content grows." },
       { title: "SaaS cost calculator", href: "/free-tools/saas-cost-calculator/", description: "Estimate broader software spend." }
+    ]
+  },
+  {
+    title: "Automation ROI Calculator v2",
+    slug: "automation-roi-calculator-v2",
+    description: "Estimate automation value with time saved, failure risk, review overhead, setup effort, and tool spend.",
+    inputSummary: "Workflow, monthly runs, minutes saved, hourly cost, tool cost, setup effort, review overhead, and failure risk.",
+    outputSummary: "Monthly value, adjusted value, payback, risk notes, and next workflow actions.",
+    fields: [
+      { name: "workflow", label: "Workflow", type: "text", defaultValue: "lead follow-up automation", required: true },
+      { name: "monthlyRuns", label: "Monthly runs", type: "number", defaultValue: "120", min: 1, max: 100000, required: true },
+      { name: "minutesSaved", label: "Minutes saved per run", type: "number", defaultValue: "8", min: 0, max: 10000, required: true },
+      { name: "hourlyCost", label: "Hourly cost", type: "number", defaultValue: "35", min: 0, max: 10000, required: true },
+      { name: "monthlyToolCost", label: "Monthly tool cost", type: "number", defaultValue: "180", min: 0, max: 1000000, required: true },
+      { name: "setupHours", label: "Setup hours", type: "number", defaultValue: "10", min: 0, max: 10000, required: true },
+      { name: "reviewOverhead", label: "Review overhead %", type: "number", defaultValue: "20", min: 0, max: 100, required: true },
+      { name: "failureRisk", label: "Failure risk", type: "select", defaultValue: "medium", options: ["low", "medium", "high"], required: true },
+      { name: "currency", label: "Currency", type: "select", defaultValue: "GBP", options: ["GBP", "USD", "EUR", "AUD", "CAD"], required: true }
+    ],
+    related: [
+      { title: "Automation OS", href: "/automation-os/", description: "Find a template to test before buying tools." },
+      { title: "Workflow audit generator", href: "/free-tools/workflow-audit-generator/", description: "Check weak points before rollout." },
+      { title: "Daily AI Workflow Brief", href: "/daily-ai-workflow-brief/", description: "Use the workflow again tomorrow." }
+    ]
+  },
+  {
+    title: "Workflow Audit Generator",
+    slug: "workflow-audit-generator",
+    description: "Audit a workflow for trigger quality, ownership, review steps, failure modes, privacy risk, and next fixes.",
+    inputSummary: "Workflow, trigger, tools, owner, review level, failure symptoms, and data sensitivity.",
+    outputSummary: "Audit score, weak points, repair plan, and related Automation OS templates.",
+    fields: [
+      { name: "workflow", label: "Workflow", type: "text", defaultValue: "new lead to CRM follow-up", required: true },
+      { name: "trigger", label: "Trigger", type: "text", defaultValue: "website form submitted", required: true },
+      { name: "tools", label: "Tools used", type: "textarea", defaultValue: "Typeform, Zapier, Pipedrive, Gmail", required: true },
+      { name: "owner", label: "Workflow owner", type: "text", defaultValue: "sales manager", required: true },
+      { name: "reviewLevel", label: "Review level", type: "select", defaultValue: "human before customer-facing output", options: ["none", "spot check", "human before customer-facing output", "manager approval"], required: true },
+      { name: "symptoms", label: "Failure symptoms", type: "textarea", defaultValue: "duplicate records, late follow-up, unclear owner", required: true },
+      { name: "dataSensitivity", label: "Data sensitivity", type: "select", defaultValue: "medium", options: ["low", "medium", "high"], required: true }
+    ],
+    related: [
+      { title: "Broken Zapier workflow audit", href: "/automation-os/cleanup/broken-zapier-workflow-audit/", description: "Repair a failed workflow." },
+      { title: "Automation OS templates", href: "/automation-os/", description: "Pick a stronger template." },
+      { title: "Daily AI Workflow Brief", href: "/daily-ai-workflow-brief/", description: "Return for one audit task tomorrow." }
+    ]
+  },
+  {
+    title: "Workflow Recipe Finder",
+    slug: "workflow-recipe-finder",
+    description: "Find a practical workflow recipe by team, workflow type, tool, difficulty, and risk level.",
+    inputSummary: "Audience, workflow type, current tool, difficulty, risk level, and urgency.",
+    outputSummary: "Recommended recipes, why they fit, related tools, and the next free tool to use.",
+    fields: [
+      { name: "audience", label: "Audience", type: "select", defaultValue: "sales teams", options: ["sales teams", "real estate", "consultants", "agencies", "ecommerce", "support", "finance", "trades"], required: true },
+      { name: "workflowType", label: "Workflow type", type: "select", defaultValue: "lead follow-up", options: ["lead follow-up", "CRM cleanup", "meeting notes", "support triage", "reporting", "customer follow-up", "client onboarding", "finance follow-up"], required: true },
+      { name: "currentTool", label: "Current tool", type: "select", defaultValue: "Pipedrive", options: ["Pipedrive", "HubSpot", "Follow Up Boss", "Zapier", "Make", "ClickUp", "Gorgias", "Notion AI", "none"], required: true },
+      { name: "difficulty", label: "Difficulty", type: "select", defaultValue: "medium", options: ["low", "medium", "high"], required: true },
+      { name: "riskLevel", label: "Risk level", type: "select", defaultValue: "medium", options: ["low", "medium", "high"], required: true },
+      { name: "urgency", label: "Urgency", type: "select", defaultValue: "this week", options: ["today", "this week", "this month"], required: true }
+    ],
+    related: [
+      { title: "Workflow Library", href: "/workflow-library/", description: "Browse every recipe." },
+      { title: "Workflow readiness checklist", href: "/workflow-library/checklists/workflow-readiness/", description: "Check the workflow before automation." },
+      { title: "Automation OS", href: "/automation-os/", description: "Open templates and audits." }
+    ]
+  },
+  {
+    title: "Agent Readiness Checker",
+    slug: "agent-readiness-checker",
+    description: "Check whether a workflow is ready for an AI agent by scoring trigger quality, data access, review rules, fallback, and risk.",
+    inputSummary: "Agent goal, trigger quality, data sensitivity, review owner, fallback path, and customer-facing risk.",
+    outputSummary: "Readiness score, launch recommendation, guardrails, failure checks, and related agent playbooks.",
+    fields: [
+      { name: "agentGoal", label: "Agent goal", type: "text", defaultValue: "follow up new sales leads", required: true },
+      { name: "triggerQuality", label: "Trigger quality", type: "select", defaultValue: "mostly reliable", options: ["unclear", "mostly reliable", "very reliable"], required: true },
+      { name: "dataSensitivity", label: "Data sensitivity", type: "select", defaultValue: "medium", options: ["low", "medium", "high"], required: true },
+      { name: "reviewOwner", label: "Review owner", type: "text", defaultValue: "sales manager", required: true },
+      { name: "fallback", label: "Manual fallback", type: "select", defaultValue: "documented", options: ["none", "informal", "documented"], required: true },
+      { name: "customerFacing", label: "Customer-facing output", type: "select", defaultValue: "yes, reviewed first", options: ["no", "yes, reviewed first", "yes, automated"], required: true }
+    ],
+    related: [
+      { title: "Agent Playbooks", href: "/agent-playbooks/", description: "Browse guarded AI agent workflows." },
+      { title: "Workflow Library", href: "/workflow-library/", description: "Open the underlying workflow recipes." },
+      { title: "Workflow audit generator", href: "/free-tools/workflow-audit-generator/", description: "Audit the workflow before launch." }
+    ]
+  },
+  {
+    title: "Stack Gap Analyzer",
+    slug: "stack-gap-analyzer",
+    description: "Find missing layers, overlap, risk, and the next blueprint for a small-business AI or SaaS stack.",
+    inputSummary: "Audience, primary workflow, current tools, budget tier, maturity level, and risk concern.",
+    outputSummary: "Stack gaps, overlap warnings, recommended blueprint, and next workflow checks.",
+    fields: [
+      { name: "audience", label: "Audience", type: "select", defaultValue: "sales teams", options: ["sales teams", "real estate", "consultants", "agencies", "ecommerce", "support", "finance", "recruiting", "local services", "content teams"], required: true },
+      { name: "primaryWorkflow", label: "Primary workflow", type: "text", defaultValue: "lead follow-up and CRM hygiene", required: true },
+      { name: "currentTools", label: "Current tools", type: "textarea", defaultValue: "Pipedrive, Zapier, Google Workspace", required: true },
+      { name: "budgetTier", label: "Budget tier", type: "select", defaultValue: "lean", options: ["lean", "balanced", "scaling"], required: true },
+      { name: "maturityLevel", label: "Maturity level", type: "select", defaultValue: "starter", options: ["starter", "growing", "advanced"], required: true },
+      { name: "riskConcern", label: "Risk concern", type: "select", defaultValue: "missed follow-up", options: ["missed follow-up", "privacy", "tool overlap", "manual reporting", "support quality"], required: true }
+    ],
+    related: [
+      { title: "Stack Blueprints", href: "/stack-blueprints/", description: "Browse recommended stacks." },
+      { title: "AI Stack Builder", href: "/free-tools/ai-stack-builder/", description: "Build a starter stack from scratch." },
+      { title: "Workflow Library", href: "/workflow-library/", description: "Tie the stack to a recipe." }
+    ]
+  },
+  {
+    title: "Zapier vs Make vs n8n Picker",
+    slug: "zapier-make-n8n-picker",
+    description: "Choose an automation builder based on technical comfort, workflow complexity, budget pressure, and maintenance ownership.",
+    inputSummary: "Workflow complexity, team skill, budget pressure, app coverage, hosting preference, and maintenance owner.",
+    outputSummary: "Best-fit builder, caution notes, and next template links.",
+    fields: [
+      { name: "complexity", label: "Workflow complexity", type: "select", defaultValue: "moderate", options: ["simple", "moderate", "complex"], required: true },
+      { name: "teamSkill", label: "Team skill", type: "select", defaultValue: "non-technical", options: ["non-technical", "ops-savvy", "technical"], required: true },
+      { name: "budgetPressure", label: "Budget pressure", type: "select", defaultValue: "medium", options: ["low", "medium", "high"], required: true },
+      { name: "appCoverage", label: "App coverage need", type: "select", defaultValue: "common SaaS apps", options: ["common SaaS apps", "custom APIs", "mixed"], required: true },
+      { name: "hosting", label: "Hosting preference", type: "select", defaultValue: "managed", options: ["managed", "self-hosted okay", "no preference"], required: true },
+      { name: "owner", label: "Maintenance owner", type: "text", defaultValue: "operations manager", required: true }
+    ],
+    related: [
+      { title: "Zapier vs Make vs n8n", href: "/automation-os/support/zapier-vs-make-vs-n8n-small-business/", description: "Read the comparison." },
+      { title: "Workflow audit generator", href: "/free-tools/workflow-audit-generator/", description: "Check if the workflow is ready." },
+      { title: "Automation OS", href: "/automation-os/", description: "Browse templates." }
+    ]
+  },
+  {
+    title: "Lead Follow-Up SLA Calculator",
+    slug: "lead-follow-up-sla-calculator",
+    description: "Set a practical follow-up SLA based on lead volume, response capacity, urgency, and missed-lead risk.",
+    inputSummary: "Lead volume, hot-lead share, response capacity, average response time, urgency, and working hours.",
+    outputSummary: "Recommended SLA, staffing warning, daily check cadence, and related lead templates.",
+    fields: [
+      { name: "dailyLeads", label: "Daily leads", type: "number", defaultValue: "25", min: 0, max: 100000, required: true },
+      { name: "hotLeadPercent", label: "Hot lead %", type: "number", defaultValue: "30", min: 0, max: 100, required: true },
+      { name: "minutesPerLead", label: "Minutes per response", type: "number", defaultValue: "6", min: 1, max: 10000, required: true },
+      { name: "availableMinutes", label: "Available response minutes/day", type: "number", defaultValue: "180", min: 1, max: 100000, required: true },
+      { name: "currentResponseTime", label: "Current avg response time (minutes)", type: "number", defaultValue: "90", min: 0, max: 100000, required: true },
+      { name: "urgency", label: "Lead urgency", type: "select", defaultValue: "high", options: ["low", "medium", "high"], required: true }
+    ],
+    related: [
+      { title: "Speed-to-lead template", href: "/automation-os/templates/speed-to-lead-ai-qualifier/", description: "Build the follow-up workflow." },
+      { title: "Real estate lead routing", href: "/automation-os/templates/real-estate-lead-routing/", description: "Route property leads faster." },
+      { title: "Pipedrive guide", href: "/ai-tools/pipedrive/", description: "Check CRM fit." }
     ]
   },
   {
@@ -261,6 +409,20 @@ export function generateFreeToolResult(slug: string, values: Record<string, stri
       return generateAiStack(values);
     case "ai-workflow-roi-calculator":
       return generateWorkflowRoi(values);
+    case "automation-roi-calculator-v2":
+      return generateAutomationRoiV2(values);
+    case "workflow-audit-generator":
+      return generateWorkflowAudit(values);
+    case "workflow-recipe-finder":
+      return generateWorkflowRecipeFinder(values);
+    case "agent-readiness-checker":
+      return generateAgentReadiness(values);
+    case "stack-gap-analyzer":
+      return generateStackGap(values);
+    case "zapier-make-n8n-picker":
+      return generateAutomationPicker(values);
+    case "lead-follow-up-sla-calculator":
+      return generateLeadSla(values);
     case "software-buying-checklist-generator":
       return generateBuyingChecklist(values);
     case "workflow-kit-planner":
@@ -315,6 +477,359 @@ export function calculateSaasCost(input: {
     annualBeforeDiscount,
     annual: annualBeforeDiscount - annualSavings,
     annualSavings
+  };
+}
+
+function generateAutomationRoiV2(values: Record<string, string>): FreeToolResult {
+  const monthlyRuns = Number(values.monthlyRuns) || 0;
+  const minutesSaved = Number(values.minutesSaved) || 0;
+  const hourlyCost = Number(values.hourlyCost) || 0;
+  const monthlyToolCost = Number(values.monthlyToolCost) || 0;
+  const setupHours = Number(values.setupHours) || 0;
+  const reviewOverhead = Number(values.reviewOverhead) || 0;
+  const riskPenalty = values.failureRisk === "high" ? 0.7 : values.failureRisk === "medium" ? 0.85 : 0.95;
+  const currency = values.currency || "USD";
+  const grossMonthlyValue = (monthlyRuns * minutesSaved * hourlyCost) / 60;
+  const reviewCost = grossMonthlyValue * (reviewOverhead / 100);
+  const adjustedMonthlyValue = Math.max(0, grossMonthlyValue * riskPenalty - reviewCost - monthlyToolCost);
+  const setupCost = setupHours * hourlyCost;
+  const paybackMonths = adjustedMonthlyValue > 0 ? setupCost / adjustedMonthlyValue : Infinity;
+  const format = (amount: number) => amount.toLocaleString("en-US", { style: "currency", currency });
+
+  return {
+    title: `${values.workflow || "Automation"} ROI estimate`,
+    summary: `Adjusted monthly value is ${format(adjustedMonthlyValue)} after tool cost, review overhead, and ${values.failureRisk || "medium"} failure-risk weighting.`,
+    sections: [
+      {
+        heading: "ROI estimate",
+        body: [
+          `Gross monthly time value: ${format(grossMonthlyValue)}.`,
+          `Review overhead estimate: ${format(reviewCost)}.`,
+          `Monthly tool cost: ${format(monthlyToolCost)}.`,
+          `Setup cost estimate: ${format(setupCost)}.`,
+          paybackMonths === Infinity ? "Payback is not positive yet; simplify the workflow or reduce cost before rollout." : `Estimated payback: ${paybackMonths.toFixed(1)} months.`
+        ]
+      },
+      {
+        heading: "Risk controls",
+        body: [
+          "Add a named owner for failed runs and stale tasks.",
+          "Keep a human review step before customer-facing, legal, financial, or property claims.",
+          "Measure actual saved time for two weeks before buying annual plans."
+        ]
+      },
+      {
+        heading: "Next workflow actions",
+        body: [
+          "Choose the closest Automation OS template.",
+          "Run the workflow audit generator after the first test.",
+          "Add the workflow to the daily brief loop if it needs recurring review."
+        ]
+      }
+    ],
+    ctas: [
+      { title: "Automation OS", href: "/automation-os/", description: "Find a matching template." },
+      { title: "Workflow audit generator", href: "/free-tools/workflow-audit-generator/", description: "Check weak points before launch." },
+      { title: "Daily AI Workflow Brief", href: "/daily-ai-workflow-brief/", description: "Use it again tomorrow." }
+    ]
+  };
+}
+
+function generateWorkflowAudit(values: Record<string, string>): FreeToolResult {
+  const hasReview = values.reviewLevel && values.reviewLevel !== "none";
+  const highSensitivity = values.dataSensitivity === "high";
+  const symptoms = (values.symptoms || "").split(",").map((item) => item.trim()).filter(Boolean);
+  const score = Math.max(20, 100 - symptoms.length * 10 - (hasReview ? 0 : 25) - (highSensitivity ? 10 : 0));
+
+  return {
+    title: `${values.workflow || "Workflow"} audit score: ${score}/100`,
+    summary: `This audit checks trigger clarity, tools, owner, review level, failure symptoms, and data sensitivity for ${values.workflow || "the workflow"}.`,
+    sections: [
+      {
+        heading: "Weak points",
+        body: [
+          `Trigger to verify: ${values.trigger || "not supplied"}.`,
+          `Owner: ${values.owner || "not supplied"}.`,
+          hasReview ? `Review step: ${values.reviewLevel}.` : "No review step is a major risk.",
+          highSensitivity ? "High-sensitivity data requires stricter permissions, retention checks, and human approval." : "Data sensitivity is not marked high, but connected-app permissions still need review.",
+          ...(symptoms.length ? symptoms.map((symptom) => `Reported symptom: ${symptom}.`) : ["No failure symptoms supplied."])
+        ]
+      },
+      {
+        heading: "Repair plan",
+        body: [
+          "Name one owner for failed runs and stale tasks.",
+          "Write the expected input fields before changing automations.",
+          "Add a review step before any customer-facing output.",
+          "Run one safe sample through the workflow and compare the result with the expected record."
+        ]
+      }
+    ],
+    ctas: [
+      { title: "Broken Zapier workflow audit", href: "/automation-os/cleanup/broken-zapier-workflow-audit/", description: "Use the repair checklist." },
+      { title: "Automation ROI Calculator v2", href: "/free-tools/automation-roi-calculator-v2/", description: "Estimate value after cleanup." },
+      { title: "Automation OS", href: "/automation-os/", description: "Pick a cleaner template." }
+    ]
+  };
+}
+
+function generateWorkflowRecipeFinder(values: Record<string, string>): FreeToolResult {
+  const audience = values.audience || "sales teams";
+  const workflowType = values.workflowType || "lead follow-up";
+  const currentTool = values.currentTool || "";
+  const difficulty = values.difficulty || "medium";
+  const riskLevel = values.riskLevel || "medium";
+  const urgency = values.urgency || "this week";
+  const matches = findWorkflowRecipes({
+    audience,
+    workflowType,
+    difficulty,
+    riskLevel,
+    tool: currentTool === "none" ? "" : currentTool
+  });
+  const fallback = findWorkflowRecipes({ audience }).slice(0, 3);
+  const recommendations = (matches.length ? matches : fallback).slice(0, 3);
+  const top = recommendations[0];
+
+  return {
+    title: "Workflow recipe shortlist",
+    summary: top
+      ? `Start with ${top.title}. It matches ${audience}, ${workflowType}, ${difficulty} difficulty, and ${riskLevel} risk signals.`
+      : "Start with the Workflow Library hub, then choose the closest collection before picking a tool.",
+    sections: [
+      {
+        heading: "Recommended recipes",
+        body: recommendations.length
+          ? recommendations.map((recipe) => `${recipe.title}: ${recipe.summary} Open /workflow-library/${recipe.slug}/`)
+          : ["No exact recipe matched every filter. Use the Workflow Library hub and relax one filter."]
+      },
+      {
+        heading: "Why this fits",
+        body: [
+          `Audience: ${audience}.`,
+          `Workflow type: ${workflowType}.`,
+          `Current tool signal: ${currentTool}.`,
+          `Rollout urgency: ${urgency}. Start with a recipe before adding new software.`
+        ]
+      },
+      {
+        heading: "Next checks",
+        body: [
+          "Confirm the trigger and system of record before automating.",
+          "Add a human review step for customer-facing or high-risk outputs.",
+          "Copy this share link so the same setup can be reused tomorrow."
+        ]
+      }
+    ],
+    ctas: [
+      { title: top?.title ?? "Workflow Library", href: top ? `/workflow-library/${top.slug}/` : "/workflow-library/", description: "Open the best matching recipe." },
+      { title: "Workflow readiness checklist", href: "/workflow-library/checklists/workflow-readiness/", description: "Check whether this workflow is ready." },
+      { title: "Workflow audit generator", href: "/free-tools/workflow-audit-generator/", description: "Audit the selected workflow." },
+      { title: "Automation OS", href: "/automation-os/", description: "Find related templates and calculators." }
+    ]
+  };
+}
+
+function generateAgentReadiness(values: Record<string, string>): FreeToolResult {
+  const agentGoal = values.agentGoal || "launch an AI agent";
+  const triggerQuality = values.triggerQuality || "mostly reliable";
+  const dataSensitivity = values.dataSensitivity || "medium";
+  const reviewOwner = values.reviewOwner || "workflow owner";
+  const fallback = values.fallback || "informal";
+  const customerFacing = values.customerFacing || "yes, reviewed first";
+  const score =
+    (triggerQuality === "very reliable" ? 25 : triggerQuality === "mostly reliable" ? 15 : 5) +
+    (dataSensitivity === "low" ? 20 : dataSensitivity === "medium" ? 12 : 4) +
+    (reviewOwner.trim().length > 2 ? 15 : 0) +
+    (fallback === "documented" ? 20 : fallback === "informal" ? 10 : 0) +
+    (customerFacing === "no" ? 20 : customerFacing === "yes, reviewed first" ? 12 : 0);
+  const status = score >= 75 ? "pilot-ready with guardrails" : score >= 50 ? "needs a controlled test first" : "not ready for an agent yet";
+  const likelyPlaybooks = agentPlaybooks
+    .filter((playbook) => `${playbook.title} ${playbook.summary}`.toLowerCase().includes(agentGoal.toLowerCase().split(" ")[0] ?? ""))
+    .slice(0, 3);
+  const recommendations = likelyPlaybooks.length ? likelyPlaybooks : agentPlaybooks.slice(0, 3);
+
+  return {
+    title: `Agent readiness score: ${score}/100`,
+    summary: `${agentGoal} is ${status}. Keep ${reviewOwner} as the named owner until the workflow has boring, predictable handoffs.`,
+    sections: [
+      {
+        heading: "Readiness verdict",
+        body: [
+          `Trigger quality: ${triggerQuality}.`,
+          `Data sensitivity: ${dataSensitivity}.`,
+          `Fallback: ${fallback}.`,
+          `Customer-facing status: ${customerFacing}.`
+        ]
+      },
+      {
+        heading: "Guardrails to add",
+        body: [
+          "Require source context or a missing-information flag for every output.",
+          "Escalate sensitive, legal, financial, hiring, or angry-customer cases.",
+          "Do not send customer-facing output unless the review rule allows it."
+        ]
+      },
+      {
+        heading: "Related playbooks",
+        body: recommendations.map((playbook) => `${playbook.title}: ${playbook.summary} Open /agent-playbooks/${playbook.slug}/`)
+      }
+    ],
+    ctas: [
+      { title: recommendations[0]?.title ?? "Agent Playbooks", href: recommendations[0] ? `/agent-playbooks/${recommendations[0].slug}/` : "/agent-playbooks/", description: "Open the closest playbook." },
+      { title: "Agent Playbooks", href: "/agent-playbooks/", description: "Browse every guarded AI agent workflow." },
+      { title: "Workflow Library", href: "/workflow-library/", description: "Use the underlying step-by-step recipe." },
+      { title: "Workflow audit generator", href: "/free-tools/workflow-audit-generator/", description: "Audit the workflow before launch." }
+    ]
+  };
+}
+
+function generateStackGap(values: Record<string, string>): FreeToolResult {
+  const audience = values.audience || "sales teams";
+  const primaryWorkflow = values.primaryWorkflow || "workflow";
+  const currentTools = values.currentTools || "";
+  const budgetTier = values.budgetTier || "lean";
+  const maturityLevel = values.maturityLevel || "starter";
+  const riskConcern = values.riskConcern || "missed follow-up";
+  const toolsLower = currentTools.toLowerCase();
+  const matches = stackBlueprints.filter((blueprint) =>
+    blueprint.audience.toLowerCase().includes(audience.split(" ")[0]) ||
+    blueprint.primaryWorkflow.toLowerCase().includes(primaryWorkflow.toLowerCase().split(" ")[0] ?? "") ||
+    blueprint.budgetTier === budgetTier ||
+    blueprint.maturityLevel === maturityLevel
+  );
+  const recommended = (matches.length ? matches : stackBlueprints).slice(0, 3);
+  const top = recommended[0];
+  const missingLayers = top
+    ? top.stackLayers
+        .filter((layer) => !layer.toolSlugs.some((toolSlug) => toolsLower.includes(toolSlug.replaceAll("-", " ")) || toolsLower.includes(toolSlug)))
+        .map((layer) => layer.name)
+    : [];
+
+  return {
+    title: "Stack gap analysis",
+    summary: top
+      ? `Closest blueprint: ${top.title}. Focus on ${primaryWorkflow}, then close ${missingLayers.length || 1} likely stack gap before adding more tools.`
+      : "Start with a stack blueprint before buying more tools.",
+    sections: [
+      {
+        heading: "Likely gaps",
+        body: missingLayers.length
+          ? missingLayers.map((name) => `${name}: add or clarify this layer before upgrading plans.`)
+          : ["No obvious missing layer from the closest blueprint. Check overlap, ownership, and review rules next."]
+      },
+      {
+        heading: "Risk warnings",
+        body: [
+          `Main risk concern: ${riskConcern}.`,
+          "Avoid buying a tool that does not map to the primary workflow.",
+          "Check whether two current tools are doing the same job before adding a new one."
+        ]
+      },
+      {
+        heading: "Recommended blueprints",
+        body: recommended.map((blueprint) => `${blueprint.title}: ${blueprint.summary} Open /stack-blueprints/${blueprint.slug}/`)
+      }
+    ],
+    ctas: [
+      { title: top?.title ?? "Stack Blueprints", href: top ? `/stack-blueprints/${top.slug}/` : "/stack-blueprints/", description: "Open the closest stack blueprint." },
+      { title: "AI Stack Builder", href: "/free-tools/ai-stack-builder/", description: "Build a starter stack from scratch." },
+      { title: "Workflow Recipe Finder", href: "/free-tools/workflow-recipe-finder/", description: "Find the recipe that proves the stack." },
+      { title: "Agent Readiness Checker", href: "/free-tools/agent-readiness-checker/", description: "Check if any layer is ready for an agent." }
+    ]
+  };
+}
+
+function generateAutomationPicker(values: Record<string, string>): FreeToolResult {
+  const complexity = values.complexity || "moderate";
+  const skill = values.teamSkill || "non-technical";
+  const budget = values.budgetPressure || "medium";
+  const selfHosted = values.hosting === "self-hosted okay";
+  const pick =
+    selfHosted || skill === "technical"
+      ? "n8n"
+      : complexity === "complex" || budget === "high"
+        ? "Make"
+        : "Zapier";
+  const reason =
+    pick === "Zapier"
+      ? "Zapier is usually the fastest path for non-technical teams using common SaaS apps."
+      : pick === "Make"
+        ? "Make is a strong fit when the workflow needs visual branching, data shaping, and better cost control."
+        : "n8n is strongest when a technical owner can manage hosting, credentials, and workflow governance.";
+
+  return {
+    title: `Best first automation builder: ${pick}`,
+    summary: reason,
+    sections: [
+      {
+        heading: "Why this fit",
+        body: [
+          `Workflow complexity: ${complexity}.`,
+          `Team skill: ${skill}.`,
+          `Budget pressure: ${budget}.`,
+          `App coverage need: ${values.appCoverage || "not supplied"}.`,
+          `Maintenance owner: ${values.owner || "not supplied"}.`
+        ]
+      },
+      {
+        heading: "Cautions",
+        body: [
+          "Start with one workflow before moving several processes.",
+          "Document failure alerts and owner responsibilities.",
+          "Retest automations when connected apps change fields, permissions, or pricing."
+        ]
+      }
+    ],
+    ctas: [
+      { title: "Zapier vs Make vs n8n", href: "/automation-os/support/zapier-vs-make-vs-n8n-small-business/", description: "Read the full decision page." },
+      { title: "Workflow audit generator", href: "/free-tools/workflow-audit-generator/", description: "Audit the workflow before launch." },
+      { title: "Automation OS templates", href: "/automation-os/", description: "Choose a workflow template." }
+    ]
+  };
+}
+
+function generateLeadSla(values: Record<string, string>): FreeToolResult {
+  const dailyLeads = Number(values.dailyLeads) || 0;
+  const hotLeadPercent = Number(values.hotLeadPercent) || 0;
+  const minutesPerLead = Number(values.minutesPerLead) || 1;
+  const availableMinutes = Number(values.availableMinutes) || 1;
+  const currentResponseTime = Number(values.currentResponseTime) || 0;
+  const hotLeads = dailyLeads * (hotLeadPercent / 100);
+  const requiredMinutes = dailyLeads * minutesPerLead;
+  const capacityRatio = requiredMinutes / availableMinutes;
+  const target = values.urgency === "high" ? 15 : values.urgency === "medium" ? 60 : 240;
+  const staffingWarning = capacityRatio > 1 ? "Response capacity is overloaded." : "Response capacity is workable if routing is clear.";
+
+  return {
+    title: `Recommended lead SLA: respond within ${target} minutes`,
+    summary: `${staffingWarning} Current average response time is ${currentResponseTime} minutes, with about ${hotLeads.toFixed(1)} hot leads per day.`,
+    sections: [
+      {
+        heading: "Capacity check",
+        body: [
+          `Daily lead volume: ${dailyLeads}.`,
+          `Estimated hot leads per day: ${hotLeads.toFixed(1)}.`,
+          `Response work required: ${requiredMinutes.toFixed(0)} minutes/day.`,
+          `Available response capacity: ${availableMinutes.toFixed(0)} minutes/day.`,
+          `Capacity load: ${(capacityRatio * 100).toFixed(0)}%.`
+        ]
+      },
+      {
+        heading: "Operating cadence",
+        body: [
+          "Route hot leads to a named owner immediately.",
+          "Check missed-response queue at least twice per day.",
+          "Use automation for routing and drafting, but verify claims before sending.",
+          "Track missed SLA count weekly and simplify the intake flow if it keeps rising."
+        ]
+      }
+    ],
+    ctas: [
+      { title: "Speed-to-lead template", href: "/automation-os/templates/speed-to-lead-ai-qualifier/", description: "Build the follow-up workflow." },
+      { title: "Real estate lead routing", href: "/automation-os/templates/real-estate-lead-routing/", description: "Apply this to agent workflows." },
+      { title: "Pipedrive guide", href: "/ai-tools/pipedrive/", description: "Check CRM fit." }
+    ]
   };
 }
 

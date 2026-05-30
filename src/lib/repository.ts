@@ -25,6 +25,8 @@ import {
   getWorkflows
 } from "./data";
 import { hasDatabaseUrl, prisma } from "./prisma";
+import { priorityCountryProfessionPairs } from "./route-registry";
+import { applyToolEvidence } from "./tool-evidence";
 import { getUseCasePages, slugifyUseCase } from "./use-cases";
 
 async function fromDb<T>(query: () => Promise<T>, fallback: () => T): Promise<T> {
@@ -326,7 +328,11 @@ export async function relatedLinks(params: {
     links.push(
       ...countries.slice(0, 5).map((country) => ({
         title: `${params.profession?.name} AI tools in ${country.name}`,
-        href: `/countries/${country.slug}/`,
+        href:
+          params.profession &&
+          priorityCountryProfessionPairs.some((pair) => pair.country === country.slug && pair.profession === params.profession?.slug)
+            ? `/countries/${country.slug}/${params.profession.slug}/`
+            : `/countries/${country.slug}/`,
         description: `${country.currency} pricing context`,
         score: 70 - country.priority
       }))
@@ -395,7 +401,7 @@ export async function loadSeedSnapshot() {
 }
 
 function mapTool(tool: any): Tool {
-  return {
+  return applyToolEvidence({
     name: tool.name,
     slug: tool.slug,
     summary: tool.summary,
@@ -426,8 +432,20 @@ function mapTool(tool: any): Tool {
     affiliateAvailable: tool.affiliateAvailable,
     isSponsored: tool.isSponsored,
     lastCheckedAt: tool.lastCheckedAt ? new Date(tool.lastCheckedAt).toISOString() : null,
-    lastVerifiedAt: tool.lastVerifiedAt ? new Date(tool.lastVerifiedAt).toISOString() : null
-  };
+    lastVerifiedAt: tool.lastVerifiedAt ? new Date(tool.lastVerifiedAt).toISOString() : null,
+    testedAt: tool.testedAt ? new Date(tool.testedAt).toISOString() : null,
+    testedBy: tool.testedBy ?? undefined,
+    testingSummary: tool.testingSummary ?? undefined,
+    evidenceUrls: tool.evidenceUrls ?? [],
+    pricingLastCheckedAt: tool.pricingLastCheckedAt ? new Date(tool.pricingLastCheckedAt).toISOString() : null,
+    featureLastCheckedAt: tool.featureLastCheckedAt ? new Date(tool.featureLastCheckedAt).toISOString() : null,
+    changeLog: tool.changeLog ?? [],
+    workflowFitScore: tool.workflowFitScore ?? undefined,
+    setupEffortScore: tool.setupEffortScore ?? undefined,
+    privacyRiskNotes: tool.privacyRiskNotes ?? undefined,
+    bestForUseCases: tool.bestForUseCases ?? [],
+    dailyUseCases: tool.dailyUseCases ?? []
+  });
 }
 
 function mapCategory(category: any): ToolCategory {

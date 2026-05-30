@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState } from "react";
-import { AlertCircle, Check, Copy, RotateCcw, Sparkles } from "lucide-react";
+import { useEffect, useMemo, useState } from "react";
+import { AlertCircle, Check, Copy, Link as LinkIcon, RotateCcw, Sparkles } from "lucide-react";
 import { trackEvent } from "@/lib/analytics";
 import {
   generateFreeToolResult,
@@ -17,10 +17,25 @@ export function FreeToolForm({ tool }: { tool: FreeToolDefinition }) {
   const defaults = useMemo(() => getDefaultValues(tool), [tool]);
   const [values, setValues] = useState<Record<string, string>>(defaults);
   const [copied, setCopied] = useState(false);
+  const [shared, setShared] = useState(false);
   const errors = validateFreeToolInput(tool, values);
   const hasErrors = Object.keys(errors).length > 0;
   const result = useMemo(() => generateFreeToolResult(tool.slug, values), [tool.slug, values]);
   const copyText = stringifyResult(result);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const nextValues = { ...defaults };
+    let hasQueryValues = false;
+    for (const field of tool.fields) {
+      const value = params.get(field.name);
+      if (value !== null) {
+        nextValues[field.name] = value;
+        hasQueryValues = true;
+      }
+    }
+    if (hasQueryValues) setValues(nextValues);
+  }, [defaults, tool.fields]);
 
   function update(name: string, value: string) {
     setValues((current) => ({ ...current, [name]: value }));
@@ -30,6 +45,7 @@ export function FreeToolForm({ tool }: { tool: FreeToolDefinition }) {
   function reset() {
     setValues(defaults);
     setCopied(false);
+    setShared(false);
     trackEvent({
       event: "free_tool_reset",
       label: tool.title,
@@ -58,6 +74,23 @@ export function FreeToolForm({ tool }: { tool: FreeToolDefinition }) {
       metadata: {
         outputSections: result.sections.length
       }
+    });
+  }
+
+  async function copyShareLink() {
+    const params = new URLSearchParams();
+    for (const field of tool.fields) {
+      const value = values[field.name];
+      if (value) params.set(field.name, value);
+    }
+    const shareUrl = `${window.location.origin}${window.location.pathname}?${params.toString()}`;
+    await navigator.clipboard?.writeText(shareUrl);
+    setShared(true);
+    trackEvent({
+      event: "free_tool_copy",
+      label: `${tool.title} share link`,
+      toolSlug: tool.slug,
+      placement: "free-tool-share-link"
     });
   }
 
@@ -90,6 +123,15 @@ export function FreeToolForm({ tool }: { tool: FreeToolDefinition }) {
           >
             {copied ? <Check className="h-4 w-4" aria-hidden="true" /> : <Copy className="h-4 w-4" aria-hidden="true" />}
             {copied ? "Copied" : "Copy output"}
+          </button>
+          <button
+            type="button"
+            onClick={copyShareLink}
+            disabled={hasErrors}
+            className="inline-flex items-center gap-2 rounded-md border border-line bg-white px-3 py-2 text-sm font-semibold text-ink disabled:cursor-not-allowed disabled:text-muted"
+          >
+            {shared ? <Check className="h-4 w-4" aria-hidden="true" /> : <LinkIcon className="h-4 w-4" aria-hidden="true" />}
+            {shared ? "Link copied" : "Copy share link"}
           </button>
         </div>
       </div>

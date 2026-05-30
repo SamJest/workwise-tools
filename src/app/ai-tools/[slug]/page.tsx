@@ -17,6 +17,7 @@ import {
   NotBestForBlock,
   QualityWarning,
   RelatedPages,
+  SearchIntentPanel,
   ToolVerificationPanel,
   VendorCtaCard,
   VerdictBox
@@ -27,6 +28,7 @@ import { buildToolFaqs, buildToolProfile } from "@/lib/content-engine";
 import { breadcrumbJsonLd, faqJsonLd, productJsonLd, softwareJsonLd } from "@/lib/jsonld";
 import { getPageQualityScore } from "@/lib/quality";
 import { findTool, relatedLinks } from "@/lib/repository";
+import { getToolIntentBrief } from "@/lib/search-intent";
 import { currentYear, pageMetadata } from "@/lib/seo";
 
 export function generateStaticParams() {
@@ -42,6 +44,7 @@ export async function generateMetadata({ params }: RouteProps) {
   const tool = await findTool(slug);
   if (!tool) return {};
   const related = await relatedLinks({ tool });
+  const intentBrief = getToolIntentBrief(tool.slug);
   const quality = getPageQualityScore({
     matchingTools: [tool],
     valueBlocks: ["verdict", "pros-cons", "related-links", "pricing-summary", "faqs"],
@@ -52,8 +55,8 @@ export async function generateMetadata({ params }: RouteProps) {
   });
 
   return pageMetadata({
-    title: `${tool.name} Review and Use Cases (${currentYear()})`,
-    description: tool.summary,
+    title: intentBrief ? `${tool.name} Use Cases and Review (${currentYear()})` : `${tool.name} Review and Use Cases (${currentYear()})`,
+    description: intentBrief?.description ?? tool.summary,
     path: `/ai-tools/${tool.slug}/`,
     quality
   });
@@ -68,6 +71,7 @@ export default async function ToolDetailPage({ params }: RouteProps) {
   const faqs = buildToolFaqs(tool);
   const profile = buildToolProfile(tool, related);
   const quality = profile.quality;
+  const intentBrief = getToolIntentBrief(tool.slug);
 
   const breadcrumbs = [
     { name: "Home", href: "/" },
@@ -94,13 +98,14 @@ export default async function ToolDetailPage({ params }: RouteProps) {
             recommendation until pricing and feature claims are verified.
           </VerdictBox>
           <DataFreshnessNotice date={tool.lastCheckedAt} />
+          <SearchIntentPanel brief={intentBrief} />
           <ToolVerificationPanel tool={tool} />
           <ProsCons pros={tool.pros} cons={tool.cons} />
           <BestForGrid items={tool.bestFor} />
           <NotBestForBlock items={tool.notBestFor} />
           <PricingSummary tool={tool} />
           <FAQBlock faqs={faqs} />
-          <RelatedPages links={related} />
+          <RelatedPages links={[...(intentBrief?.links ?? []), ...related]} />
           <MethodologyBox />
           <AffiliateDisclosure />
         </div>

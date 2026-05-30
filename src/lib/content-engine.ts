@@ -10,6 +10,7 @@ import type {
   Workflow
 } from "@/types/content";
 import { getPageQualityScore } from "./quality";
+import { getToolIntentBrief } from "./search-intent";
 import { currentYear } from "./seo";
 
 export function pricingSummary(tool: Tool) {
@@ -78,7 +79,8 @@ export function buildToolFaqs(tool: Tool) {
       answer: tool.freePlanAvailable
         ? "The seed data flags a free plan, but this should be verified against the vendor's current pricing page."
         : "The seed data does not flag a free plan. Verify current vendor pricing before publication."
-    }
+    },
+    ...(getToolIntentBrief(tool.slug)?.faqs ?? [])
   ];
 }
 
@@ -129,10 +131,14 @@ export function buildToolProfile(tool: Tool, related: SiteLink[]): PageContentPr
   const valueBlocks = ["editorial-verdict", "pros-cons", "best-for", "pricing-summary", "faqs", "related-links"];
   const dataWarnings = [
     ...freshnessWarnings(tool.lastCheckedAt),
+    ...freshnessWarnings(tool.pricingLastCheckedAt ?? tool.lastCheckedAt, `${tool.name} pricing`),
+    ...freshnessWarnings(tool.featureLastCheckedAt ?? tool.lastVerifiedAt ?? tool.lastCheckedAt, `${tool.name} features`),
     ...(tool.startingPrice === null ? ["Starting price is unverified."] : []),
     ...(tool.websiteUrl ? [] : ["Vendor website URL is missing."]),
     ...(tool.pricingPageUrl ? [] : ["Pricing source URL is missing."]),
-    ...(tool.sourceUrls.length ? [] : ["Source URLs are missing."]),
+    ...((tool.evidenceUrls?.length || tool.sourceUrls.length) ? [] : ["Evidence URLs are missing."]),
+    ...(tool.testingSummary ? [] : ["Testing summary is missing."]),
+    ...(tool.workflowFitScore ? [] : ["Workflow fit score is missing."]),
     ...(tool.verificationStatus === "verified" ? [] : [`Verification status is ${tool.verificationStatus}.`])
   ];
 
@@ -143,7 +149,8 @@ export function buildToolProfile(tool: Tool, related: SiteLink[]): PageContentPr
       `${tool.name} is mapped to ${tool.professions.length} professions.`,
       `${tool.name} is mapped to ${tool.countries.length} countries.`,
       `${tool.name} has ${tool.bestFor.length} best-fit use cases.`,
-      `${tool.name} verification status: ${tool.verificationStatus}.`
+      `${tool.name} verification status: ${tool.verificationStatus}.`,
+      tool.workflowFitScore ? `${tool.name} workflow fit score: ${tool.workflowFitScore}/10.` : `${tool.name} needs a workflow fit score.`
     ],
     dataWarnings,
     quality: getPageQualityScore({

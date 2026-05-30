@@ -3,6 +3,7 @@ import { AlertCircle, ArrowUpRight, CheckCircle2, Clock, ExternalLink, Info, Shi
 import type { PageContentProfile, PageQuality, SiteLink, Tool, Workflow } from "@/types/content";
 import { getToolOutboundAction, monetisationLabel } from "@/lib/affiliate";
 import { hasDemoDataWarning } from "@/lib/quality";
+import type { SearchIntentBrief } from "@/lib/search-intent";
 import type { WorkflowKit } from "@/lib/workflow-kits";
 import { kitLinks } from "@/lib/workflow-kits";
 import { NewsletterSignupForm } from "./NewsletterSignupForm";
@@ -195,6 +196,30 @@ export function BestForGrid({ items, title = "Best for" }: { items: string[]; ti
   );
 }
 
+export function SearchIntentPanel({ brief }: { brief?: SearchIntentBrief }) {
+  if (!brief) return null;
+
+  return (
+    <section className="rounded-md border border-line bg-white p-6">
+      <h2 className="text-2xl font-bold text-ink">{brief.title}</h2>
+      <p className="mt-3 text-sm leading-6 text-muted">{brief.description}</p>
+      <div className="mt-5 grid gap-4 md:grid-cols-2">
+        {brief.sections.map((section) => (
+          <article key={section.title} className="rounded-md bg-panel p-4">
+            <h3 className="font-semibold text-ink">{section.title}</h3>
+            <p className="mt-2 text-sm leading-6 text-muted">{section.description}</p>
+            {section.bullets?.length ? (
+              <ul className="mt-3 list-disc space-y-1 pl-5 text-sm leading-6 text-muted">
+                {section.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}
+              </ul>
+            ) : null}
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 export function NotBestForBlock({ items }: { items: string[] }) {
   if (!items.length) return null;
 
@@ -229,6 +254,7 @@ export function ToolCard({ tool, rank }: { tool: Tool; rank?: number }) {
       </div>
       <p className="mt-3 text-sm leading-6 text-muted">{tool.summary}</p>
       <div className="mt-4 flex flex-wrap gap-2">
+        {toolUxLabels(tool).map((label) => <Badge key={label}>{label}</Badge>)}
         {tool.freePlanAvailable ? <Badge>Free plan</Badge> : null}
         {tool.trialAvailable ? <Badge>Trial</Badge> : null}
         {tool.categories.slice(0, 2).map((category) => (
@@ -332,21 +358,61 @@ export function ComparisonTable({ tools }: { tools: Tool[] }) {
 }
 
 export function ToolVerificationPanel({ tool }: { tool: Tool }) {
+  const evidenceUrls = tool.evidenceUrls?.length ? tool.evidenceUrls : tool.sourceUrls;
+
   return (
     <section className="rounded-md border border-line bg-white p-6">
       <h2 className="text-2xl font-bold text-ink">Publisher verification</h2>
       <div className="mt-5 grid gap-4 md:grid-cols-2">
         <Metric label="Verification" value={tool.verificationStatus.replaceAll("-", " ")} />
-        <Metric label="Setup difficulty" value={tool.setupDifficulty || "Verify"} />
+        <Metric label="Workflow fit" value={tool.workflowFitScore ? `${tool.workflowFitScore}/10` : "Needs scoring"} />
+        <Metric label="Setup effort" value={tool.setupEffortScore ? `${tool.setupEffortScore}/10` : tool.setupDifficulty || "Verify"} />
         <Metric label="Privacy risk" value={tool.privacyRisk || "Verify"} />
         <Metric label="Last verified" value={tool.lastVerifiedAt ? new Date(tool.lastVerifiedAt).toLocaleDateString("en-GB") : "Needs verification"} />
       </div>
+      {tool.testingSummary ? (
+        <div className="mt-5 rounded-md bg-panel p-4">
+          <p className="font-semibold text-ink">Testing summary</p>
+          <p className="mt-2 text-sm leading-6 text-muted">{tool.testingSummary}</p>
+          <p className="mt-2 text-xs font-semibold uppercase tracking-wide text-muted">
+            {tool.testedBy ? `Checked by ${tool.testedBy}` : "Editorial check pending"}
+            {tool.testedAt ? ` on ${new Date(tool.testedAt).toLocaleDateString("en-GB")}` : ""}
+          </p>
+        </div>
+      ) : null}
       {tool.freePlanReality ? <p className="mt-4 text-sm leading-6 text-muted">{tool.freePlanReality}</p> : null}
+      {tool.privacyRiskNotes ? <p className="mt-4 text-sm leading-6 text-muted">{tool.privacyRiskNotes}</p> : null}
       {tool.bestForTeams.length ? (
         <div className="mt-4 flex flex-wrap gap-2">
           {tool.bestForTeams.map((team) => (
             <Badge key={team}>{team}</Badge>
           ))}
+        </div>
+      ) : null}
+      {tool.bestForUseCases?.length ? (
+        <div className="mt-4">
+          <p className="text-sm font-semibold text-ink">Best workflow fits</p>
+          <div className="mt-2 flex flex-wrap gap-2">
+            {tool.bestForUseCases.map((useCase) => (
+              <Badge key={useCase}>{useCase}</Badge>
+            ))}
+          </div>
+        </div>
+      ) : null}
+      {tool.dailyUseCases?.length ? (
+        <div className="mt-4">
+          <p className="text-sm font-semibold text-ink">Daily-use reasons</p>
+          <ul className="mt-2 list-disc space-y-1 pl-5 text-sm leading-6 text-muted">
+            {tool.dailyUseCases.map((useCase) => <li key={useCase}>{useCase}</li>)}
+          </ul>
+        </div>
+      ) : null}
+      {tool.changeLog?.length ? (
+        <div className="mt-4">
+          <p className="text-sm font-semibold text-ink">What changed</p>
+          <ul className="mt-2 list-disc space-y-1 pl-5 text-sm leading-6 text-muted">
+            {tool.changeLog.map((change) => <li key={change}>{change}</li>)}
+          </ul>
         </div>
       ) : null}
       <div className="mt-5 flex flex-wrap gap-3">
@@ -355,9 +421,9 @@ export function ToolVerificationPanel({ tool }: { tool: Tool }) {
             Pricing source
           </a>
         ) : null}
-        {tool.sourceUrls.map((url) => (
+        {evidenceUrls.map((url) => (
           <a key={url} href={url} target="_blank" rel="nofollow noopener noreferrer" className="text-sm font-semibold text-muted hover:text-ink">
-            Source
+            Evidence source
           </a>
         ))}
       </div>
@@ -395,6 +461,8 @@ export function PricingSummary({ tool }: { tool: Tool }) {
         <Metric label="Pricing model" value={tool.pricingModel || "Verify"} />
         <Metric label="Starting price" value={tool.startingPrice === null ? "Verify" : `${tool.currency} ${tool.startingPrice}`} />
         <Metric label="Free/trial" value={[tool.freePlanAvailable ? "Free plan" : null, tool.trialAvailable ? "Trial" : null].filter(Boolean).join(" + ") || "Not flagged"} />
+        <Metric label="Pricing checked" value={tool.pricingLastCheckedAt ? new Date(tool.pricingLastCheckedAt).toLocaleDateString("en-GB") : "Needs check"} />
+        <Metric label="Features checked" value={tool.featureLastCheckedAt ? new Date(tool.featureLastCheckedAt).toLocaleDateString("en-GB") : "Needs check"} />
       </div>
       <p className="mt-4 text-sm leading-6 text-muted">
         Pricing is intentionally conservative in the MVP. Do not publish exact claims until the vendor page has been checked and
@@ -598,8 +666,8 @@ export function NewsletterCTA() {
     <div className="rounded-md bg-ink p-6 text-white">
       <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
         <div>
-          <p className="text-xl font-bold">Get new tool guides and refresh notes</p>
-          <p className="mt-2 text-sm text-white/75">Newsletter integration is staged; wire this to your provider before launch.</p>
+          <p className="text-xl font-bold">Get the daily AI workflow brief</p>
+          <p className="mt-2 text-sm text-white/75">One practical workflow idea, tool check, prompt, or calculator to use each day.</p>
         </div>
         <NewsletterSignupForm placement="newsletter-cta" />
       </div>
@@ -675,4 +743,13 @@ function Metric({ label, value }: { label: string; value: string }) {
       <p className="mt-2 text-lg font-bold text-ink">{value}</p>
     </div>
   );
+}
+
+function toolUxLabels(tool: Tool) {
+  return [
+    tool.workflowFitScore && tool.workflowFitScore >= 8 ? "Most reusable" : null,
+    tool.setupEffortScore && tool.setupEffortScore <= 3 ? "Fastest to implement" : null,
+    !tool.testingSummary || !tool.workflowFitScore ? "Needs verification" : null,
+    tool.dailyUseCases?.length ? "Daily-use fit" : null
+  ].filter(Boolean) as string[];
 }

@@ -192,13 +192,17 @@
         "listing descriptions",
         "lead follow-up",
         "client updates",
-        "social content"
+        "social content",
+        "viewing notes",
+        "brokerage handoffs"
       ],
       "commonTasks": [
         "write property descriptions",
         "follow up leads",
         "create brochures",
-        "summarise viewings"
+        "summarise viewings",
+        "route buyer enquiries",
+        "prepare listing social posts"
       ],
       "recommendedCategories": [
         "AI writing",
@@ -1089,7 +1093,9 @@
       "useCases": [
         "CRM",
         "lead management",
-        "marketing automation"
+        "marketing automation",
+        "sales follow-up automation",
+        "real estate lead follow-up"
       ],
       "affiliateAvailable": false,
       "lastCheckedAt": "2026-05-17",
@@ -2379,8 +2385,8 @@
     {
       "name": "Pipedrive",
       "slug": "pipedrive",
-      "summary": "Sales CRM for pipeline tracking, activities, automation, and small sales teams.",
-      "description": "Pipedrive is a sales CRM focused on pipelines, deals, activities, and follow-up. It fits WorkWise sales workflows where teams need practical tracking without a heavier CRM suite.",
+      "summary": "Sales CRM for pipeline tracking, lead follow-up, CRM automation, reporting, and small sales teams.",
+      "description": "Pipedrive is a sales CRM focused on pipelines, deals, activities, follow-up, and reporting. It fits WorkWise sales, consulting, and real estate workflows where teams need practical tracking without a heavier CRM suite.",
       "websiteUrl": "https://www.pipedrive.com/",
       "pricingPageUrl": "https://www.pipedrive.com/en/pricing",
       "sourceUrls": [
@@ -2408,14 +2414,17 @@
       "bestFor": [
         "sales pipeline",
         "deal tracking",
-        "follow-up tasks"
+        "follow-up tasks",
+        "real estate lead follow-up",
+        "CRM reporting"
       ],
       "notBestFor": [
         "teams needing a full marketing suite"
       ],
       "pros": [
         "clear sales pipeline workflow",
-        "good fit for small sales teams"
+        "good fit for small sales teams",
+        "useful for real estate lead follow-up when a simple CRM is enough"
       ],
       "cons": [
         "AI and automation features vary by plan"
@@ -2436,7 +2445,10 @@
       "useCases": [
         "CRM",
         "pipeline management",
-        "sales follow-up"
+        "sales follow-up",
+        "sales follow-up automation",
+        "real estate lead follow-up",
+        "CRM reporting"
       ],
       "affiliateAvailable": false,
       "lastCheckedAt": "2026-05-17",
@@ -2769,7 +2781,9 @@
       "useCases": [
         "automation",
         "integrations",
-        "workflow handoff"
+        "workflow handoff",
+        "workplace automation tools",
+        "sales follow-up automation"
       ],
       "affiliateAvailable": false,
       "lastCheckedAt": "2026-05-17",
@@ -2837,7 +2851,9 @@
       "useCases": [
         "automation",
         "workflow scenarios",
-        "data handoff"
+        "data handoff",
+        "workplace automation tools",
+        "sales follow-up automation"
       ],
       "affiliateAvailable": false,
       "lastCheckedAt": "2026-05-17",
@@ -2903,7 +2919,8 @@
       "useCases": [
         "project management",
         "task tracking",
-        "docs"
+        "docs",
+        "workplace automation tools"
       ],
       "affiliateAvailable": false,
       "lastCheckedAt": "2026-05-17",
@@ -2968,7 +2985,8 @@
       "useCases": [
         "project management",
         "team workflows",
-        "delivery tracking"
+        "delivery tracking",
+        "workplace automation tools"
       ],
       "affiliateAvailable": false,
       "lastCheckedAt": "2026-05-17",
@@ -3164,7 +3182,9 @@
       "useCases": [
         "real estate CRM",
         "lead routing",
-        "follow-up"
+        "follow-up",
+        "real estate lead follow-up",
+        "sales follow-up automation"
       ],
       "affiliateAvailable": false,
       "lastCheckedAt": "2026-05-17",
@@ -3447,6 +3467,20 @@
       },
       "pricingNotes": "Verify capture, hosting, export, and design plan limits before publishing.",
       "lastCheckedAt": "2026-05-17"
+    },
+    {
+      "slug": "pipedrive-vs-follow-up-boss",
+      "toolA": "pipedrive",
+      "toolB": "follow-up-boss",
+      "summaryVerdict": "Pipedrive is the broader lightweight sales CRM; Follow Up Boss is more focused on real estate lead routing, agent accountability, and brokerage follow-up workflows.",
+      "primaryUseCase": "real estate CRM and lead follow-up",
+      "winnerByUseCase": {
+        "general sales pipeline": "Pipedrive",
+        "real estate lead routing": "Follow Up Boss",
+        "small agent CRM": "Depends on integrations and lead volume"
+      },
+      "pricingNotes": "Verify real estate integrations, team seats, automation limits, and current pricing before publishing.",
+      "lastCheckedAt": "2026-05-26"
     }
   ],
   "alternativeSets": [
@@ -3893,6 +3927,93 @@
         "Support escalation checklist"
       ],
       "lastUpdatedAt": "2026-05-17"
+    },
+    {
+      "title": "Pipedrive Sales Follow-Up Workflow",
+      "slug": "pipedrive-sales-follow-up-workflow",
+      "problem": "Small sales teams lose pipeline momentum when call notes, objections, and next actions do not become clear CRM tasks.",
+      "toolsNeeded": [
+        "Pipedrive",
+        "Fathom or Fireflies.ai",
+        "Calendly",
+        "Typeform",
+        "Zapier or Make"
+      ],
+      "relatedProfession": "sales-teams",
+      "steps": [
+        {
+          "title": "Capture lead context",
+          "description": "Collect source, company, buyer role, problem, budget signal, and requested next step before creating the deal."
+        },
+        {
+          "title": "Create the deal and activity",
+          "description": "Add the lead to the right Pipedrive pipeline stage and create the next activity before the rep moves on."
+        },
+        {
+          "title": "Summarise the call",
+          "description": "Use a meeting assistant or notes prompt to extract objections, buying signals, open questions, and follow-up promises."
+        },
+        {
+          "title": "Send a specific follow-up",
+          "description": "Draft a short follow-up that references only verified context, then log the message and next task in the CRM."
+        },
+        {
+          "title": "Review stale deals weekly",
+          "description": "Check deals without recent activity, close out dead opportunities, and adjust pipeline stages when follow-up keeps slipping."
+        }
+      ],
+      "prompts": [
+        "Act as a sales operations assistant. Turn these notes into Pipedrive-ready CRM fields, deal stage, objections, buying signals, next activity, and a concise follow-up email. Use only supplied facts: [notes]."
+      ],
+      "templates": [
+        "Pipedrive implementation checklist",
+        "Sales follow-up activity template"
+      ],
+      "lastUpdatedAt": "2026-05-26"
+    },
+    {
+      "title": "Real Estate Lead Follow-Up Workflow",
+      "slug": "real-estate-lead-follow-up-workflow",
+      "problem": "Real estate agents miss opportunities when enquiries, viewing notes, and buyer follow-up are scattered across inboxes, portals, calendars, and personal notes.",
+      "toolsNeeded": [
+        "Pipedrive or Follow Up Boss",
+        "Calendly",
+        "Typeform",
+        "Canva",
+        "ChatGPT"
+      ],
+      "relatedProfession": "real-estate-agents",
+      "steps": [
+        {
+          "title": "Log every enquiry",
+          "description": "Capture lead source, property interest, location, budget range if supplied, urgency, and consent context before drafting replies."
+        },
+        {
+          "title": "Assign follow-up owner",
+          "description": "Route the lead to an agent or team member, create the next task, and record response-time expectations."
+        },
+        {
+          "title": "Prepare listing and viewing context",
+          "description": "Use verified property facts to draft viewing notes, listing copy variants, and safe buyer questions without inventing local claims."
+        },
+        {
+          "title": "Send a personalised follow-up",
+          "description": "Summarise the viewing or enquiry, answer only confirmed questions, and propose the next action."
+        },
+        {
+          "title": "Review brokerage pipeline",
+          "description": "Check missed responses, stale leads, viewing feedback, and handoffs so the brokerage can improve repeat lead handling."
+        }
+      ],
+      "prompts": [
+        "Act as a real estate operations assistant. Using only these lead details, property facts, and viewing notes, create CRM fields, a follow-up email, buyer questions, next tasks, and any claims that need verification: [context]."
+      ],
+      "templates": [
+        "Real estate lead intake checklist",
+        "Viewing follow-up email template",
+        "Brokerage lead review template"
+      ],
+      "lastUpdatedAt": "2026-05-26"
     }
   ],
   "promptTemplates": [
@@ -3952,12 +4073,13 @@
       "title": "ChatGPT Prompts for Consultants",
       "slug": "chatgpt-prompts-for-consultants",
       "profession": "consultants",
-      "task": "research synthesis and client reporting",
-      "prompt": "Act as a consulting analyst. Summarise these notes into findings, evidence, assumptions, risks, recommendations, and open questions. Use only the supplied material and flag any missing evidence: [notes].",
-      "refinementPrompt": "Turn the findings into an executive-summary draft, then create a separate implementation checklist with owners, decisions needed, and next actions.",
+      "task": "consultant research synthesis, client reporting, and implementation planning",
+      "prompt": "Act as a consulting analyst. Summarise these notes into findings, evidence, assumptions, risks, recommendations, open questions, and client-ready next actions. Use only the supplied material, separate facts from interpretation, and flag any missing evidence: [notes].",
+      "refinementPrompt": "Turn the findings into an executive-summary draft, then create a separate implementation checklist with owners, decisions needed, first-week actions, dependencies, and risks the consultant should discuss with the client.",
       "mistakesToAvoid": [
         "Do not turn weak evidence into firm recommendations.",
-        "Do not cite sources, numbers, or client facts that were not provided."
+        "Do not cite sources, numbers, or client facts that were not provided.",
+        "Do not remove risks, caveats, or open questions just to make the report sound more confident."
       ],
       "lastUpdatedAt": "2026-05-17"
     },

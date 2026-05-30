@@ -31,6 +31,7 @@ import { articleJsonLd, breadcrumbJsonLd, faqJsonLd } from "@/lib/jsonld";
 import { getPageQualityScore } from "@/lib/quality";
 import { findProfession, listPromptTemplates, listWorkflows, relatedLinks, toolsForProfession } from "@/lib/repository";
 import { currentYear, pageMetadata } from "@/lib/seo";
+import { workflowRecipes } from "@/lib/workflow-library";
 
 export function generateStaticParams() {
   return getProfessions().map((profession) => ({ slug: profession.slug }));
@@ -74,7 +75,11 @@ export default async function ProfessionPage({ params }: RouteProps) {
     relatedLinks({ profession })
   ]);
   const promptLinks = matchingPromptLinks(profession, prompts);
-  const related = [...promptLinks, ...baseRelated];
+  const recipeLinks = workflowRecipes
+    .filter((recipe) => recipe.professionSlug === profession.slug)
+    .slice(0, 4)
+    .map((recipe) => ({ title: recipe.title, href: `/workflow-library/${recipe.slug}/`, description: recipe.summary }));
+  const related = [...recipeLinks, ...promptLinks, ...baseRelated];
   const workflow = professionWorkflowSuggestion(profession, workflows);
   const useCaseRows = bestUseCaseRows(tools);
   const profile = buildProfessionProfile(profession, tools, related);

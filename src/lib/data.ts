@@ -11,6 +11,7 @@ import type {
   ToolCategory,
   Workflow
 } from "@/types/content";
+import { applyToolEvidence } from "./tool-evidence";
 import { seedDataSchema } from "./validators";
 
 const parsedSeedData = seedDataSchema.parse(rawSeedData) as SeedData;
@@ -24,7 +25,7 @@ export function getDemoNotice(): string {
 }
 
 export function getTools(): Tool[] {
-  return parsedSeedData.tools;
+  return parsedSeedData.tools.map(applyToolEvidence);
 }
 
 export function getTool(slug: string): Tool | undefined {

@@ -38,6 +38,19 @@ export default async function AiToolsPage() {
             to find candidates, then validate fit through the linked workflow and comparison pages.
           </VerdictBox>
         </div>
+        <section className="mt-8 rounded-md border border-line bg-white p-6">
+          <h2 className="text-2xl font-bold text-ink">Filter by workflow fit</h2>
+          <p className="mt-3 text-sm leading-6 text-muted">
+            Start with the operating question, then narrow by setup effort, privacy risk, team size, and daily-use frequency.
+          </p>
+          <div className="mt-5 grid gap-3 md:grid-cols-2 lg:grid-cols-5">
+            <FilterCard title="Workflow type" href="/automation-os/" body="Templates, audits, and repeatable handoffs." />
+            <FilterCard title="Team size" href="/professions/" body="Role and team-specific software guides." />
+            <FilterCard title="Setup effort" href="/free-tools/zapier-make-n8n-picker/" body="Choose a builder your team can maintain." />
+            <FilterCard title="Privacy risk" href="/free-tools/software-buying-checklist-generator/" body="Check data and review requirements." />
+            <FilterCard title="Daily-use frequency" href="/daily-ai-workflow-brief/" body="Return for one practical task each day." />
+          </div>
+        </section>
         <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {categoryRows.map(({ category, tools: matchingTools }) => (
             <Link key={category.slug} href={`/categories/${category.slug}/`} className="rounded-md border border-line bg-white p-5 hover:border-brand">
@@ -61,5 +74,14 @@ export default async function AiToolsPage() {
         </div>
       </section>
     </>
+  );
+}
+
+function FilterCard({ title, href, body }: { title: string; href: string; body: string }) {
+  return (
+    <Link href={href} className="rounded-md border border-line bg-panel p-4 hover:border-brand">
+      <h3 className="font-semibold text-ink">{title}</h3>
+      <p className="mt-2 text-sm leading-6 text-muted">{body}</p>
+    </Link>
   );
 }

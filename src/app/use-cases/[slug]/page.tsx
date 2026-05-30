@@ -11,14 +11,17 @@ import {
   MethodologyBox,
   PageHero,
   RelatedPages,
+  SearchIntentPanel,
   ToolGrid,
   VerdictBox
 } from "@/components/Blocks";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumbJsonLd, collectionPageJsonLd, faqJsonLd, itemListJsonLd } from "@/lib/jsonld";
 import { listTools, relatedLinks } from "@/lib/repository";
+import { getUseCaseIntentBrief } from "@/lib/search-intent";
 import { pageMetadata, truncateDescription } from "@/lib/seo";
 import { findUseCasePage, getUseCasePages, type UseCasePage } from "@/lib/use-cases";
+import { workflowRecipes } from "@/lib/workflow-library";
 
 export async function generateStaticParams() {
   const tools = await listTools();
@@ -34,10 +37,15 @@ export async function generateMetadata({ params }: RouteProps) {
   const tools = await listTools();
   const useCase = findUseCasePage(tools, slug);
   if (!useCase) return {};
+  const intentBrief = getUseCaseIntentBrief(useCase.slug);
 
   return pageMetadata({
     title: `${useCase.label} AI Tools`,
-    description: truncateDescription(`Compare AI and SaaS tools for ${useCase.label.toLowerCase()} by setup effort, privacy risk, free-plan limits, and workflow fit.`, 155),
+    description: truncateDescription(
+      intentBrief?.description ??
+        `Compare AI and SaaS tools for ${useCase.label.toLowerCase()} by setup effort, privacy risk, free-plan limits, and workflow fit.`,
+      155
+    ),
     path: `/use-cases/${useCase.slug}/`
   });
 }
@@ -53,13 +61,19 @@ export default async function UseCasePage({ params }: RouteProps) {
     { name: "Use cases", href: "/use-cases/" },
     { name: useCase.label, href: `/use-cases/${useCase.slug}/` }
   ];
-  const faqs = buildUseCaseFaqs(useCase);
+  const intentBrief = getUseCaseIntentBrief(useCase.slug);
+  const faqs = [...buildUseCaseFaqs(useCase), ...(intentBrief?.faqs ?? [])];
   const links = await relatedLinks({ tool: useCase.tools[0], limit: 8 });
   const helperLinks = [
+    { title: "Workflow Library", href: "/workflow-library/", description: "Find step-by-step recipes tied to this kind of work." },
     { title: "Build an AI stack", href: "/free-tools/ai-stack-builder/", description: "Turn this use case into a practical tool shortlist." },
     { title: "Estimate workflow ROI", href: "/free-tools/ai-workflow-roi-calculator/", description: "Check whether the workflow is worth automating." },
     { title: "Software buying checklist", href: "/free-tools/software-buying-checklist-generator/", description: "Create a buying checklist before choosing a vendor." }
   ];
+  const recipeLinks = workflowRecipes
+    .filter((recipe) => recipe.workflowType.toLowerCase().includes(useCase.label.toLowerCase()) || useCase.tools.some((tool) => recipe.relatedToolSlugs.includes(tool.slug)))
+    .slice(0, 4)
+    .map((recipe) => ({ title: recipe.title, href: `/workflow-library/${recipe.slug}/`, description: recipe.summary }));
 
   return (
     <>
@@ -86,10 +100,11 @@ export default async function UseCasePage({ params }: RouteProps) {
             Pick a tool for the whole workflow, not just the feature label. Check how it fits your team size, current stack,
             privacy expectations, and how often the task repeats.
           </VerdictBox>
+          <SearchIntentPanel brief={intentBrief} />
           <ComparisonTable tools={useCase.tools} />
           <DecisionGuide tools={useCase.tools.slice(0, 6)} />
           <ToolGrid tools={useCase.tools} />
-          <RelatedPages links={[...helperLinks, ...links]} />
+          <RelatedPages links={[...recipeLinks, ...(intentBrief?.links ?? []), ...helperLinks, ...links]} />
           <MethodologyBox>
             <p>
               Use-case hubs are only published when at least two structured tool records support the same task.

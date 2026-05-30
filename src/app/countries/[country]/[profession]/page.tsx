@@ -10,6 +10,7 @@ import {
   MethodologyBox,
   PageHero,
   RelatedPages,
+  SearchIntentPanel,
   ToolGrid,
   VerdictBox,
   WorkflowSteps
@@ -26,6 +27,7 @@ import {
   toolsForProfession
 } from "@/lib/repository";
 import { priorityCountryProfessionPairs } from "@/lib/route-registry";
+import { getCountryProfessionIntentBrief } from "@/lib/search-intent";
 import { currentYear, pageMetadata } from "@/lib/seo";
 
 export function generateStaticParams() {
@@ -40,10 +42,13 @@ export async function generateMetadata({ params }: RouteProps) {
   const { country: countrySlug, profession: professionSlug } = await params;
   const [country, profession] = await Promise.all([findCountry(countrySlug), findProfession(professionSlug)]);
   if (!country || !profession) return {};
+  const intentBrief = getCountryProfessionIntentBrief(country, profession);
 
   return pageMetadata({
     title: `${profession.name} AI Tools in ${country.name}`,
-    description: `Compare AI tools for ${profession.name.toLowerCase()} in ${country.name}, with ${country.currency} context, terminology, privacy notes, and workflow fit.`,
+    description:
+      intentBrief?.description ??
+      `Compare AI tools for ${profession.name.toLowerCase()} in ${country.name}, with ${country.currency} context, terminology, privacy notes, and workflow fit.`,
     path: `/countries/${country.slug}/${profession.slug}/`
   });
 }
@@ -61,8 +66,10 @@ export default async function CountryProfessionPage({ params }: RouteProps) {
   ]);
   const tools = allProfessionTools.filter((tool) => tool.countries.includes(country.slug));
   const workflow = professionWorkflowSuggestion(profession, workflows);
+  const intentBrief = getCountryProfessionIntentBrief(country, profession);
   const faqs = [
     ...buildProfessionFaqs(profession, tools),
+    ...(intentBrief?.faqs ?? []),
     {
       question: `What should ${profession.name.toLowerCase()} in ${country.name} check before using AI tools?`,
       answer: `Check ${country.currency} billing, local terminology such as ${country.terminologyNotes.join(", ")}, regional availability, and privacy requirements. ${country.privacyNotes.join(" ")}`
@@ -72,6 +79,7 @@ export default async function CountryProfessionPage({ params }: RouteProps) {
     .filter((prompt) => prompt.profession === profession.slug)
     .map((prompt) => ({ title: prompt.title, href: `/prompts/${prompt.slug}/`, description: prompt.task }));
   const related = [
+    ...(intentBrief?.links ?? []),
     { title: `${country.name} AI tools`, href: `/countries/${country.slug}/`, description: `${country.currency} and privacy context.` },
     { title: `${profession.name} guide`, href: `/professions/${profession.slug}/`, description: "Full profession-level tool shortlist." },
     ...promptLinks,
@@ -101,6 +109,7 @@ export default async function CountryProfessionPage({ params }: RouteProps) {
             Use this page when the reader needs local context, not just a generic profession guide. Keep vendor claims conservative until
             availability and pricing are checked for {country.name}.
           </VerdictBox>
+          <SearchIntentPanel brief={intentBrief} />
           <section className="rounded-md border border-line bg-white p-6">
             <h2 className="text-2xl font-bold text-ink">Local fit notes</h2>
             <div className="mt-5 grid gap-4 md:grid-cols-3">

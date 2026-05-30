@@ -11,11 +11,17 @@ import type {
   ToolCategory,
   Workflow
 } from "@/types/content";
+import { agentPlaybooks } from "./agent-playbooks";
+import { authorityTopics } from "./authority-topics";
+import { automationCleanupPages, automationProfessionPages, automationSupportPages, automationTemplates } from "./automation-os";
 import { freeTools } from "./free-tools";
 import { getPageQualityScore } from "./quality";
+import { getCountryProfessionIntentBrief, getToolIntentBrief, getUseCaseIntentBrief } from "./search-intent";
 import { currentYear, truncateDescription } from "./seo";
+import { stackBlueprints } from "./stack-blueprints";
 import { getUseCasePages, slugifyUseCase, type UseCasePage } from "./use-cases";
 import { getTradeCityPairs, getTradeCity, getTrade, tradeDescription, tradePageTitle, tradePages } from "./trade-pages";
+import { workflowChecklists, workflowCollections, workflowRecipes } from "./workflow-library";
 import { workflowKits } from "./workflow-kits";
 
 export type RouteGroup =
@@ -32,6 +38,11 @@ export type RouteGroup =
   | "prompts"
   | "templates"
   | "free-tools"
+  | "topics"
+  | "agent-playbooks"
+  | "automation-os"
+  | "stack-blueprints"
+  | "workflow-library"
   | "country-professions"
   | "trades";
 
@@ -153,6 +164,55 @@ export const staticSeoRoutes: SeoRoute[] = [
     quality: strongStaticQuality
   },
   {
+    path: "/topics/",
+    group: "topics",
+    title: "AI Workflow Topic Clusters",
+    description: "Explore WorkWise authority clusters for CRM, real estate, automation, agent workflows, stack blueprints, ecommerce, support, and local services.",
+    quality: strongStaticQuality
+  },
+  {
+    path: "/updates/",
+    group: "static",
+    title: "Latest AI Workflow Updates",
+    description: "Fresh WorkWise notes on AI workflow clusters, tool watchlists, pricing checks, and new practical guides.",
+    quality: strongStaticQuality
+  },
+  {
+    path: "/daily-ai-workflow-brief/",
+    group: "static",
+    title: "Daily AI Workflow Brief",
+    description: "A daily WorkWise routine with one workflow idea, one tool check, one prompt, and one free-tool action.",
+    quality: strongStaticQuality
+  },
+  {
+    path: "/agent-playbooks/",
+    group: "agent-playbooks",
+    title: "AI Agent Playbooks for Small Business",
+    description: "Practical AI agent playbooks with triggers, owners, guardrails, handoff rules, privacy notes, and related workflow recipes.",
+    quality: strongStaticQuality
+  },
+  {
+    path: "/stack-blueprints/",
+    group: "stack-blueprints",
+    title: "AI Stack Blueprints for Small Business",
+    description: "Practical AI and SaaS stack blueprints by workflow, audience, budget tier, maturity level, tools, rollout steps, and upgrade triggers.",
+    quality: strongStaticQuality
+  },
+  {
+    path: "/automation-os/",
+    group: "automation-os",
+    title: "Automation OS for Small Business",
+    description: "Workflow templates, automation audits, tool comparisons, calculators, and daily operating habits for small-business automation.",
+    quality: strongStaticQuality
+  },
+  {
+    path: "/workflow-library/",
+    group: "workflow-library",
+    title: "Workflow Library for Small Business Automation",
+    description: "Step-by-step workflow recipes for sales, real estate, agencies, ecommerce, support, finance, admin, and local service teams.",
+    quality: strongStaticQuality
+  },
+  {
     path: "/trades/",
     group: "trades",
     title: "Job Management Software for UK Tradespeople",
@@ -260,6 +320,86 @@ export function buildSeoRoutes(data: SeedData): SeoRoute[] {
     ...workflowKits.map((kit) => workflowKitRoute(kit, context)),
     ...data.promptTemplates.map((prompt) => promptRoute(prompt, context)),
     ...data.promptTemplates.map((template) => templateRoute(template, context)),
+    ...authorityTopics.map((topic) => ({
+      path: `/topics/${topic.slug}/`,
+      group: "topics" as const,
+      title: topic.title,
+      description: topic.summary,
+      parent: "/topics/",
+      quality: strongStaticQuality
+    })),
+    ...agentPlaybooks.map((playbook) => ({
+      path: `/agent-playbooks/${playbook.slug}/`,
+      group: "agent-playbooks" as const,
+      title: playbook.title,
+      description: truncateDescription(`${playbook.summary} Includes setup steps, guardrails, handoff rules, failure modes, privacy notes, and a related free tool.`, 155),
+      parent: "/agent-playbooks/",
+      quality: strongStaticQuality
+    })),
+    ...stackBlueprints.map((blueprint) => ({
+      path: `/stack-blueprints/${blueprint.slug}/`,
+      group: "stack-blueprints" as const,
+      title: blueprint.title,
+      description: truncateDescription(`${blueprint.summary} Includes stack layers, rollout steps, risk notes, upgrade triggers, recipes, and agent playbooks.`, 155),
+      parent: "/stack-blueprints/",
+      quality: strongStaticQuality
+    })),
+    ...automationTemplates.map((template) => ({
+      path: `/automation-os/templates/${template.slug}/`,
+      group: "automation-os" as const,
+      title: template.title,
+      description: truncateDescription(`${template.trigger} Includes inputs, workflow steps, tools, risk level, review step, failure modes, and a related free tool.`, 155),
+      parent: "/automation-os/",
+      quality: strongStaticQuality
+    })),
+    ...automationSupportPages.map((page) => ({
+      path: `/automation-os/support/${page.slug}/`,
+      group: "automation-os" as const,
+      title: page.title,
+      description: page.summary,
+      parent: "/automation-os/",
+      quality: strongStaticQuality
+    })),
+    ...automationProfessionPages.map((page) => ({
+      path: `/automation-os/professions/${page.slug}/`,
+      group: "automation-os" as const,
+      title: page.title,
+      description: page.summary,
+      parent: "/automation-os/",
+      quality: strongStaticQuality
+    })),
+    ...automationCleanupPages.map((page) => ({
+      path: `/automation-os/cleanup/${page.slug}/`,
+      group: "automation-os" as const,
+      title: page.title,
+      description: page.summary,
+      parent: "/automation-os/",
+      quality: strongStaticQuality
+    })),
+    ...workflowRecipes.map((recipe) => ({
+      path: `/workflow-library/${recipe.slug}/`,
+      group: "workflow-library" as const,
+      title: recipe.title,
+      description: truncateDescription(`${recipe.summary} Includes trigger, setup steps, review checks, failure modes, privacy notes, tools, and a related free tool.`, 155),
+      parent: "/workflow-library/",
+      quality: strongStaticQuality
+    })),
+    ...workflowCollections.map((collection) => ({
+      path: `/workflow-library/collections/${collection.slug}/`,
+      group: "workflow-library" as const,
+      title: collection.title,
+      description: truncateDescription(collection.primaryPain, 155),
+      parent: "/workflow-library/",
+      quality: strongStaticQuality
+    })),
+    ...workflowChecklists.map((checklist) => ({
+      path: `/workflow-library/checklists/${checklist.slug}/`,
+      group: "workflow-library" as const,
+      title: checklist.title,
+      description: truncateDescription(checklist.summary, 155),
+      parent: "/workflow-library/",
+      quality: strongStaticQuality
+    })),
     ...freeTools.map((tool) => ({
       path: `/free-tools/${tool.slug}/`,
       group: "free-tools" as const,
@@ -317,12 +457,14 @@ function categoryRoute(category: ToolCategory, context: ReturnType<typeof create
 }
 
 function useCaseRoute(useCase: UseCasePage, context: ReturnType<typeof createRouteContext>): SeoRoute {
+  const intentBrief = getUseCaseIntentBrief(useCase.slug);
   return {
     path: `/use-cases/${useCase.slug}/`,
     group: "use-cases",
     title: `${useCase.label} AI Tools`,
     description: truncateDescription(
-      `Compare AI and SaaS tools for ${useCase.label.toLowerCase()} by setup effort, privacy risk, free-plan limits, and workflow fit.`,
+      intentBrief?.description ??
+        `Compare AI and SaaS tools for ${useCase.label.toLowerCase()} by setup effort, privacy risk, free-plan limits, and workflow fit.`,
       155
     ),
     parent: "/use-cases/",
@@ -339,11 +481,12 @@ function useCaseRoute(useCase: UseCasePage, context: ReturnType<typeof createRou
 
 function toolRoute(tool: Tool, context: ReturnType<typeof createRouteContext>): SeoRoute {
   const links = toolInternalLinks(tool, context);
+  const intentBrief = getToolIntentBrief(tool.slug);
   return {
     path: `/ai-tools/${tool.slug}/`,
     group: "tools",
-    title: `${tool.name} Review and Use Cases (${currentYear()})`,
-    description: tool.summary,
+    title: intentBrief ? `${tool.name} Use Cases and Review (${currentYear()})` : `${tool.name} Review and Use Cases (${currentYear()})`,
+    description: truncateDescription(intentBrief?.description ?? tool.summary, 155),
     parent: "/ai-tools/",
     quality: getPageQualityScore({
       matchingTools: [tool],
@@ -405,13 +548,15 @@ function countryProfessionRoutes(context: ReturnType<typeof createRouteContext>)
       const profession = context.professionBySlug.get(professionSlug);
       if (!country || !profession) return undefined;
       const tools = context.tools.filter((tool) => tool.countries.includes(country.slug) && tool.professions.includes(profession.slug));
+      const intentBrief = getCountryProfessionIntentBrief(country, profession);
 
       return {
         path: `/countries/${country.slug}/${profession.slug}/`,
         group: "country-professions" as const,
         title: `${profession.name} AI Tools in ${country.name}`,
         description: truncateDescription(
-          `Compare AI tools for ${profession.name.toLowerCase()} in ${country.name}, including ${country.currency} context, local terminology, privacy notes, and workflow fit.`,
+          intentBrief?.description ??
+            `Compare AI tools for ${profession.name.toLowerCase()} in ${country.name}, including ${country.currency} context, local terminology, privacy notes, and workflow fit.`,
           155
         ),
         parent: `/countries/${country.slug}/`,
@@ -581,8 +726,14 @@ function toolInternalLinks(tool: Tool, context: ReturnType<typeof createRouteCon
 function professionInternalLinks(profession: Profession, context: ReturnType<typeof createRouteContext>): SiteLink[] {
   const countryLinks = context.countries.slice(0, 4).map((country) => ({
     title: `${profession.name} AI tools in ${country.name}`,
-    href: `/countries/${country.slug}/`
+    href: priorityCountryProfessionPairs.some((pair) => pair.country === country.slug && pair.profession === profession.slug)
+      ? `/countries/${country.slug}/${profession.slug}/`
+      : `/countries/${country.slug}/`
   }));
+  const toolLinks = context.tools
+    .filter((tool) => tool.professions.includes(profession.slug))
+    .slice(0, 5)
+    .map((tool) => ({ title: tool.name, href: `/ai-tools/${tool.slug}/` }));
   const promptLinks = context.prompts
     .filter((prompt) => prompt.profession === profession.slug)
     .map((prompt) => ({ title: prompt.title, href: `/prompts/${prompt.slug}/` }));
@@ -590,7 +741,7 @@ function professionInternalLinks(profession: Profession, context: ReturnType<typ
     .filter((workflow) => workflow.relatedProfession === profession.slug)
     .map((workflow) => ({ title: workflow.title, href: `/workflows/${workflow.slug}/` }));
 
-  return dedupeLinks([...countryLinks, ...promptLinks, ...workflowLinks]);
+  return dedupeLinks([...toolLinks, ...countryLinks, ...promptLinks, ...workflowLinks]);
 }
 
 function countryInternalLinks(country: Country, context: ReturnType<typeof createRouteContext>): SiteLink[] {
