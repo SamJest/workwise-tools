@@ -167,7 +167,7 @@ export const staticSeoRoutes: SeoRoute[] = [
     path: "/topics/",
     group: "topics",
     title: "AI Workflow Topic Clusters",
-    description: "Explore WorkWise authority clusters for CRM, real estate, automation, agent workflows, stack blueprints, ecommerce, support, and local services.",
+    description: "Explore WorkWise authority clusters for CRM, real estate, automation, marketing, finance, recruiting, reporting, compliance, retention, and support.",
     quality: strongStaticQuality
   },
   {

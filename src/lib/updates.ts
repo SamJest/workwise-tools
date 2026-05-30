@@ -2,6 +2,24 @@ import type { UpdateItem } from "@/types/content";
 
 export const updateItems: UpdateItem[] = [
   {
+    title: "New search-demand clusters added across six adjacent markets",
+    slug: "adjacent-search-demand-clusters-added",
+    type: "new-guide",
+    summary:
+      "WorkWise now adds topic clusters for marketing content ops, finance and admin automation, recruiting and HR, analytics reporting, compliance risk, and customer-success retention workflows.",
+    affectedTools: ["chatgpt", "claude", "zapier", "make", "hubspot", "quickbooks", "xero", "clickup", "asana"],
+    affectedClusters: ["marketing content", "finance admin", "recruiting HR", "analytics reporting", "compliance risk", "customer success"],
+    sourceUrls: [
+      "/topics/best-ai-tools-for-marketing-teams/",
+      "/topics/ai-tools-for-bookkeeping-accounting/",
+      "/topics/ai-recruiting-tools-small-business/",
+      "/topics/ai-reporting-tools-small-business/",
+      "/topics/ai-privacy-review-checklist-small-business/",
+      "/topics/ai-customer-success-tools-small-business/"
+    ],
+    publishedAt: "2026-05-30"
+  },
+  {
     title: "AI stack blueprints added for buyer-intent workflows",
     slug: "ai-stack-blueprints-added",
     type: "new-guide",

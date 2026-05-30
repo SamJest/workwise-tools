@@ -9,7 +9,7 @@ import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
   title: "AI Workflow Topic Clusters",
-  description: "Explore WorkWise authority clusters for AI tools, CRM, real estate, automation, agents, stacks, ecommerce, support, and local services.",
+  description: "Explore WorkWise authority clusters for CRM, real estate, automation, marketing, finance, recruiting, reporting, compliance, and retention.",
   path: "/topics/"
 });
 
@@ -38,7 +38,7 @@ export default function TopicsPage() {
       <PageHero
         eyebrow="Topic clusters"
         title="AI workflow clusters built for depth, not directory sprawl"
-        description="Start with workflow-first clusters for CRM, real estate, automation, agent playbooks, stack blueprints, ecommerce, support, and local services."
+        description="Start with workflow-first clusters for CRM, real estate, automation, agent playbooks, stack blueprints, marketing, finance, recruiting, reporting, compliance, retention, ecommerce, support, and local services."
       >
         <Breadcrumbs items={breadcrumbs} />
       </PageHero>

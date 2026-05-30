@@ -13,7 +13,7 @@ import {
 } from "@/components/Blocks";
 import { SectionHeader } from "@/components/Shell";
 import { agentPlaybooks } from "@/lib/agent-playbooks";
-import { authorityClusters, authorityTopicsByCluster } from "@/lib/authority-topics";
+import { authorityClusters, authorityTopics, authorityTopicsByCluster } from "@/lib/authority-topics";
 import { automationTemplates } from "@/lib/automation-os";
 import { freeTools } from "@/lib/free-tools";
 import {
@@ -105,6 +105,7 @@ export default async function HomePage() {
           <Stat icon={<Tags />} label="Categories" value={categories.length} />
           <Stat icon={<ListChecks />} label="Use cases" value={useCases.length} />
           <Stat icon={<CalendarClock />} label="Recipes" value={workflowRecipes.length} />
+          <Stat icon={<FileSearch />} label="Topic pages" value={authorityTopics.length} />
           <Stat icon={<Sparkles />} label="Agent playbooks" value={agentPlaybooks.length} />
           <Stat icon={<Database />} label="Stack blueprints" value={stackBlueprints.length} />
           <Stat icon={<FileSearch />} label="Professions" value={professions.length} />
@@ -118,7 +119,7 @@ export default async function HomePage() {
           <SectionHeader
             eyebrow="Authority clusters"
             title="Start where search demand is already appearing"
-            description="The growth wedges now cover CRM, real estate, automation, agent workflows, stack blueprints, ecommerce, support, and local-service workflows. Each cluster links tools, workflows, comparisons, prompts, calculators, and updates."
+            description="The growth wedges now cover CRM, real estate, automation, agent workflows, stack blueprints, marketing, finance, recruiting, reporting, compliance, customer success, ecommerce, support, and local-service workflows. Each cluster links tools, workflows, comparisons, prompts, calculators, and updates."
             action={{ href: "/topics/", label: "View all topic pages" }}
           />
           <div className="grid gap-5 lg:grid-cols-3">

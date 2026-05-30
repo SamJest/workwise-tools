@@ -18,7 +18,7 @@ export default function DailyAiWorkflowBriefPage() {
     { name: "Home", href: "/" },
     { name: "Daily AI Workflow Brief", href: "/daily-ai-workflow-brief/" }
   ];
-  const today = new Date("2026-05-29");
+  const today = new Date("2026-05-30");
 
   return (
     <>
@@ -50,6 +50,12 @@ export default function DailyAiWorkflowBriefPage() {
               body="Pick one workflow with a visible failure mode, then run the audit generator before changing any tools."
               href="/free-tools/workflow-audit-generator/"
               label="Audit workflow"
+            />
+            <BriefCard
+              title="Topic to explore"
+              body="Open the new finance, recruiting, marketing, reporting, compliance, or retention clusters if today's bottleneck sits outside CRM."
+              href="/topics/"
+              label="Browse topics"
             />
             <BriefCard
               title="Workflow of the day"
