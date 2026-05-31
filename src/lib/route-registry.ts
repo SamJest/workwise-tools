@@ -257,6 +257,13 @@ export const staticSeoRoutes: SeoRoute[] = [
     quality: strongStaticQuality
   },
   {
+    path: "/crawl-quality/",
+    group: "static",
+    title: "Crawl Quality Review for WorkWise",
+    description: "A crawl-quality checklist for WorkWise: live sitemap coverage, duplicate URL checks, status sampling, canonical domain checks, and internal-link audits.",
+    quality: strongStaticQuality
+  },
+  {
     path: "/affiliate-disclosure/",
     group: "static",
     title: "Advertising and Affiliate Disclosure",

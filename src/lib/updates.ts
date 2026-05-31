@@ -2,6 +2,17 @@ import type { UpdateItem } from "@/types/content";
 
 export const updateItems: UpdateItem[] = [
   {
+    title: "Live crawl found and fixed duplicate sitemap URLs",
+    slug: "live-crawl-duplicate-sitemap-urls-fixed",
+    type: "verification",
+    summary:
+      "A public crawl confirmed the live site is deployed on www, sampled priority pages return 200, and the sitemap exposed duplicate trade URLs. Sitemap generation now uses the route registry once to remove those duplicates.",
+    affectedTools: [],
+    affectedClusters: ["crawl quality", "sitemap", "trades", "technical SEO"],
+    sourceUrls: ["/crawl-quality/", "/sitemap.xml", "/quality-scorecard/"],
+    publishedAt: "2026-05-31"
+  },
+  {
     title: "Quality scorecard and expanded audit coverage added",
     slug: "quality-scorecard-audit-coverage-added",
     type: "verification",

@@ -111,6 +111,7 @@ function findDuplicates(values: string[]) {
 function addInternalReference(href: string) {
   if (!href.startsWith("/")) return;
   const [path] = href.split("#");
+  if (path === "/sitemap.xml" || path === "/robots.txt") return;
   if (!path || path === "/") {
     referencedRoutes.add("/");
     return;

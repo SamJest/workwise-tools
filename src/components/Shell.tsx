@@ -80,6 +80,7 @@ export function Footer() {
             { href: "/editorial-policy/", label: "Editorial policy" },
             { href: "/how-we-review-ai-tools/", label: "How we review" },
             { href: "/quality-scorecard/", label: "Quality scorecard" },
+            { href: "/crawl-quality/", label: "Crawl quality" },
             { href: "/affiliate-disclosure/", label: "Advertising disclosure" },
             { href: "/privacy/", label: "Privacy policy" },
             { href: "/cookies/", label: "Cookie policy" },

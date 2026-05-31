@@ -11,7 +11,6 @@ import {
 } from "@/lib/repository";
 import { absoluteUrl } from "@/lib/seo";
 import { buildSeoRoutes } from "@/lib/route-registry";
-import { getTradeCityPairs, tradePages } from "@/lib/trade-pages";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const [tools, professions, countries, comparisons, alternativeSets, workflows, promptTemplates, categories] = await Promise.all([
@@ -40,22 +39,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     promptTemplates
   }).filter((route) => route.quality.indexable);
 
-  const tradeRoutes = [
-    {
-      path: "/trades/",
-      group: "trades"
-    },
-    ...tradePages.map((trade) => ({
-      path: `/trades/${trade.slug}/`,
-      group: "trades"
-    })),
-    ...getTradeCityPairs().map((pair) => ({
-      path: `/trades/${pair.trade}/${pair.city}/`,
-      group: "trades"
-    }))
-  ];
-
-  return [...routes, ...tradeRoutes].map((route) => ({
+  return routes.map((route) => ({
     url: absoluteUrl(route.path),
     lastModified: new Date(),
     changeFrequency: route.path === "/" ? "weekly" : "monthly",
