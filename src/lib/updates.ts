@@ -2,6 +2,28 @@ import type { UpdateItem } from "@/types/content";
 
 export const updateItems: UpdateItem[] = [
   {
+    title: "Quality scorecard and expanded audit coverage added",
+    slug: "quality-scorecard-audit-coverage-added",
+    type: "verification",
+    summary:
+      "The quality system now includes a public scorecard plus content-profile coverage for buying guides, so new commercial pages are checked for usefulness, links, red flags, rollout depth, and daily-return value.",
+    affectedTools: [],
+    affectedClusters: ["quality scorecard", "buying guides", "content quality", "internal links"],
+    sourceUrls: ["/quality-scorecard/", "/buying-guides/", "/how-we-review-ai-tools/"],
+    publishedAt: "2026-05-31"
+  },
+  {
+    title: "Software buying guide library added",
+    slug: "software-buying-guide-library-added",
+    type: "new-guide",
+    summary:
+      "A new buying-guide route family captures high-intent software searches with pricing reality, privacy risk, rollout plans, red flags, and related workflow actions.",
+    affectedTools: ["pipedrive", "hubspot", "zapier", "make", "fathom", "gorgias", "zendesk-ai", "calendly", "typeform"],
+    affectedClusters: ["buying guides", "software decisions", "commercial investigation", "returning tools"],
+    sourceUrls: ["/buying-guides/", "/free-tools/software-buying-checklist-generator/", "/stack-blueprints/"],
+    publishedAt: "2026-05-31"
+  },
+  {
     title: "New search-demand clusters added across six adjacent markets",
     slug: "adjacent-search-demand-clusters-added",
     type: "new-guide",

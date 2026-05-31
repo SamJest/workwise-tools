@@ -88,6 +88,12 @@ export default function DailyAiWorkflowBriefPage() {
               label="Analyze stack"
             />
             <BriefCard
+              title="Buying check"
+              body="Before starting a new software trial, use a buying guide to check pricing traps, privacy risk, rollout steps, and red flags."
+              href="/buying-guides/"
+              label="Open buying guides"
+            />
+            <BriefCard
               title="Agent check"
               body="Before turning any workflow into an agent, confirm the trigger, owner, review queue, fallback path, and escalation rules."
               href="/free-tools/agent-readiness-checker/"
@@ -131,6 +137,7 @@ export default function DailyAiWorkflowBriefPage() {
             links={[
               { title: "Latest updates", href: "/updates/", description: "Follow the changelog." },
               { title: "Workflow Library", href: "/workflow-library/", description: "Step-by-step recipes." },
+              { title: "Buying Guides", href: "/buying-guides/", description: "Software decisions with rollout checks." },
               { title: "Agent Playbooks", href: "/agent-playbooks/", description: "Guardrailed agent workflows." },
               { title: "Stack Blueprints", href: "/stack-blueprints/", description: "Buyer-ready AI stack plans." },
               { title: "Automation OS", href: "/automation-os/", description: "Templates, audits, and calculators." },

@@ -8,6 +8,7 @@ const navItems = [
   { href: "/automation-os/", label: "Automation OS" },
   { href: "/workflow-library/", label: "Workflow Library" },
   { href: "/stack-blueprints/", label: "Stack Blueprints" },
+  { href: "/buying-guides/", label: "Buying" },
   { href: "/agent-playbooks/", label: "Agent Playbooks" },
   { href: "/workflow-kits/", label: "Build workflow" },
   { href: "/comparisons/", label: "Compare" },
@@ -60,6 +61,7 @@ export function Footer() {
             { href: "/automation-os/", label: "Automation OS" },
             { href: "/workflow-library/", label: "Workflow Library" },
             { href: "/stack-blueprints/", label: "Stack Blueprints" },
+            { href: "/buying-guides/", label: "Buying Guides" },
             { href: "/agent-playbooks/", label: "Agent Playbooks" },
             { href: "/best-ai-tools/", label: "Best AI tools" },
             { href: "/workflow-kits/", label: "Build a workflow" },
@@ -77,6 +79,7 @@ export function Footer() {
           links={[
             { href: "/editorial-policy/", label: "Editorial policy" },
             { href: "/how-we-review-ai-tools/", label: "How we review" },
+            { href: "/quality-scorecard/", label: "Quality scorecard" },
             { href: "/affiliate-disclosure/", label: "Advertising disclosure" },
             { href: "/privacy/", label: "Privacy policy" },
             { href: "/cookies/", label: "Cookie policy" },

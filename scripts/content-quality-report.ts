@@ -1,5 +1,6 @@
 import {
   buildAlternativeProfile,
+  buildBuyingGuideProfile,
   buildComparisonProfile,
   buildCountryProfile,
   buildProfessionProfile,
@@ -7,6 +8,7 @@ import {
   buildToolProfile,
   buildWorkflowProfile
 } from "../src/lib/content-engine";
+import { buyingGuides } from "../src/lib/buying-guides";
 import {
   getAlternativeSets,
   getComparisonTools,
@@ -62,6 +64,13 @@ for (const set of getAlternativeSets()) {
   profiles.push({
     route: `/alternatives/${set.slug}/`,
     profile: buildAlternativeProfile(set, getToolsBySlugs(set.candidateSlugs), baseTool ? getRelatedLinks({ tool: baseTool }) : [])
+  });
+}
+
+for (const guide of buyingGuides) {
+  profiles.push({
+    route: `/buying-guides/${guide.slug}/`,
+    profile: buildBuyingGuideProfile(guide)
   });
 }
 

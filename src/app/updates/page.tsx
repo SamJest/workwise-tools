@@ -77,6 +77,7 @@ export default function UpdatesPage() {
           <RelatedPages
             links={[
               { title: "Daily AI Workflow Brief", href: "/daily-ai-workflow-brief/", description: "Today's practical workflow idea." },
+              { title: "Buying guides", href: "/buying-guides/", description: "High-intent software decision pages." },
               { title: "Topic clusters", href: "/topics/", description: "CRM, automation, marketing, finance, recruiting, reporting, compliance, and retention." },
               { title: "AI workflow ROI calculator", href: "/free-tools/ai-workflow-roi-calculator/", description: "Estimate the value of a workflow." }
             ]}

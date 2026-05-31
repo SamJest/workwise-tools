@@ -14,6 +14,7 @@ import type {
 import { agentPlaybooks } from "./agent-playbooks";
 import { authorityTopics } from "./authority-topics";
 import { automationCleanupPages, automationProfessionPages, automationSupportPages, automationTemplates } from "./automation-os";
+import { buyingGuides } from "./buying-guides";
 import { freeTools } from "./free-tools";
 import { getPageQualityScore } from "./quality";
 import { getCountryProfessionIntentBrief, getToolIntentBrief, getUseCaseIntentBrief } from "./search-intent";
@@ -38,6 +39,7 @@ export type RouteGroup =
   | "prompts"
   | "templates"
   | "free-tools"
+  | "buying-guides"
   | "topics"
   | "agent-playbooks"
   | "automation-os"
@@ -164,6 +166,13 @@ export const staticSeoRoutes: SeoRoute[] = [
     quality: strongStaticQuality
   },
   {
+    path: "/buying-guides/",
+    group: "buying-guides",
+    title: "Software Buying Guides for Small Business",
+    description: "Workflow-first buying guides for CRM, automation, AI writing, support, accounting, recruiting, reporting, scheduling, and more.",
+    quality: strongStaticQuality
+  },
+  {
     path: "/topics/",
     group: "topics",
     title: "AI Workflow Topic Clusters",
@@ -238,6 +247,13 @@ export const staticSeoRoutes: SeoRoute[] = [
     group: "static",
     title: "How We Review AI Tools",
     description: "The review framework for evaluating AI and SaaS tools.",
+    quality: strongStaticQuality
+  },
+  {
+    path: "/quality-scorecard/",
+    group: "static",
+    title: "WorkWise Content Quality Scorecard",
+    description: "The WorkWise quality scorecard for useful AI and SaaS pages: evidence, workflow fit, pricing caution, privacy risk, links, and return value.",
     quality: strongStaticQuality
   },
   {
@@ -320,6 +336,14 @@ export function buildSeoRoutes(data: SeedData): SeoRoute[] {
     ...workflowKits.map((kit) => workflowKitRoute(kit, context)),
     ...data.promptTemplates.map((prompt) => promptRoute(prompt, context)),
     ...data.promptTemplates.map((template) => templateRoute(template, context)),
+    ...buyingGuides.map((guide) => ({
+      path: `/buying-guides/${guide.slug}/`,
+      group: "buying-guides" as const,
+      title: guide.title,
+      description: truncateDescription(`${guide.summary} Includes pricing reality, privacy risk, rollout steps, red flags, and related workflows.`, 155),
+      parent: "/buying-guides/",
+      quality: strongStaticQuality
+    })),
     ...authorityTopics.map((topic) => ({
       path: `/topics/${topic.slug}/`,
       group: "topics" as const,

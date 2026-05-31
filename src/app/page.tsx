@@ -15,6 +15,7 @@ import { SectionHeader } from "@/components/Shell";
 import { agentPlaybooks } from "@/lib/agent-playbooks";
 import { authorityClusters, authorityTopics, authorityTopicsByCluster } from "@/lib/authority-topics";
 import { automationTemplates } from "@/lib/automation-os";
+import { buyingGuides } from "@/lib/buying-guides";
 import { freeTools } from "@/lib/free-tools";
 import {
   listAlternativeSets,
@@ -93,6 +94,9 @@ export default async function HomePage() {
           <Link href="/free-tools/" className="rounded-md border border-line bg-white px-5 py-3 text-sm font-semibold text-ink">
             Use a free tool
           </Link>
+          <Link href="/buying-guides/" className="rounded-md border border-line bg-white px-5 py-3 text-sm font-semibold text-ink">
+            Buying guides
+          </Link>
           <Link href="/updates/" className="rounded-md border border-line bg-white px-5 py-3 text-sm font-semibold text-ink">
             Latest updates
           </Link>
@@ -110,6 +114,7 @@ export default async function HomePage() {
           <Stat icon={<Database />} label="Stack blueprints" value={stackBlueprints.length} />
           <Stat icon={<FileSearch />} label="Professions" value={professions.length} />
           <Stat icon={<GitCompare />} label="Comparisons" value={comparisons.length} />
+          <Stat icon={<ListChecks />} label="Buying guides" value={buyingGuides.length} />
           <Stat icon={<Sparkles />} label="Free tools" value={freeTools.length} />
         </div>
       </section>
@@ -140,6 +145,24 @@ export default async function HomePage() {
             Competitors often stop at rankings or broad software lists. WorkWise goes deeper: workflow examples, setup checks,
             pricing caution, privacy notes, alternatives, prompts, calculators, and an update loop that gives readers a reason to return.
           </VerdictBox>
+
+          <section>
+            <SectionHeader
+              eyebrow="Buying Guides"
+              title="Software decisions with pricing, privacy, and rollout checks"
+              description="Buying guides capture high-intent searches and route readers into workflows, calculators, comparisons, and stack blueprints before paid commitments."
+              action={{ href: "/buying-guides/", label: "Browse buying guides" }}
+            />
+            <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+              {buyingGuides.slice(0, 4).map((guide) => (
+                <Link key={guide.slug} href={`/buying-guides/${guide.slug}/`} className="rounded-md border border-line bg-white p-5 hover:border-brand">
+                  <p className="text-sm font-semibold text-brand">{guide.category}</p>
+                  <h2 className="mt-2 text-lg font-bold text-ink">{guide.title}</h2>
+                  <p className="mt-3 text-sm leading-6 text-muted">{guide.quickAnswer}</p>
+                </Link>
+              ))}
+            </div>
+          </section>
 
           <section>
             <SectionHeader
@@ -248,6 +271,7 @@ export default async function HomePage() {
             links={[
               { title: "Daily AI Workflow Brief", href: "/daily-ai-workflow-brief/", description: "One useful workflow idea each day." },
               { title: "Workflow Library", href: "/workflow-library/", description: "Step-by-step recipes for repeatable work." },
+              { title: "Buying Guides", href: "/buying-guides/", description: "Choose software with pricing, privacy, and rollout checks." },
               { title: "Agent Playbooks", href: "/agent-playbooks/", description: "Guardrailed AI agent workflows." },
               { title: "Stack Blueprints", href: "/stack-blueprints/", description: "Buyer-ready AI stack plans." },
               { title: "Latest updates", href: "/updates/", description: "Fresh guide and watchlist notes." },
@@ -295,6 +319,7 @@ export default async function HomePage() {
           <ClusterCard title="Comparisons" href="/comparisons/" count={comparisons.length} />
           <ClusterCard title="Workflow pages" href="/workflows/" count={workflows.length} />
           <ClusterCard title="Workflow recipes" href="/workflow-library/" count={workflowRecipes.length} />
+          <ClusterCard title="Buying guides" href="/buying-guides/" count={buyingGuides.length} />
           <ClusterCard title="Agent playbooks" href="/agent-playbooks/" count={agentPlaybooks.length} />
           <ClusterCard title="Stack blueprints" href="/stack-blueprints/" count={stackBlueprints.length} />
           <ClusterCard title="Prompt library" href="/prompts/" count={prompts.length} />

@@ -9,6 +9,7 @@ import type {
   Tool,
   Workflow
 } from "@/types/content";
+import type { BuyingGuide } from "./buying-guides";
 import { getPageQualityScore } from "./quality";
 import { getToolIntentBrief } from "./search-intent";
 import { currentYear } from "./seo";
@@ -159,6 +160,45 @@ export function buildToolProfile(tool: Tool, related: SiteLink[]): PageContentPr
       intro: tool.summary,
       internalLinks: related,
       lastUpdated: tool.lastCheckedAt,
+      hasAuthor: true,
+      dataWarnings
+    })
+  };
+}
+
+export function buildBuyingGuideProfile(guide: BuyingGuide): PageContentProfile {
+  const valueBlocks = [
+    "quick-answer",
+    "best-for",
+    "evaluation-criteria",
+    "pricing-reality",
+    "privacy-risk",
+    "rollout-plan",
+    "red-flags",
+    "related-workflows"
+  ];
+  const dataWarnings = [
+    ...(guide.evaluationCriteria.length >= 3 ? [] : ["Buying guide has fewer than 3 evaluation criteria."]),
+    ...(guide.rolloutPlan.length >= 4 ? [] : ["Buying guide rollout plan is too thin."]),
+    ...(guide.redFlags.length >= 3 ? [] : ["Buying guide has too few red flags."]),
+    ...(guide.related.length >= 4 ? [] : ["Buying guide has fewer than 4 related links."]),
+    ...(guide.dailyReturn ? [] : ["Daily-return reason is missing."])
+  ];
+
+  return {
+    pageType: "buying-guide",
+    valueBlocks,
+    uniqueAngles: [
+      `${guide.title} targets ${guide.searchIntent.toLowerCase()} intent.`,
+      `${guide.title} includes ${guide.evaluationCriteria.length} evaluation sections.`,
+      `${guide.title} has ${guide.rolloutPlan.length} rollout steps and ${guide.redFlags.length} red flags.`
+    ],
+    dataWarnings,
+    quality: getPageQualityScore({
+      valueBlocks,
+      intro: `${guide.summary} ${guide.quickAnswer}`,
+      internalLinks: guide.related,
+      lastUpdated: new Date().toISOString(),
       hasAuthor: true,
       dataWarnings
     })

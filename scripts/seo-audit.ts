@@ -1,5 +1,9 @@
+import { authorityTopics } from "../src/lib/authority-topics";
+import { buyingGuides } from "../src/lib/buying-guides";
 import { getSeedData } from "../src/lib/data";
+import { freeTools } from "../src/lib/free-tools";
 import { buildSeoRoutes } from "../src/lib/route-registry";
+import { updateItems } from "../src/lib/updates";
 
 const data = getSeedData();
 const routes = buildSeoRoutes(data);
@@ -55,6 +59,25 @@ for (const prompt of data.promptTemplates) {
   if (prompt.profession) referencedRoutes.add(`/professions/${prompt.profession}/`);
 }
 
+for (const topic of authorityTopics) {
+  referencedRoutes.add(`/topics/${topic.slug}/`);
+  for (const link of topic.related) addInternalReference(link.href);
+}
+
+for (const guide of buyingGuides) {
+  referencedRoutes.add(`/buying-guides/${guide.slug}/`);
+  for (const link of guide.related) addInternalReference(link.href);
+}
+
+for (const tool of freeTools) {
+  referencedRoutes.add(`/free-tools/${tool.slug}/`);
+  for (const link of tool.related) addInternalReference(link.href);
+}
+
+for (const update of updateItems) {
+  for (const href of update.sourceUrls) addInternalReference(href);
+}
+
 for (const route of referencedRoutes) {
   if (!routePaths.has(route)) errors.push(`Referenced route does not exist: ${route}`);
 }
@@ -83,4 +106,14 @@ function findDuplicates(values: string[]) {
     seen.add(value);
   }
   return [...duplicates];
+}
+
+function addInternalReference(href: string) {
+  if (!href.startsWith("/")) return;
+  const [path] = href.split("#");
+  if (!path || path === "/") {
+    referencedRoutes.add("/");
+    return;
+  }
+  referencedRoutes.add(path.endsWith("/") ? path : `${path}/`);
 }

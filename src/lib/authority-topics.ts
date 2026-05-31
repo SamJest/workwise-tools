@@ -92,7 +92,7 @@ const localServicesRelated: SiteLink[] = [
 const marketingContentRelated: SiteLink[] = [
   { title: "Marketing agency AI stack", href: "/topics/ai-stack-for-marketing-agencies/", description: "A stack for briefs, production, approvals, and reporting." },
   { title: "Campaign brief from intake", href: "/workflow-library/campaign-brief-from-intake/", description: "Turn client inputs into a checked campaign brief." },
-  { title: "AI prompt generator", href: "/free-tools/ai-prompt-generator/", description: "Draft reusable prompts for marketing workflows." },
+  { title: "AI prompt generator", href: "/free-tools/prompt-generator/", description: "Draft reusable prompts for marketing workflows." },
   { title: "Workflow Library", href: "/workflow-library/", description: "Find the repeatable recipe behind the topic." }
 ];
 
@@ -112,7 +112,7 @@ const recruitingHrRelated: SiteLink[] = [
 
 const analyticsReportingRelated: SiteLink[] = [
   { title: "Weekly KPI brief", href: "/workflow-library/weekly-kpi-brief/", description: "Turn source metrics into a checked weekly summary." },
-  { title: "Weekly reporting automation", href: "/automation-os/templates/weekly-reporting-automation/", description: "Automate report gathering without hiding review." },
+  { title: "Weekly reporting automation", href: "/automation-os/templates/weekly-kpi-reporting-brief/", description: "Automate report gathering without hiding review." },
   { title: "Stack Gap Analyzer", href: "/free-tools/stack-gap-analyzer/", description: "Find missing reporting and system-of-record layers." },
   { title: "Workflow Recipe Finder", href: "/free-tools/workflow-recipe-finder/", description: "Find a reporting recipe by team and risk." }
 ];
